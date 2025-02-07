@@ -240,7 +240,7 @@ __pmaintext:
 
 ;; *************** function _main *****************
 ;; Defined at:
-;;		line 9 in file "C:\Users\www\Desktop\PIC16F877A\KEYPAD_INTERFACE_7_SEG\Main.c"
+;;		line 9 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_7_SEG\Main.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -270,7 +270,7 @@ __pmaintext:
 ;; This function uses a non-reentrant model
 ;;
 psect	maintext
-	file	"C:\Users\www\Desktop\PIC16F877A\KEYPAD_INTERFACE_7_SEG\Main.c"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_7_SEG\Main.c"
 	line	9
 	global	__size_of_main
 	__size_of_main	equ	__end_of_main-_main
@@ -352,7 +352,7 @@ __ptext107:
 
 ;; *************** function _KEYPAD_KEYS *****************
 ;; Defined at:
-;;		line 7 in file "C:\Users\www\Desktop\PIC16F877A\KEYPAD_INTERFACE_7_SEG\KEYPAD_lib.h"
+;;		line 7 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_7_SEG\KEYPAD_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -379,7 +379,7 @@ __ptext107:
 ;; This function uses a non-reentrant model
 ;;
 psect	text107
-	file	"C:\Users\www\Desktop\PIC16F877A\KEYPAD_INTERFACE_7_SEG\KEYPAD_lib.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_7_SEG\KEYPAD_lib.h"
 	line	7
 	global	__size_of_KEYPAD_KEYS
 	__size_of_KEYPAD_KEYS	equ	__end_of_KEYPAD_KEYS-_KEYPAD_KEYS
@@ -714,7 +714,7 @@ __ptext108:
 
 ;; *************** function _KEYPAD_INIT *****************
 ;; Defined at:
-;;		line 3 in file "C:\Users\www\Desktop\PIC16F877A\KEYPAD_INTERFACE_7_SEG\KEYPAD_lib.h"
+;;		line 3 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_7_SEG\KEYPAD_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -741,7 +741,7 @@ __ptext108:
 ;; This function uses a non-reentrant model
 ;;
 psect	text108
-	file	"C:\Users\www\Desktop\PIC16F877A\KEYPAD_INTERFACE_7_SEG\KEYPAD_lib.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_7_SEG\KEYPAD_lib.h"
 	line	3
 	global	__size_of_KEYPAD_INIT
 	__size_of_KEYPAD_INIT	equ	__end_of_KEYPAD_INIT-_KEYPAD_INIT
@@ -774,7 +774,7 @@ __ptext109:
 
 ;; *************** function _Seg_Display *****************
 ;; Defined at:
-;;		line 15 in file "C:\Users\www\Desktop\PIC16F877A\KEYPAD_INTERFACE_7_SEG\Seg7_lib.h"
+;;		line 15 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_7_SEG\Seg7_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;  num             2    0[COMMON] int 
 ;; Auto vars:     Size  Location     Type
@@ -801,7 +801,7 @@ __ptext109:
 ;; This function uses a non-reentrant model
 ;;
 psect	text109
-	file	"C:\Users\www\Desktop\PIC16F877A\KEYPAD_INTERFACE_7_SEG\Seg7_lib.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_7_SEG\Seg7_lib.h"
 	line	15
 	global	__size_of_Seg_Display
 	__size_of_Seg_Display	equ	__end_of_Seg_Display-_Seg_Display
@@ -1177,7 +1177,7 @@ __ptext110:
 
 ;; *************** function _Seg_Init *****************
 ;; Defined at:
-;;		line 11 in file "C:\Users\www\Desktop\PIC16F877A\KEYPAD_INTERFACE_7_SEG\Seg7_lib.h"
+;;		line 11 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_7_SEG\Seg7_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -1204,7 +1204,7 @@ __ptext110:
 ;; This function uses a non-reentrant model
 ;;
 psect	text110
-	file	"C:\Users\www\Desktop\PIC16F877A\KEYPAD_INTERFACE_7_SEG\Seg7_lib.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_7_SEG\Seg7_lib.h"
 	line	11
 	global	__size_of_Seg_Init
 	__size_of_Seg_Init	equ	__end_of_Seg_Init-_Seg_Init

@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\www\Desktop\PIC16F877A\PWM_APPLICATION\Main.c"
+# 1 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_APPLICATION\Main.c"
 
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
@@ -1090,7 +1090,7 @@ extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsign
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 3 "C:\Users\www\Desktop\PIC16F877A\PWM_APPLICATION\PWM_lib.h"
+# 3 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_APPLICATION\PWM_lib.h"
 long Frequency;
 
 
@@ -1179,7 +1179,7 @@ PWM1_START();
 PWM2_START();
 }
 
-# 6 "C:\Users\www\Desktop\PIC16F877A\PWM_APPLICATION\Main.c"
+# 6 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_APPLICATION\Main.c"
 void main()
 {
 unsigned int i=0x00,j=0x00;

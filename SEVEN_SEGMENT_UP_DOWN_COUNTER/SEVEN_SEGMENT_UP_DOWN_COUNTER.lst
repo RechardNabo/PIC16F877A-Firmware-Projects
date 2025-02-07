@@ -1,0 +1,1452 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.82 build 9453 
+                                                                                               Thu Dec 23 21:08:43 2021
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 9453
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 9453"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F877A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           	FNCALL	_main,_Seg_Init
+    43                           	FNCALL	_main,_Seg_Display
+    44                           	FNCALL	_main,_Check_button
+    45                           	FNCALL	_main,_Up_count
+    46                           	FNCALL	_main,_Down_count
+    47                           	FNCALL	_Down_count,_Seg_Display
+    48                           	FNCALL	_Up_count,_Seg_Display
+    49                           	FNROOT	_main
+    50                           	global	_PORTB
+    51                           psect	text112,local,class=CODE,delta=2
+    52                           global __ptext112
+    53  0000                     __ptext112:
+    54  0006                     _PORTB	set	6
+    55                           	global	_PORTC
+    56  0007                     _PORTC	set	7
+    57                           	global	_CARRY
+    58  0018                     _CARRY	set	24
+    59                           	global	_GIE
+    60  005F                     _GIE	set	95
+    61                           	global	_RB0
+    62  0030                     _RB0	set	48
+    63                           	global	_RB1
+    64  0031                     _RB1	set	49
+    65                           	global	_TRISB
+    66  0086                     _TRISB	set	134
+    67                           	global	_TRISC0
+    68  0438                     _TRISC0	set	1080
+    69                           	global	_TRISC1
+    70  0439                     _TRISC1	set	1081
+    71                           	global	_TRISC2
+    72  043A                     _TRISC2	set	1082
+    73                           	global	_TRISC3
+    74  043B                     _TRISC3	set	1083
+    75                           	global	_TRISC4
+    76  043C                     _TRISC4	set	1084
+    77                           	global	_TRISC5
+    78  043D                     _TRISC5	set	1085
+    79                           	global	_TRISC6
+    80  043E                     _TRISC6	set	1086
+    81                           	global	_TRISC7
+    82  043F                     _TRISC7	set	1087
+    83                           	global	_EEADR
+    84  010D                     _EEADR	set	269
+    85                           	global	_EEDATA
+    86  010C                     _EEDATA	set	268
+    87                           	global	_EECON1
+    88  018C                     _EECON1	set	396
+    89                           	global	_EECON2
+    90  018D                     _EECON2	set	397
+    91                           	global	_RD
+    92  0C60                     _RD	set	3168
+    93                           	global	_WR
+    94  0C61                     _WR	set	3169
+    95                           	global	_WREN
+    96  0C62                     _WREN	set	3170
+    97                           	file	"SEVEN_SEGMENT_UP_DOWN_COUNTER.as"
+    98                           	line	#
+    99                           psect cinit,class=CODE,delta=2
+   100                           global start_initialization
+   101  0675                     start_initialization:
+   102                           
+   103                           psect cinit,class=CODE,delta=2
+   104                           global end_of_initialization
+   105                           
+   106                           ;End of C runtime variable initialization code
+   107                           
+   108  0675                     end_of_initialization:
+   109  0675  0183               clrf status
+   110  0676  120A  118A  2EF1   ljmp _main	;jump to C main() function
+   111                           psect	cstackCOMMON,class=COMMON,space=1
+   112                           global __pcstackCOMMON
+   113  0070                     __pcstackCOMMON:
+   114                           	global	?_Seg_Init
+   115  0070                     ?_Seg_Init:	; 0 bytes @ 0x0
+   116                           	global	??_Seg_Init
+   117  0070                     ??_Seg_Init:	; 0 bytes @ 0x0
+   118                           	global	?_Seg_Display
+   119  0070                     ?_Seg_Display:	; 0 bytes @ 0x0
+   120                           	global	?_Up_count
+   121  0070                     ?_Up_count:	; 0 bytes @ 0x0
+   122                           	global	?_Down_count
+   123  0070                     ?_Down_count:	; 0 bytes @ 0x0
+   124                           	global	?_Check_button
+   125  0070                     ?_Check_button:	; 2 bytes @ 0x0
+   126                           	global	?_main
+   127  0070                     ?_main:	; 2 bytes @ 0x0
+   128                           	global	Seg_Display@num
+   129  0070                     Seg_Display@num:	; 2 bytes @ 0x0
+   130  0070                     	ds	2
+   131                           	global	??_Check_button
+   132  0072                     ??_Check_button:	; 0 bytes @ 0x2
+   133                           	global	??_Seg_Display
+   134  0072                     ??_Seg_Display:	; 0 bytes @ 0x2
+   135                           	global	??_Up_count
+   136  0072                     ??_Up_count:	; 0 bytes @ 0x2
+   137                           	global	??_Down_count
+   138  0072                     ??_Down_count:	; 0 bytes @ 0x2
+   139  0072                     	ds	2
+   140                           	global	Check_button@status
+   141  0074                     Check_button@status:	; 2 bytes @ 0x4
+   142  0074                     	ds	1
+   143                           	global	Up_count@x
+   144  0075                     Up_count@x:	; 2 bytes @ 0x5
+   145                           	global	Down_count@x
+   146  0075                     Down_count@x:	; 2 bytes @ 0x5
+   147  0075                     	ds	2
+   148                           	global	??_main
+   149  0077                     ??_main:	; 0 bytes @ 0x7
+   150 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 0 stack 0
+   151 ;;Auto spaces:   Size  Autos    Used
+   152 ;; COMMON          14      7       7
+   153 ;; BANK0           80      0       0
+   154 ;; BANK1           80      0       0
+   155 ;; BANK3           96      0       0
+   156 ;; BANK2           96      0       0
+   157                           
+   158 ;;
+   159 ;; Pointer list with targets:
+   160                           
+   161 ;; ?_Check_button	unsigned int  size(1) Largest target is 0
+   162 ;;
+   163                           
+   164                           
+   165 ;;
+   166 ;; Critical Paths under _main in COMMON
+   167 ;;
+   168 ;;   _main->_Up_count
+   169 ;;   _main->_Down_count
+   170 ;;   _Down_count->_Seg_Display
+   171 ;;   _Up_count->_Seg_Display
+   172 ;;
+   173 ;; Critical Paths under _main in BANK0
+   174 ;;
+   175 ;;   None.
+   176 ;;
+   177 ;; Critical Paths under _main in BANK1
+   178 ;;
+   179 ;;   None.
+   180 ;;
+   181 ;; Critical Paths under _main in BANK3
+   182 ;;
+   183 ;;   None.
+   184 ;;
+   185 ;; Critical Paths under _main in BANK2
+   186 ;;
+   187 ;;   None.
+   188                           
+   189 ;;
+   190 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   191 ;;
+   192                           
+   193 ;;
+   194 ;;Call Graph Tables:
+   195 ;;
+   196 ;; ---------------------------------------------------------------------------------
+   197 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   198 ;; ---------------------------------------------------------------------------------
+   199 ;; (0) _main                                                 0     0      0     165
+   200 ;;                           _Seg_Init
+   201 ;;                        _Seg_Display
+   202 ;;                       _Check_button
+   203 ;;                           _Up_count
+   204 ;;                         _Down_count
+   205 ;; ---------------------------------------------------------------------------------
+   206 ;; (1) _Check_button                                         6     4      2      15
+   207 ;;                                              0 COMMON     6     4      2
+   208 ;; ---------------------------------------------------------------------------------
+   209 ;; (1) _Down_count                                           5     5      0      75
+   210 ;;                                              2 COMMON     5     5      0
+   211 ;;                        _Seg_Display
+   212 ;; ---------------------------------------------------------------------------------
+   213 ;; (1) _Up_count                                             5     5      0      60
+   214 ;;                                              2 COMMON     5     5      0
+   215 ;;                        _Seg_Display
+   216 ;; ---------------------------------------------------------------------------------
+   217 ;; (2) _Seg_Display                                          2     0      2      15
+   218 ;;                                              0 COMMON     2     0      2
+   219 ;; ---------------------------------------------------------------------------------
+   220 ;; (1) _Seg_Init                                             0     0      0       0
+   221 ;; ---------------------------------------------------------------------------------
+   222 ;; Estimated maximum stack depth 2
+   223 ;; ---------------------------------------------------------------------------------
+   224                           
+   225 ;; Call Graph Graphs:
+   226                           
+   227 ;; _main (ROOT)
+   228 ;;   _Seg_Init
+   229 ;;   _Seg_Display
+   230 ;;   _Check_button
+   231 ;;   _Up_count
+   232 ;;     _Seg_Display
+   233 ;;   _Down_count
+   234 ;;     _Seg_Display
+   235 ;;
+   236                           
+   237 ;; Address spaces:
+   238                           
+   239 ;;Name               Size   Autos  Total    Cost      Usage
+   240 ;;BITCOMMON            E      0       0       0        0.0%
+   241 ;;EEDATA             100      0       0       0        0.0%
+   242 ;;NULL                 0      0       0       0        0.0%
+   243 ;;CODE                 0      0       0       0        0.0%
+   244 ;;COMMON               E      7       7       1       50.0%
+   245 ;;BITSFR0              0      0       0       1        0.0%
+   246 ;;SFR0                 0      0       0       1        0.0%
+   247 ;;BITSFR1              0      0       0       2        0.0%
+   248 ;;SFR1                 0      0       0       2        0.0%
+   249 ;;STACK                0      0       2       2        0.0%
+   250 ;;ABS                  0      0       0       3        0.0%
+   251 ;;BITBANK0            50      0       0       4        0.0%
+   252 ;;BITSFR3              0      0       0       4        0.0%
+   253 ;;SFR3                 0      0       0       4        0.0%
+   254 ;;BANK0               50      0       0       5        0.0%
+   255 ;;BITSFR2              0      0       0       5        0.0%
+   256 ;;SFR2                 0      0       0       5        0.0%
+   257 ;;BITBANK1            50      0       0       6        0.0%
+   258 ;;BANK1               50      0       0       7        0.0%
+   259 ;;BITBANK3            60      0       0       8        0.0%
+   260 ;;BANK3               60      0       0       9        0.0%
+   261 ;;BITBANK2            60      0       0      10        0.0%
+   262 ;;BANK2               60      0       0      11        0.0%
+   263 ;;DATA                 0      0       0      12        0.0%
+   264                           
+   265                           	global	_main
+   266                           psect	maintext,global,class=CODE,delta=2
+   267                           global __pmaintext
+   268  06F1                     __pmaintext:
+   269                           
+   270 ;; *************** function _main *****************
+   271 ;; Defined at:
+   272 ;;		line 9 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Main.c"
+   273 ;; Parameters:    Size  Location     Type
+   274 ;;		None
+   275 ;; Auto vars:     Size  Location     Type
+   276 ;;		None
+   277 ;; Return value:  Size  Location     Type
+   278 ;;                  2  726[COMMON] int 
+   279 ;; Registers used:
+   280 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   281 ;; Tracked objects:
+   282 ;;		On entry : 17F/0
+   283 ;;		On exit  : 0/0
+   284 ;;		Unchanged: 0/0
+   285 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   286 ;;      Params:         0       0       0       0       0
+   287 ;;      Locals:         0       0       0       0       0
+   288 ;;      Temps:          0       0       0       0       0
+   289 ;;      Totals:         0       0       0       0       0
+   290 ;;Total ram usage:        0 bytes
+   291 ;; Hardware stack levels required when called:    2
+   292 ;; This function calls:
+   293 ;;		_Seg_Init
+   294 ;;		_Seg_Display
+   295 ;;		_Check_button
+   296 ;;		_Up_count
+   297 ;;		_Down_count
+   298 ;; This function is called by:
+   299 ;;		Startup code after reset
+   300 ;; This function uses a non-reentrant model
+   301 ;;
+   302                           psect	maintext
+   303                           	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUN
+                                 TER\Main.c"
+   304                           	line	9
+   305                           	global	__size_of_main
+   306  003C                     	__size_of_main	equ	__end_of_main-_main
+   307                           	
+   308  06F1                     _main:	
+   309                           	opt	stack 6
+   310                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   311                           	line	10
+   312                           	
+   313  06F1                     l2732:	
+   314                           ;Main.c: 10: TRISB = 0b11111111;
+   315  06F1  30FF               	movlw	(0FFh)
+   316  06F2  1683               	bsf	status, 5	;RP0=1, select bank1
+   317  06F3  1303               	bcf	status, 6	;RP1=0, select bank1
+   318  06F4  0086               	movwf	(134)^080h	;volatile
+   319                           	line	11
+   320                           	
+   321  06F5                     l2734:	
+   322                           ;Main.c: 11: Seg_Init();
+   323  06F5  120A  118A  2679   	fcall	_Seg_Init
+              120A  118A         
+   324  06FA  2EFB               	goto	l2736
+   325                           	line	12
+   326                           ;Main.c: 12: while(0x01){
+   327                           	
+   328  06FB                     l727:	
+   329                           	line	13
+   330                           	
+   331  06FB                     l2736:	
+   332                           ;Main.c: 13: Seg_Display(0x00);
+   333  06FB  3000               	movlw	low(0)
+   334  06FC  00F0               	movwf	(?_Seg_Display)
+   335  06FD  3000               	movlw	high(0)
+   336  06FE  00F1               	movwf	((?_Seg_Display))+1
+   337  06FF  120A  118A  2776   	fcall	_Seg_Display
+              120A  118A         
+   338                           	line	14
+   339                           	
+   340  0704                     l2738:	
+   341                           ;Main.c: 14: if(Check_button() == 0x01){
+   342  0704  120A  118A  2684   	fcall	_Check_button
+              120A  118A         
+   343  0709  3001               	movlw	01h
+   344  070A  0670               	xorwf	(0+(?_Check_button)),w
+   345  070B  0471               	iorwf	(1+(?_Check_button)),w
+   346  070C  1D03               	skipz
+   347  070D  2F0F               	goto	u2291
+   348  070E  2F10               	goto	u2290
+   349  070F                     u2291:
+   350  070F  2F16               	goto	l2742
+   351  0710                     u2290:
+   352                           	line	15
+   353                           	
+   354  0710                     l2740:	
+   355                           ;Main.c: 15: Up_count();
+   356  0710  120A  118A  26B6   	fcall	_Up_count
+              120A  118A         
+   357  0715  2F16               	goto	l2742
+   358                           	line	16
+   359                           	
+   360  0716                     l728:	
+   361                           	line	17
+   362                           	
+   363  0716                     l2742:	
+   364                           ;Main.c: 16: }
+   365                           ;Main.c: 17: if(Check_button() == 0x02){
+   366  0716  120A  118A  2684   	fcall	_Check_button
+              120A  118A         
+   367  071B  3002               	movlw	02h
+   368  071C  0670               	xorwf	(0+(?_Check_button)),w
+   369  071D  0471               	iorwf	(1+(?_Check_button)),w
+   370  071E  1D03               	skipz
+   371  071F  2F21               	goto	u2301
+   372  0720  2F22               	goto	u2300
+   373  0721                     u2301:
+   374  0721  2EFB               	goto	l2736
+   375  0722                     u2300:
+   376                           	line	18
+   377                           	
+   378  0722                     l2744:	
+   379                           ;Main.c: 18: Down_count();
+   380  0722  120A  118A  272D   	fcall	_Down_count
+              120A  118A         
+   381  0727  2EFB               	goto	l2736
+   382                           	line	19
+   383                           	
+   384  0728                     l729:	
+   385  0728  2EFB               	goto	l2736
+   386                           	line	20
+   387                           	
+   388  0729                     l730:	
+   389                           	line	12
+   390  0729  2EFB               	goto	l2736
+   391                           	
+   392  072A                     l731:	
+   393                           	line	22
+   394                           ;Main.c: 19: }
+   395                           ;Main.c: 20: }
+   396                           ;Main.c: 21: return 0;
+   397                           ;	Return value of _main is never used
+   398                           	
+   399  072A                     l732:	
+   400                           	global	start
+   401  072A  120A  118A  2800   	ljmp	start
+   402                           	opt stack 0
+   403                           GLOBAL	__end_of_main
+   404  072D                     	__end_of_main:
+   405 ;; =============== function _main ends ============
+   406                           
+   407                           	signat	_main,90
+   408                           	global	_Check_button
+   409                           psect	text113,local,class=CODE,delta=2
+   410                           global __ptext113
+   411  0684                     __ptext113:
+   412                           
+   413 ;; *************** function _Check_button *****************
+   414 ;; Defined at:
+   415 ;;		line 24 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Main.c"
+   416 ;; Parameters:    Size  Location     Type
+   417 ;;		None
+   418 ;; Auto vars:     Size  Location     Type
+   419 ;;  status          2    4[COMMON] unsigned int 
+   420 ;; Return value:  Size  Location     Type
+   421 ;;                  2    0[COMMON] unsigned int 
+   422 ;; Registers used:
+   423 ;;		wreg, status,2, status,0
+   424 ;; Tracked objects:
+   425 ;;		On entry : 0/0
+   426 ;;		On exit  : 0/0
+   427 ;;		Unchanged: 0/0
+   428 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   429 ;;      Params:         2       0       0       0       0
+   430 ;;      Locals:         2       0       0       0       0
+   431 ;;      Temps:          2       0       0       0       0
+   432 ;;      Totals:         6       0       0       0       0
+   433 ;;Total ram usage:        6 bytes
+   434 ;; Hardware stack levels used:    1
+   435 ;; This function calls:
+   436 ;;		Nothing
+   437 ;; This function is called by:
+   438 ;;		_main
+   439 ;; This function uses a non-reentrant model
+   440 ;;
+   441                           psect	text113
+   442                           	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUN
+                                 TER\Main.c"
+   443                           	line	24
+   444                           	global	__size_of_Check_button
+   445  0032                     	__size_of_Check_button	equ	__end_of_Check_button-_Check_button
+   446                           	
+   447  0684                     _Check_button:	
+   448                           	opt	stack 7
+   449                           ; Regs used in _Check_button: [wreg+status,2+status,0]
+   450                           	line	25
+   451                           	
+   452  0684                     l2716:	
+   453                           ;Main.c: 25: unsigned int status = 0x00;
+   454  0684  01F4               	clrf	(Check_button@status)
+   455  0685  01F5               	clrf	(Check_button@status+1)
+   456                           	line	26
+   457                           	
+   458  0686                     l2718:	
+   459                           ;Main.c: 26: PORTB = 0b00000011;
+   460  0686  3003               	movlw	(03h)
+   461  0687  1283               	bcf	status, 5	;RP0=0, select bank0
+   462  0688  1303               	bcf	status, 6	;RP1=0, select bank0
+   463  0689  0086               	movwf	(6)	;volatile
+   464                           	line	27
+   465                           	
+   466  068A                     l2720:	
+   467                           ;Main.c: 27: if(RB0 == 0x01){
+   468  068A  1C06               	btfss	(48/8),(48)&7
+   469  068B  2E8D               	goto	u2271
+   470  068C  2E8E               	goto	u2270
+   471  068D                     u2271:
+   472  068D  2E92               	goto	l735
+   473  068E                     u2270:
+   474                           	line	28
+   475                           	
+   476  068E                     l2722:	
+   477                           ;Main.c: 28: status = 0x01;
+   478  068E  3001               	movlw	low(01h)
+   479  068F  00F4               	movwf	(Check_button@status)
+   480  0690  3000               	movlw	high(01h)
+   481  0691  00F5               	movwf	((Check_button@status))+1
+   482                           	line	29
+   483                           	
+   484  0692                     l735:	
+   485                           	line	30
+   486                           ;Main.c: 29: }
+   487                           ;Main.c: 30: _delay((unsigned long)((5)*(20000000/4000.0)));
+   488                           	opt asmopt_off
+   489  0692  3021               movlw	33
+   490  0693  00F3               movwf	((??_Check_button+0)+0+1),f
+   491  0694  3076               	movlw	118
+   492  0695  00F2               movwf	((??_Check_button+0)+0),f
+   493  0696                     u2317:
+   494  0696  0BF2               	decfsz	((??_Check_button+0)+0),f
+   495  0697  2E96               	goto	u2317
+   496  0698  0BF3               	decfsz	((??_Check_button+0)+0+1),f
+   497  0699  2E96               	goto	u2317
+   498  069A  0064               	clrwdt
+   499                           opt asmopt_on
+   500                           
+   501                           	line	31
+   502                           	
+   503  069B                     l2724:	
+   504                           ;Main.c: 31: if(RB1 == 0x01){
+   505  069B  1283               	bcf	status, 5	;RP0=0, select bank0
+   506  069C  1303               	bcf	status, 6	;RP1=0, select bank0
+   507  069D  1C86               	btfss	(49/8),(49)&7
+   508  069E  2EA0               	goto	u2281
+   509  069F  2EA1               	goto	u2280
+   510  06A0                     u2281:
+   511  06A0  2EA5               	goto	l736
+   512  06A1                     u2280:
+   513                           	line	32
+   514                           	
+   515  06A1                     l2726:	
+   516                           ;Main.c: 32: status = 0x02;
+   517  06A1  3002               	movlw	low(02h)
+   518  06A2  00F4               	movwf	(Check_button@status)
+   519  06A3  3000               	movlw	high(02h)
+   520  06A4  00F5               	movwf	((Check_button@status))+1
+   521                           	line	33
+   522                           	
+   523  06A5                     l736:	
+   524                           	line	34
+   525                           ;Main.c: 33: }
+   526                           ;Main.c: 34: _delay((unsigned long)((5)*(20000000/4000.0)));
+   527                           	opt asmopt_off
+   528  06A5  3021               movlw	33
+   529  06A6  00F3               movwf	((??_Check_button+0)+0+1),f
+   530  06A7  3076               	movlw	118
+   531  06A8  00F2               movwf	((??_Check_button+0)+0),f
+   532  06A9                     u2327:
+   533  06A9  0BF2               	decfsz	((??_Check_button+0)+0),f
+   534  06AA  2EA9               	goto	u2327
+   535  06AB  0BF3               	decfsz	((??_Check_button+0)+0+1),f
+   536  06AC  2EA9               	goto	u2327
+   537  06AD  0064               	clrwdt
+   538                           opt asmopt_on
+   539                           
+   540                           	line	35
+   541                           	
+   542  06AE                     l2728:	
+   543                           ;Main.c: 35: return status;
+   544  06AE  0875               	movf	(Check_button@status+1),w
+   545  06AF  01F1               	clrf	(?_Check_button+1)
+   546  06B0  07F1               	addwf	(?_Check_button+1)
+   547  06B1  0874               	movf	(Check_button@status),w
+   548  06B2  01F0               	clrf	(?_Check_button)
+   549  06B3  07F0               	addwf	(?_Check_button)
+   550                           
+   551  06B4  2EB5               	goto	l737
+   552                           	
+   553  06B5                     l2730:	
+   554                           	line	37
+   555                           	
+   556  06B5                     l737:	
+   557  06B5  0008               	return
+   558                           	opt stack 0
+   559                           GLOBAL	__end_of_Check_button
+   560  06B6                     	__end_of_Check_button:
+   561 ;; =============== function _Check_button ends ============
+   562                           
+   563                           	signat	_Check_button,90
+   564                           	global	_Down_count
+   565                           psect	text114,local,class=CODE,delta=2
+   566                           global __ptext114
+   567  072D                     __ptext114:
+   568                           
+   569 ;; *************** function _Down_count *****************
+   570 ;; Defined at:
+   571 ;;		line 103 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Seg7_lib.h"
+   572 ;; Parameters:    Size  Location     Type
+   573 ;;		None
+   574 ;; Auto vars:     Size  Location     Type
+   575 ;;  x               2    5[COMMON] int 
+   576 ;; Return value:  Size  Location     Type
+   577 ;;		None               void
+   578 ;; Registers used:
+   579 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   580 ;; Tracked objects:
+   581 ;;		On entry : 0/0
+   582 ;;		On exit  : 0/0
+   583 ;;		Unchanged: 0/0
+   584 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   585 ;;      Params:         0       0       0       0       0
+   586 ;;      Locals:         2       0       0       0       0
+   587 ;;      Temps:          3       0       0       0       0
+   588 ;;      Totals:         5       0       0       0       0
+   589 ;;Total ram usage:        5 bytes
+   590 ;; Hardware stack levels used:    1
+   591 ;; Hardware stack levels required when called:    1
+   592 ;; This function calls:
+   593 ;;		_Seg_Display
+   594 ;; This function is called by:
+   595 ;;		_main
+   596 ;; This function uses a non-reentrant model
+   597 ;;
+   598                           psect	text114
+   599                           	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUN
+                                 TER\Seg7_lib.h"
+   600                           	line	103
+   601                           	global	__size_of_Down_count
+   602  0049                     	__size_of_Down_count	equ	__end_of_Down_count-_Down_count
+   603                           	
+   604  072D                     _Down_count:	
+   605                           	opt	stack 6
+   606                           ; Regs used in _Down_count: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   607                           	line	104
+   608                           	
+   609  072D                     l2700:	
+   610                           ;Seg7_lib.h: 104: int x = 0x0F;
+   611  072D  300F               	movlw	low(0Fh)
+   612  072E  00F5               	movwf	(Down_count@x)
+   613  072F  3000               	movlw	high(0Fh)
+   614  0730  00F6               	movwf	((Down_count@x))+1
+   615                           	line	105
+   616                           	
+   617  0731                     l2702:	
+   618  0731  0876               	movf	(Down_count@x+1),w
+   619  0732  3A80               	xorlw	80h
+   620  0733  00FF               	movwf	btemp+1
+   621  0734  3080               	movlw	(high(01h))^80h
+   622  0735  027F               	subwf	btemp+1,w
+   623  0736  1D03               	skipz
+   624  0737  2F3A               	goto	u2245
+   625  0738  3001               	movlw	low(01h)
+   626  0739  0275               	subwf	(Down_count@x),w
+   627  073A                     u2245:
+   628                           
+   629  073A  1803               	skipnc
+   630  073B  2F3D               	goto	u2241
+   631  073C  2F3E               	goto	u2240
+   632  073D                     u2241:
+   633  073D  2F40               	goto	l721
+   634  073E                     u2240:
+   635  073E  2F75               	goto	l724
+   636                           	
+   637  073F                     l2704:	
+   638  073F  2F75               	goto	l724
+   639                           	
+   640  0740                     l721:	
+   641                           	line	106
+   642                           ;Seg7_lib.h: 106: if(x < 0x00){x=0x0F;}
+   643  0740  1FF6               	btfss	(Down_count@x+1),7
+   644  0741  2F43               	goto	u2251
+   645  0742  2F44               	goto	u2250
+   646  0743                     u2251:
+   647  0743  2F49               	goto	l2708
+   648  0744                     u2250:
+   649                           	
+   650  0744                     l2706:	
+   651  0744  300F               	movlw	low(0Fh)
+   652  0745  00F5               	movwf	(Down_count@x)
+   653  0746  3000               	movlw	high(0Fh)
+   654  0747  00F6               	movwf	((Down_count@x))+1
+   655  0748  2F49               	goto	l2708
+   656                           	
+   657  0749                     l723:	
+   658                           	line	107
+   659                           	
+   660  0749                     l2708:	
+   661                           ;Seg7_lib.h: 107: Seg_Display(x);
+   662  0749  0876               	movf	(Down_count@x+1),w
+   663  074A  01F1               	clrf	(?_Seg_Display+1)
+   664  074B  07F1               	addwf	(?_Seg_Display+1)
+   665  074C  0875               	movf	(Down_count@x),w
+   666  074D  01F0               	clrf	(?_Seg_Display)
+   667  074E  07F0               	addwf	(?_Seg_Display)
+   668                           
+   669  074F  120A  118A  2776   	fcall	_Seg_Display
+              120A  118A         
+   670                           	line	108
+   671                           	
+   672  0754                     l2710:	
+   673                           ;Seg7_lib.h: 108: _delay((unsigned long)((500)*(20000000/4000.0)));
+   674                           	opt asmopt_off
+   675  0754  300D               movlw  13
+   676  0755  00F4               movwf	((??_Down_count+0)+0+2),f
+   677  0756  30AF               movlw	175
+   678  0757  00F3               movwf	((??_Down_count+0)+0+1),f
+   679  0758  30C1               	movlw	193
+   680  0759  00F2               movwf	((??_Down_count+0)+0),f
+   681  075A                     u2337:
+   682  075A  0BF2               	decfsz	((??_Down_count+0)+0),f
+   683  075B  2F5A               	goto	u2337
+   684  075C  0BF3               	decfsz	((??_Down_count+0)+0+1),f
+   685  075D  2F5A               	goto	u2337
+   686  075E  0BF4               	decfsz	((??_Down_count+0)+0+2),f
+   687  075F  2F5A               	goto	u2337
+   688  0760  0064               	clrwdt
+   689                           opt asmopt_on
+   690                           
+   691                           	line	105
+   692                           	
+   693  0761                     l2712:	
+   694  0761  30FF               	movlw	low(-1)
+   695  0762  07F5               	addwf	(Down_count@x),f
+   696  0763  1803               	skipnc
+   697  0764  0AF6               	incf	(Down_count@x+1),f
+   698  0765  30FF               	movlw	high(-1)
+   699  0766  07F6               	addwf	(Down_count@x+1),f
+   700                           	
+   701  0767                     l2714:	
+   702  0767  0876               	movf	(Down_count@x+1),w
+   703  0768  3A80               	xorlw	80h
+   704  0769  00FF               	movwf	btemp+1
+   705  076A  3080               	movlw	(high(01h))^80h
+   706  076B  027F               	subwf	btemp+1,w
+   707  076C  1D03               	skipz
+   708  076D  2F70               	goto	u2265
+   709  076E  3001               	movlw	low(01h)
+   710  076F  0275               	subwf	(Down_count@x),w
+   711  0770                     u2265:
+   712                           
+   713  0770  1803               	skipnc
+   714  0771  2F73               	goto	u2261
+   715  0772  2F74               	goto	u2260
+   716  0773                     u2261:
+   717  0773  2F40               	goto	l721
+   718  0774                     u2260:
+   719  0774  2F75               	goto	l724
+   720                           	
+   721  0775                     l722:	
+   722                           	line	110
+   723                           	
+   724  0775                     l724:	
+   725  0775  0008               	return
+   726                           	opt stack 0
+   727                           GLOBAL	__end_of_Down_count
+   728  0776                     	__end_of_Down_count:
+   729 ;; =============== function _Down_count ends ============
+   730                           
+   731                           	signat	_Down_count,88
+   732                           	global	_Up_count
+   733                           psect	text115,local,class=CODE,delta=2
+   734                           global __ptext115
+   735  06B6                     __ptext115:
+   736                           
+   737 ;; *************** function _Up_count *****************
+   738 ;; Defined at:
+   739 ;;		line 94 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Seg7_lib.h"
+   740 ;; Parameters:    Size  Location     Type
+   741 ;;		None
+   742 ;; Auto vars:     Size  Location     Type
+   743 ;;  x               2    5[COMMON] int 
+   744 ;; Return value:  Size  Location     Type
+   745 ;;		None               void
+   746 ;; Registers used:
+   747 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   748 ;; Tracked objects:
+   749 ;;		On entry : 0/0
+   750 ;;		On exit  : 0/0
+   751 ;;		Unchanged: 0/0
+   752 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   753 ;;      Params:         0       0       0       0       0
+   754 ;;      Locals:         2       0       0       0       0
+   755 ;;      Temps:          3       0       0       0       0
+   756 ;;      Totals:         5       0       0       0       0
+   757 ;;Total ram usage:        5 bytes
+   758 ;; Hardware stack levels used:    1
+   759 ;; Hardware stack levels required when called:    1
+   760 ;; This function calls:
+   761 ;;		_Seg_Display
+   762 ;; This function is called by:
+   763 ;;		_main
+   764 ;; This function uses a non-reentrant model
+   765 ;;
+   766                           psect	text115
+   767                           	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUN
+                                 TER\Seg7_lib.h"
+   768                           	line	94
+   769                           	global	__size_of_Up_count
+   770  003B                     	__size_of_Up_count	equ	__end_of_Up_count-_Up_count
+   771                           	
+   772  06B6                     _Up_count:	
+   773                           	opt	stack 6
+   774                           ; Regs used in _Up_count: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   775                           	line	95
+   776                           	
+   777  06B6                     l2686:	
+   778                           ;Seg7_lib.h: 95: int x = 0x00;
+   779  06B6  01F5               	clrf	(Up_count@x)
+   780  06B7  01F6               	clrf	(Up_count@x+1)
+   781                           	line	96
+   782                           ;Seg7_lib.h: 96: while(x!=0x10){
+   783  06B8  2EE8               	goto	l2698
+   784                           	
+   785  06B9                     l715:	
+   786                           	line	97
+   787                           	
+   788  06B9                     l2688:	
+   789                           ;Seg7_lib.h: 97: if(x > 0x0F){x=0x00;}
+   790  06B9  0876               	movf	(Up_count@x+1),w
+   791  06BA  3A80               	xorlw	80h
+   792  06BB  00FF               	movwf	btemp+1
+   793  06BC  3080               	movlw	(high(010h))^80h
+   794  06BD  027F               	subwf	btemp+1,w
+   795  06BE  1D03               	skipz
+   796  06BF  2EC2               	goto	u2225
+   797  06C0  3010               	movlw	low(010h)
+   798  06C1  0275               	subwf	(Up_count@x),w
+   799  06C2                     u2225:
+   800                           
+   801  06C2  1C03               	skipc
+   802  06C3  2EC5               	goto	u2221
+   803  06C4  2EC6               	goto	u2220
+   804  06C5                     u2221:
+   805  06C5  2EC9               	goto	l2692
+   806  06C6                     u2220:
+   807                           	
+   808  06C6                     l2690:	
+   809  06C6  01F5               	clrf	(Up_count@x)
+   810  06C7  01F6               	clrf	(Up_count@x+1)
+   811  06C8  2EC9               	goto	l2692
+   812                           	
+   813  06C9                     l716:	
+   814                           	line	98
+   815                           	
+   816  06C9                     l2692:	
+   817                           ;Seg7_lib.h: 98: Seg_Display(x);
+   818  06C9  0876               	movf	(Up_count@x+1),w
+   819  06CA  01F1               	clrf	(?_Seg_Display+1)
+   820  06CB  07F1               	addwf	(?_Seg_Display+1)
+   821  06CC  0875               	movf	(Up_count@x),w
+   822  06CD  01F0               	clrf	(?_Seg_Display)
+   823  06CE  07F0               	addwf	(?_Seg_Display)
+   824                           
+   825  06CF  120A  118A  2776   	fcall	_Seg_Display
+              120A  118A         
+   826                           	line	99
+   827                           	
+   828  06D4                     l2694:	
+   829                           ;Seg7_lib.h: 99: _delay((unsigned long)((500)*(20000000/4000.0)));
+   830                           	opt asmopt_off
+   831  06D4  300D               movlw  13
+   832  06D5  00F4               movwf	((??_Up_count+0)+0+2),f
+   833  06D6  30AF               movlw	175
+   834  06D7  00F3               movwf	((??_Up_count+0)+0+1),f
+   835  06D8  30C1               	movlw	193
+   836  06D9  00F2               movwf	((??_Up_count+0)+0),f
+   837  06DA                     u2347:
+   838  06DA  0BF2               	decfsz	((??_Up_count+0)+0),f
+   839  06DB  2EDA               	goto	u2347
+   840  06DC  0BF3               	decfsz	((??_Up_count+0)+0+1),f
+   841  06DD  2EDA               	goto	u2347
+   842  06DE  0BF4               	decfsz	((??_Up_count+0)+0+2),f
+   843  06DF  2EDA               	goto	u2347
+   844  06E0  0064               	clrwdt
+   845                           opt asmopt_on
+   846                           
+   847                           	line	100
+   848                           	
+   849  06E1                     l2696:	
+   850                           ;Seg7_lib.h: 100: x++;
+   851  06E1  3001               	movlw	low(01h)
+   852  06E2  07F5               	addwf	(Up_count@x),f
+   853  06E3  1803               	skipnc
+   854  06E4  0AF6               	incf	(Up_count@x+1),f
+   855  06E5  3000               	movlw	high(01h)
+   856  06E6  07F6               	addwf	(Up_count@x+1),f
+   857  06E7  2EE8               	goto	l2698
+   858                           	line	101
+   859                           	
+   860  06E8                     l714:	
+   861                           	line	96
+   862                           	
+   863  06E8                     l2698:	
+   864  06E8  3010               	movlw	010h
+   865  06E9  0675               	xorwf	(Up_count@x),w
+   866  06EA  0476               	iorwf	(Up_count@x+1),w
+   867  06EB  1D03               	skipz
+   868  06EC  2EEE               	goto	u2231
+   869  06ED  2EEF               	goto	u2230
+   870  06EE                     u2231:
+   871  06EE  2EB9               	goto	l2688
+   872  06EF                     u2230:
+   873  06EF  2EF0               	goto	l718
+   874                           	
+   875  06F0                     l717:	
+   876                           	line	102
+   877                           	
+   878  06F0                     l718:	
+   879  06F0  0008               	return
+   880                           	opt stack 0
+   881                           GLOBAL	__end_of_Up_count
+   882  06F1                     	__end_of_Up_count:
+   883 ;; =============== function _Up_count ends ============
+   884                           
+   885                           	signat	_Up_count,88
+   886                           	global	_Seg_Display
+   887                           psect	text116,local,class=CODE,delta=2
+   888                           global __ptext116
+   889  0776                     __ptext116:
+   890                           
+   891 ;; *************** function _Seg_Display *****************
+   892 ;; Defined at:
+   893 ;;		line 23 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Seg7_lib.h"
+   894 ;; Parameters:    Size  Location     Type
+   895 ;;  num             2    0[COMMON] int 
+   896 ;; Auto vars:     Size  Location     Type
+   897 ;;		None
+   898 ;; Return value:  Size  Location     Type
+   899 ;;		None               void
+   900 ;; Registers used:
+   901 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+   902 ;; Tracked objects:
+   903 ;;		On entry : 0/0
+   904 ;;		On exit  : 0/0
+   905 ;;		Unchanged: 0/0
+   906 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   907 ;;      Params:         2       0       0       0       0
+   908 ;;      Locals:         0       0       0       0       0
+   909 ;;      Temps:          0       0       0       0       0
+   910 ;;      Totals:         2       0       0       0       0
+   911 ;;Total ram usage:        2 bytes
+   912 ;; Hardware stack levels used:    1
+   913 ;; This function calls:
+   914 ;;		Nothing
+   915 ;; This function is called by:
+   916 ;;		_Up_count
+   917 ;;		_Down_count
+   918 ;;		_main
+   919 ;; This function uses a non-reentrant model
+   920 ;;
+   921                           psect	text116
+   922                           	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUN
+                                 TER\Seg7_lib.h"
+   923                           	line	23
+   924                           	global	__size_of_Seg_Display
+   925  008A                     	__size_of_Seg_Display	equ	__end_of_Seg_Display-_Seg_Display
+   926                           	
+   927  0776                     _Seg_Display:	
+   928                           	opt	stack 6
+   929                           ; Regs used in _Seg_Display: [wreg-fsr0h+status,2+status,0]
+   930                           	line	24
+   931                           	
+   932  0776                     l1786:	
+   933                           ;Seg7_lib.h: 24: switch(num){
+   934  0776  2FC8               	goto	l1822
+   935                           	line	26
+   936                           ;Seg7_lib.h: 26: case 0x00:
+   937                           	
+   938  0777                     l693:	
+   939                           	line	27
+   940                           	
+   941  0777                     l1788:	
+   942                           ;Seg7_lib.h: 27: PORTC = 0b01000000;
+   943  0777  3040               	movlw	(040h)
+   944  0778  1283               	bcf	status, 5	;RP0=0, select bank0
+   945  0779  1303               	bcf	status, 6	;RP1=0, select bank0
+   946  077A  0087               	movwf	(7)	;volatile
+   947                           	line	28
+   948                           ;Seg7_lib.h: 28: break;
+   949  077B  2FFF               	goto	l711
+   950                           	line	30
+   951                           ;Seg7_lib.h: 30: case 0x01:
+   952                           	
+   953  077C                     l695:	
+   954                           	line	31
+   955                           	
+   956  077C                     l1790:	
+   957                           ;Seg7_lib.h: 31: PORTC = 0b01111001;
+   958  077C  3079               	movlw	(079h)
+   959  077D  1283               	bcf	status, 5	;RP0=0, select bank0
+   960  077E  1303               	bcf	status, 6	;RP1=0, select bank0
+   961  077F  0087               	movwf	(7)	;volatile
+   962                           	line	32
+   963                           ;Seg7_lib.h: 32: break;
+   964  0780  2FFF               	goto	l711
+   965                           	line	34
+   966                           ;Seg7_lib.h: 34: case 0x02:
+   967                           	
+   968  0781                     l696:	
+   969                           	line	35
+   970                           	
+   971  0781                     l1792:	
+   972                           ;Seg7_lib.h: 35: PORTC = 0b00100100;
+   973  0781  3024               	movlw	(024h)
+   974  0782  1283               	bcf	status, 5	;RP0=0, select bank0
+   975  0783  1303               	bcf	status, 6	;RP1=0, select bank0
+   976  0784  0087               	movwf	(7)	;volatile
+   977                           	line	36
+   978                           ;Seg7_lib.h: 36: break;
+   979  0785  2FFF               	goto	l711
+   980                           	line	38
+   981                           ;Seg7_lib.h: 38: case 0x03:
+   982                           	
+   983  0786                     l697:	
+   984                           	line	39
+   985                           	
+   986  0786                     l1794:	
+   987                           ;Seg7_lib.h: 39: PORTC = 0b00110000;
+   988  0786  3030               	movlw	(030h)
+   989  0787  1283               	bcf	status, 5	;RP0=0, select bank0
+   990  0788  1303               	bcf	status, 6	;RP1=0, select bank0
+   991  0789  0087               	movwf	(7)	;volatile
+   992                           	line	40
+   993                           ;Seg7_lib.h: 40: break;
+   994  078A  2FFF               	goto	l711
+   995                           	line	42
+   996                           ;Seg7_lib.h: 42: case 0x04:
+   997                           	
+   998  078B                     l698:	
+   999                           	line	43
+  1000                           	
+  1001  078B                     l1796:	
+  1002                           ;Seg7_lib.h: 43: PORTC = 0b00011001;
+  1003  078B  3019               	movlw	(019h)
+  1004  078C  1283               	bcf	status, 5	;RP0=0, select bank0
+  1005  078D  1303               	bcf	status, 6	;RP1=0, select bank0
+  1006  078E  0087               	movwf	(7)	;volatile
+  1007                           	line	44
+  1008                           ;Seg7_lib.h: 44: break;
+  1009  078F  2FFF               	goto	l711
+  1010                           	line	46
+  1011                           ;Seg7_lib.h: 46: case 0x05:
+  1012                           	
+  1013  0790                     l699:	
+  1014                           	line	47
+  1015                           	
+  1016  0790                     l1798:	
+  1017                           ;Seg7_lib.h: 47: PORTC = 0b00010010;
+  1018  0790  3012               	movlw	(012h)
+  1019  0791  1283               	bcf	status, 5	;RP0=0, select bank0
+  1020  0792  1303               	bcf	status, 6	;RP1=0, select bank0
+  1021  0793  0087               	movwf	(7)	;volatile
+  1022                           	line	48
+  1023                           ;Seg7_lib.h: 48: break;
+  1024  0794  2FFF               	goto	l711
+  1025                           	line	50
+  1026                           ;Seg7_lib.h: 50: case 0x06:
+  1027                           	
+  1028  0795                     l700:	
+  1029                           	line	51
+  1030                           	
+  1031  0795                     l1800:	
+  1032                           ;Seg7_lib.h: 51: PORTC = 0b00000010;
+  1033  0795  3002               	movlw	(02h)
+  1034  0796  1283               	bcf	status, 5	;RP0=0, select bank0
+  1035  0797  1303               	bcf	status, 6	;RP1=0, select bank0
+  1036  0798  0087               	movwf	(7)	;volatile
+  1037                           	line	52
+  1038                           ;Seg7_lib.h: 52: break;
+  1039  0799  2FFF               	goto	l711
+  1040                           	line	54
+  1041                           ;Seg7_lib.h: 54: case 0x07:
+  1042                           	
+  1043  079A                     l701:	
+  1044                           	line	55
+  1045                           	
+  1046  079A                     l1802:	
+  1047                           ;Seg7_lib.h: 55: PORTC = 0b01111000;
+  1048  079A  3078               	movlw	(078h)
+  1049  079B  1283               	bcf	status, 5	;RP0=0, select bank0
+  1050  079C  1303               	bcf	status, 6	;RP1=0, select bank0
+  1051  079D  0087               	movwf	(7)	;volatile
+  1052                           	line	56
+  1053                           ;Seg7_lib.h: 56: break;
+  1054  079E  2FFF               	goto	l711
+  1055                           	line	58
+  1056                           ;Seg7_lib.h: 58: case 0x08:
+  1057                           	
+  1058  079F                     l702:	
+  1059                           	line	59
+  1060                           	
+  1061  079F                     l1804:	
+  1062                           ;Seg7_lib.h: 59: PORTC = 0b00000000;
+  1063  079F  1283               	bcf	status, 5	;RP0=0, select bank0
+  1064  07A0  1303               	bcf	status, 6	;RP1=0, select bank0
+  1065  07A1  0187               	clrf	(7)	;volatile
+  1066                           	line	60
+  1067                           ;Seg7_lib.h: 60: break;
+  1068  07A2  2FFF               	goto	l711
+  1069                           	line	62
+  1070                           ;Seg7_lib.h: 62: case 0x09:
+  1071                           	
+  1072  07A3                     l703:	
+  1073                           	line	63
+  1074                           	
+  1075  07A3                     l1806:	
+  1076                           ;Seg7_lib.h: 63: PORTC = 0b00010000;
+  1077  07A3  3010               	movlw	(010h)
+  1078  07A4  1283               	bcf	status, 5	;RP0=0, select bank0
+  1079  07A5  1303               	bcf	status, 6	;RP1=0, select bank0
+  1080  07A6  0087               	movwf	(7)	;volatile
+  1081                           	line	64
+  1082                           ;Seg7_lib.h: 64: break;
+  1083  07A7  2FFF               	goto	l711
+  1084                           	line	66
+  1085                           ;Seg7_lib.h: 66: case 0x0A:
+  1086                           	
+  1087  07A8                     l704:	
+  1088                           	line	67
+  1089                           	
+  1090  07A8                     l1808:	
+  1091                           ;Seg7_lib.h: 67: PORTC = 0b00001000;
+  1092  07A8  3008               	movlw	(08h)
+  1093  07A9  1283               	bcf	status, 5	;RP0=0, select bank0
+  1094  07AA  1303               	bcf	status, 6	;RP1=0, select bank0
+  1095  07AB  0087               	movwf	(7)	;volatile
+  1096                           	line	68
+  1097                           ;Seg7_lib.h: 68: break;
+  1098  07AC  2FFF               	goto	l711
+  1099                           	line	70
+  1100                           ;Seg7_lib.h: 70: case 0x0B:
+  1101                           	
+  1102  07AD                     l705:	
+  1103                           	line	71
+  1104                           	
+  1105  07AD                     l1810:	
+  1106                           ;Seg7_lib.h: 71: PORTC = 0b00000011;
+  1107  07AD  3003               	movlw	(03h)
+  1108  07AE  1283               	bcf	status, 5	;RP0=0, select bank0
+  1109  07AF  1303               	bcf	status, 6	;RP1=0, select bank0
+  1110  07B0  0087               	movwf	(7)	;volatile
+  1111                           	line	72
+  1112                           ;Seg7_lib.h: 72: break;
+  1113  07B1  2FFF               	goto	l711
+  1114                           	line	74
+  1115                           ;Seg7_lib.h: 74: case 0x0C:
+  1116                           	
+  1117  07B2                     l706:	
+  1118                           	line	75
+  1119                           	
+  1120  07B2                     l1812:	
+  1121                           ;Seg7_lib.h: 75: PORTC = 0b01000110;
+  1122  07B2  3046               	movlw	(046h)
+  1123  07B3  1283               	bcf	status, 5	;RP0=0, select bank0
+  1124  07B4  1303               	bcf	status, 6	;RP1=0, select bank0
+  1125  07B5  0087               	movwf	(7)	;volatile
+  1126                           	line	76
+  1127                           ;Seg7_lib.h: 76: break;
+  1128  07B6  2FFF               	goto	l711
+  1129                           	line	78
+  1130                           ;Seg7_lib.h: 78: case 0x0D:
+  1131                           	
+  1132  07B7                     l707:	
+  1133                           	line	79
+  1134                           	
+  1135  07B7                     l1814:	
+  1136                           ;Seg7_lib.h: 79: PORTC = 0b00100001;
+  1137  07B7  3021               	movlw	(021h)
+  1138  07B8  1283               	bcf	status, 5	;RP0=0, select bank0
+  1139  07B9  1303               	bcf	status, 6	;RP1=0, select bank0
+  1140  07BA  0087               	movwf	(7)	;volatile
+  1141                           	line	80
+  1142                           ;Seg7_lib.h: 80: break;
+  1143  07BB  2FFF               	goto	l711
+  1144                           	line	82
+  1145                           ;Seg7_lib.h: 82: case 0x0E:
+  1146                           	
+  1147  07BC                     l708:	
+  1148                           	line	83
+  1149                           	
+  1150  07BC                     l1816:	
+  1151                           ;Seg7_lib.h: 83: PORTC = 0b00000110;
+  1152  07BC  3006               	movlw	(06h)
+  1153  07BD  1283               	bcf	status, 5	;RP0=0, select bank0
+  1154  07BE  1303               	bcf	status, 6	;RP1=0, select bank0
+  1155  07BF  0087               	movwf	(7)	;volatile
+  1156                           	line	84
+  1157                           ;Seg7_lib.h: 84: break;
+  1158  07C0  2FFF               	goto	l711
+  1159                           	line	86
+  1160                           ;Seg7_lib.h: 86: case 0x0F:
+  1161                           	
+  1162  07C1                     l709:	
+  1163                           	line	87
+  1164                           	
+  1165  07C1                     l1818:	
+  1166                           ;Seg7_lib.h: 87: PORTC = 0b00001110;
+  1167  07C1  300E               	movlw	(0Eh)
+  1168  07C2  1283               	bcf	status, 5	;RP0=0, select bank0
+  1169  07C3  1303               	bcf	status, 6	;RP1=0, select bank0
+  1170  07C4  0087               	movwf	(7)	;volatile
+  1171                           	line	88
+  1172                           ;Seg7_lib.h: 88: break;
+  1173  07C5  2FFF               	goto	l711
+  1174                           	line	90
+  1175                           ;Seg7_lib.h: 90: default:
+  1176                           	
+  1177  07C6                     l710:	
+  1178                           	line	91
+  1179                           ;Seg7_lib.h: 91: break;
+  1180  07C6  2FFF               	goto	l711
+  1181                           	line	92
+  1182                           	
+  1183  07C7                     l1820:	
+  1184                           ;Seg7_lib.h: 92: }
+  1185  07C7  2FFF               	goto	l711
+  1186                           	line	24
+  1187                           	
+  1188  07C8                     l692:	
+  1189                           	
+  1190  07C8                     l1822:	
+  1191                           	; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-s
+                                 witches
+  1192                           ; Switch size 1, requested type "space"
+  1193                           ; Number of cases is 1, Range of values is 0 to 0
+  1194                           ; switch strategies available:
+  1195                           ; Name         Instructions Cycles
+  1196                           ; simple_byte            4     3 (average)
+  1197                           ; direct_byte           11     8 (fixed)
+  1198                           ; jumptable            260     6 (fixed)
+  1199                           ; rangetable             5     6 (fixed)
+  1200                           ; spacedrange            8     9 (fixed)
+  1201                           ; locatedrange           1     3 (fixed)
+  1202                           ;	Chosen strategy is simple_byte
+  1203                           
+  1204  07C8  0871               	movf (Seg_Display@num+1),w
+  1205                           	opt asmopt_off
+  1206  07C9  3A00               	xorlw	0^0	; case 0
+  1207  07CA  1903               	skipnz
+  1208  07CB  2FCD               	goto	l2766
+  1209  07CC  2FFF               	goto	l711
+  1210                           	opt asmopt_on
+  1211                           	
+  1212  07CD                     l2766:	
+  1213                           ; Switch size 1, requested type "space"
+  1214                           ; Number of cases is 16, Range of values is 0 to 15
+  1215                           ; switch strategies available:
+  1216                           ; Name         Instructions Cycles
+  1217                           ; simple_byte           49    25 (average)
+  1218                           ; direct_byte           56     8 (fixed)
+  1219                           ; jumptable            260     6 (fixed)
+  1220                           ; rangetable            20     6 (fixed)
+  1221                           ; spacedrange           38     9 (fixed)
+  1222                           ; locatedrange          16     3 (fixed)
+  1223                           ;	Chosen strategy is simple_byte
+  1224                           
+  1225  07CD  0870               	movf (Seg_Display@num),w
+  1226                           	opt asmopt_off
+  1227  07CE  3A00               	xorlw	0^0	; case 0
+  1228  07CF  1903               	skipnz
+  1229  07D0  2F77               	goto	l1788
+  1230  07D1  3A01               	xorlw	1^0	; case 1
+  1231  07D2  1903               	skipnz
+  1232  07D3  2F7C               	goto	l1790
+  1233  07D4  3A03               	xorlw	2^1	; case 2
+  1234  07D5  1903               	skipnz
+  1235  07D6  2F81               	goto	l1792
+  1236  07D7  3A01               	xorlw	3^2	; case 3
+  1237  07D8  1903               	skipnz
+  1238  07D9  2F86               	goto	l1794
+  1239  07DA  3A07               	xorlw	4^3	; case 4
+  1240  07DB  1903               	skipnz
+  1241  07DC  2F8B               	goto	l1796
+  1242  07DD  3A01               	xorlw	5^4	; case 5
+  1243  07DE  1903               	skipnz
+  1244  07DF  2F90               	goto	l1798
+  1245  07E0  3A03               	xorlw	6^5	; case 6
+  1246  07E1  1903               	skipnz
+  1247  07E2  2F95               	goto	l1800
+  1248  07E3  3A01               	xorlw	7^6	; case 7
+  1249  07E4  1903               	skipnz
+  1250  07E5  2F9A               	goto	l1802
+  1251  07E6  3A0F               	xorlw	8^7	; case 8
+  1252  07E7  1903               	skipnz
+  1253  07E8  2F9F               	goto	l1804
+  1254  07E9  3A01               	xorlw	9^8	; case 9
+  1255  07EA  1903               	skipnz
+  1256  07EB  2FA3               	goto	l1806
+  1257  07EC  3A03               	xorlw	10^9	; case 10
+  1258  07ED  1903               	skipnz
+  1259  07EE  2FA8               	goto	l1808
+  1260  07EF  3A01               	xorlw	11^10	; case 11
+  1261  07F0  1903               	skipnz
+  1262  07F1  2FAD               	goto	l1810
+  1263  07F2  3A07               	xorlw	12^11	; case 12
+  1264  07F3  1903               	skipnz
+  1265  07F4  2FB2               	goto	l1812
+  1266  07F5  3A01               	xorlw	13^12	; case 13
+  1267  07F6  1903               	skipnz
+  1268  07F7  2FB7               	goto	l1814
+  1269  07F8  3A03               	xorlw	14^13	; case 14
+  1270  07F9  1903               	skipnz
+  1271  07FA  2FBC               	goto	l1816
+  1272  07FB  3A01               	xorlw	15^14	; case 15
+  1273  07FC  1903               	skipnz
+  1274  07FD  2FC1               	goto	l1818
+  1275  07FE  2FFF               	goto	l711
+  1276                           	opt asmopt_on
+  1277                           
+  1278                           	line	92
+  1279                           	
+  1280  07FF                     l694:	
+  1281                           	line	93
+  1282                           	
+  1283  07FF                     l711:	
+  1284  07FF  0008               	return
+  1285                           	opt stack 0
+  1286                           GLOBAL	__end_of_Seg_Display
+  1287  0800                     	__end_of_Seg_Display:
+  1288 ;; =============== function _Seg_Display ends ============
+  1289                           
+  1290                           	signat	_Seg_Display,4216
+  1291                           	global	_Seg_Init
+  1292                           psect	text117,local,class=CODE,delta=2
+  1293                           global __ptext117
+  1294  0679                     __ptext117:
+  1295                           
+  1296 ;; *************** function _Seg_Init *****************
+  1297 ;; Defined at:
+  1298 ;;		line 12 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Seg7_lib.h"
+  1299 ;; Parameters:    Size  Location     Type
+  1300 ;;		None
+  1301 ;; Auto vars:     Size  Location     Type
+  1302 ;;		None
+  1303 ;; Return value:  Size  Location     Type
+  1304 ;;		None               void
+  1305 ;; Registers used:
+  1306 ;;		None
+  1307 ;; Tracked objects:
+  1308 ;;		On entry : 0/0
+  1309 ;;		On exit  : 0/0
+  1310 ;;		Unchanged: 0/0
+  1311 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1312 ;;      Params:         0       0       0       0       0
+  1313 ;;      Locals:         0       0       0       0       0
+  1314 ;;      Temps:          0       0       0       0       0
+  1315 ;;      Totals:         0       0       0       0       0
+  1316 ;;Total ram usage:        0 bytes
+  1317 ;; Hardware stack levels used:    1
+  1318 ;; This function calls:
+  1319 ;;		Nothing
+  1320 ;; This function is called by:
+  1321 ;;		_main
+  1322 ;; This function uses a non-reentrant model
+  1323 ;;
+  1324                           psect	text117
+  1325                           	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUN
+                                 TER\Seg7_lib.h"
+  1326                           	line	12
+  1327                           	global	__size_of_Seg_Init
+  1328  000B                     	__size_of_Seg_Init	equ	__end_of_Seg_Init-_Seg_Init
+  1329                           	
+  1330  0679                     _Seg_Init:	
+  1331                           	opt	stack 7
+  1332                           ; Regs used in _Seg_Init: []
+  1333                           	line	13
+  1334                           	
+  1335  0679                     l1784:	
+  1336                           ;Seg7_lib.h: 13: TRISC0 = 0x00;
+  1337  0679  1683               	bsf	status, 5	;RP0=1, select bank1
+  1338  067A  1303               	bcf	status, 6	;RP1=0, select bank1
+  1339  067B  1007               	bcf	(1080/8)^080h,(1080)&7
+  1340                           	line	14
+  1341                           ;Seg7_lib.h: 14: TRISC1 = 0x00;
+  1342  067C  1087               	bcf	(1081/8)^080h,(1081)&7
+  1343                           	line	15
+  1344                           ;Seg7_lib.h: 15: TRISC2 = 0x00;
+  1345  067D  1107               	bcf	(1082/8)^080h,(1082)&7
+  1346                           	line	16
+  1347                           ;Seg7_lib.h: 16: TRISC3 = 0x00;
+  1348  067E  1187               	bcf	(1083/8)^080h,(1083)&7
+  1349                           	line	17
+  1350                           ;Seg7_lib.h: 17: TRISC4 = 0x00;
+  1351  067F  1207               	bcf	(1084/8)^080h,(1084)&7
+  1352                           	line	18
+  1353                           ;Seg7_lib.h: 18: TRISC5 = 0x00;
+  1354  0680  1287               	bcf	(1085/8)^080h,(1085)&7
+  1355                           	line	19
+  1356                           ;Seg7_lib.h: 19: TRISC6 = 0x00;
+  1357  0681  1307               	bcf	(1086/8)^080h,(1086)&7
+  1358                           	line	20
+  1359                           ;Seg7_lib.h: 20: TRISC7 = 0x00;
+  1360  0682  1387               	bcf	(1087/8)^080h,(1087)&7
+  1361                           	line	21
+  1362                           	
+  1363  0683                     l689:	
+  1364  0683  0008               	return
+  1365                           	opt stack 0
+  1366                           GLOBAL	__end_of_Seg_Init
+  1367  0684                     	__end_of_Seg_Init:
+  1368 ;; =============== function _Seg_Init ends ============
+  1369                           
+  1370                           	signat	_Seg_Init,88
+  1371                           psect	text118,local,class=CODE,delta=2
+  1372                           global __ptext118
+  1373  0000                     __ptext118:
+  1374                           	global	btemp
+  1375  007E                     	btemp set 07Eh
+  1376                           
+  1377                           	DABS	1,126,2	;btemp
+  1378                           	global	wtemp0
+  1379  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.82 build 9453 
+Symbol Table                                                                                   Thu Dec 23 21:08:43 2021
+
+   Check_button@status 0074                     _RD 0C60                     _WR 0C61                    l700 0795  
+                  l701 079A                    l710 07C6                    l702 079F                    l703 07A3  
+                  l711 07FF                    l704 07A8                    l705 07AD                    l721 0740  
+                  l706 07B2                    l714 06E8                    l722 0775                    l730 0729  
+                  l707 07B7                    l715 06B9                    l723 0749                    l731 072A  
+                  l708 07BC                    l716 06C9                    l724 0775                    l732 072A  
+                  l709 07C1                    l717 06F0                    l718 06F0                    l735 0692  
+                  l727 06FB                    l736 06A5                    l728 0716                    l737 06B5  
+                  l729 0728                    l692 07C8                    l693 0777                    l694 07FF  
+                  l695 077C                    l696 0781                    l689 0683                    l697 0786  
+                  l698 078B                    l699 0790                    _GIE 005F                    _RB0 0030  
+                  _RB1 0031                   l1800 0795                   l1810 07AD                   l1802 079A  
+                 l1820 07C7                   l1812 07B2                   l1804 079F                   l2700 072D  
+                 l1814 07B7                   l1806 07A3                   l1822 07C8                   l2710 0754  
+                 l2702 0731                   l1816 07BC                   l1808 07A8                   l2712 0761  
+                 l2704 073F                   l2720 068A                   l1818 07C1                   l2714 0767  
+                 l2706 0744                   l2730 06B5                   l2722 068E                   l2708 0749  
+                 l2724 069B                   l2716 0684                   l2740 0710                   l2732 06F1  
+                 l1790 077C                   l2726 06A1                   l2718 0686                   l2742 0716  
+                 l2734 06F5                   l1784 0679                   l1792 0781                   l2728 06AE  
+                 l2744 0722                   l2736 06FB                   l1794 0786                   l1786 0776  
+                 l2690 06C6                   l2738 0704                   l1796 078B                   l1788 0777  
+                 l2692 06C9                   l2766 07CD                   l1798 0790                   l2694 06D4  
+                 l2686 06B6                   l2696 06E1                   l2688 06B9                   l2698 06E8  
+                 u2220 06C6                   u2300 0722                   u2221 06C5                   u2301 0721  
+                 u2230 06EF                   u2231 06EE                   u2240 073E                   u2225 06C2  
+                 u2241 073D                   u2250 0744                   u2251 0743                   u2260 0774  
+                 u2261 0773                   u2245 073A                   u2317 0696                   u2270 068E  
+                 u2327 06A9                   u2271 068D                   u2280 06A1                   u2265 0770  
+                 u2337 075A                   u2281 06A0                   u2290 0710                   u2347 06DA  
+                 u2291 070F                   _WREN 0C62                   _main 06F1                   btemp 007E  
+                 start 0000            Down_count@x 0075                  ?_main 0070                  _EEADR 010D  
+                _CARRY 0018                  _PORTB 0006                  _PORTC 0007                  _TRISB 0086  
+        ??_Seg_Display 0072                  status 0003                  wtemp0 007E  __size_of_Check_button 0032  
+           _Down_count 072D           __end_of_main 072D       __end_of_Seg_Init 0684                 ??_main 0077  
+     __end_of_Up_count 06F1                 _EEDATA 010C                 _EECON1 018C                 _EECON2 018D  
+         _Check_button 0684    __end_of_Seg_Display 0800                 _TRISC0 0438                 _TRISC1 0439  
+               _TRISC2 043A                 _TRISC3 043B                 _TRISC4 043C                 _TRISC5 043D  
+               _TRISC6 043E                 _TRISC7 043F            ?_Down_count 0070         __pcstackCOMMON 0070  
+          _Seg_Display 0776              ?_Seg_Init 0070         Seg_Display@num 0070             __pmaintext 06F1  
+            ?_Up_count 0070    __size_of_Down_count 0049             ??_Seg_Init 0070             ??_Up_count 0072  
+ end_of_initialization 0675           ??_Down_count 0072    start_initialization 0675           ?_Seg_Display 0070  
+   __end_of_Down_count 0776      __size_of_Seg_Init 000B      __size_of_Up_count 003B              Up_count@x 0075  
+            __ptext112 0000              __ptext113 0684              __ptext114 072D              __ptext115 06B6  
+            __ptext116 0776              __ptext117 0679              __ptext118 0000          ?_Check_button 0070  
+       ??_Check_button 0072   __size_of_Seg_Display 008A               _Seg_Init 0679               _Up_count 06B6  
+        __size_of_main 003C   __end_of_Check_button 06B6  

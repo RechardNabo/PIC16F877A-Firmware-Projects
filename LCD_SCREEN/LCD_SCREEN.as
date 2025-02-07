@@ -376,7 +376,7 @@ __pmaintext:
 
 ;; *************** function _main *****************
 ;; Defined at:
-;;		line 13 in file "C:\Users\www\Desktop\PIC16F877A\LCD_SCREEN\Main.c"
+;;		line 13 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\LCD_SCREEN\Main.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -406,7 +406,7 @@ __pmaintext:
 ;; This function uses a non-reentrant model
 ;;
 psect	maintext
-	file	"C:\Users\www\Desktop\PIC16F877A\LCD_SCREEN\Main.c"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\LCD_SCREEN\Main.c"
 	line	13
 	global	__size_of_main
 	__size_of_main	equ	__end_of_main-_main
@@ -487,7 +487,7 @@ __ptext184:
 
 ;; *************** function _LCD_DISPLAY *****************
 ;; Defined at:
-;;		line 181 in file "C:\Users\www\Desktop\PIC16F877A\LCD_SCREEN\LCD_SCREEN.h"
+;;		line 181 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\LCD_SCREEN\LCD_SCREEN.h"
 ;; Parameters:    Size  Location     Type
 ;;  string          1    wreg     PTR const unsigned char 
 ;;		 -> STR_1(9), 
@@ -520,7 +520,7 @@ __ptext184:
 ;; This function uses a non-reentrant model
 ;;
 psect	text184
-	file	"C:\Users\www\Desktop\PIC16F877A\LCD_SCREEN\LCD_SCREEN.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\LCD_SCREEN\LCD_SCREEN.h"
 	line	181
 	global	__size_of_LCD_DISPLAY
 	__size_of_LCD_DISPLAY	equ	__end_of_LCD_DISPLAY-_LCD_DISPLAY
@@ -619,7 +619,7 @@ __ptext185:
 
 ;; *************** function _LCD_INITIALIZE_8BIT *****************
 ;; Defined at:
-;;		line 173 in file "C:\Users\www\Desktop\PIC16F877A\LCD_SCREEN\LCD_SCREEN.h"
+;;		line 173 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\LCD_SCREEN\LCD_SCREEN.h"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -647,7 +647,7 @@ __ptext185:
 ;; This function uses a non-reentrant model
 ;;
 psect	text185
-	file	"C:\Users\www\Desktop\PIC16F877A\LCD_SCREEN\LCD_SCREEN.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\LCD_SCREEN\LCD_SCREEN.h"
 	line	173
 	global	__size_of_LCD_INITIALIZE_8BIT
 	__size_of_LCD_INITIALIZE_8BIT	equ	__end_of_LCD_INITIALIZE_8BIT-_LCD_INITIALIZE_8BIT
@@ -690,7 +690,7 @@ __ptext186:
 
 ;; *************** function _LCD_INSTRUCTION_8BIT *****************
 ;; Defined at:
-;;		line 143 in file "C:\Users\www\Desktop\PIC16F877A\LCD_SCREEN\LCD_SCREEN.h"
+;;		line 143 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\LCD_SCREEN\LCD_SCREEN.h"
 ;; Parameters:    Size  Location     Type
 ;;  instruction     1    wreg     unsigned char 
 ;; Auto vars:     Size  Location     Type
@@ -721,7 +721,7 @@ __ptext186:
 ;; This function uses a non-reentrant model
 ;;
 psect	text186
-	file	"C:\Users\www\Desktop\PIC16F877A\LCD_SCREEN\LCD_SCREEN.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\LCD_SCREEN\LCD_SCREEN.h"
 	line	143
 	global	__size_of_LCD_INSTRUCTION_8BIT
 	__size_of_LCD_INSTRUCTION_8BIT	equ	__end_of_LCD_INSTRUCTION_8BIT-_LCD_INSTRUCTION_8BIT
@@ -1028,7 +1028,7 @@ __ptext187:
 
 ;; *************** function _LCD_DATA *****************
 ;; Defined at:
-;;		line 55 in file "C:\Users\www\Desktop\PIC16F877A\LCD_SCREEN\LCD_SCREEN.h"
+;;		line 55 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\LCD_SCREEN\LCD_SCREEN.h"
 ;; Parameters:    Size  Location     Type
 ;;  data            1    wreg     unsigned char 
 ;;  mode            2    0[COMMON] int 
@@ -1063,7 +1063,7 @@ __ptext187:
 ;; This function uses a non-reentrant model
 ;;
 psect	text187
-	file	"C:\Users\www\Desktop\PIC16F877A\LCD_SCREEN\LCD_SCREEN.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\LCD_SCREEN\LCD_SCREEN.h"
 	line	55
 	global	__size_of_LCD_DATA
 	__size_of_LCD_DATA	equ	__end_of_LCD_DATA-_LCD_DATA
@@ -1966,7 +1966,7 @@ __ptext189:
 
 ;; *************** function _LCD_SETUP_8BIT *****************
 ;; Defined at:
-;;		line 38 in file "C:\Users\www\Desktop\PIC16F877A\LCD_SCREEN\LCD_SCREEN.h"
+;;		line 38 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\LCD_SCREEN\LCD_SCREEN.h"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -1993,7 +1993,7 @@ __ptext189:
 ;; This function uses a non-reentrant model
 ;;
 psect	text189
-	file	"C:\Users\www\Desktop\PIC16F877A\LCD_SCREEN\LCD_SCREEN.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\LCD_SCREEN\LCD_SCREEN.h"
 	line	38
 	global	__size_of_LCD_SETUP_8BIT
 	__size_of_LCD_SETUP_8BIT	equ	__end_of_LCD_SETUP_8BIT-_LCD_SETUP_8BIT

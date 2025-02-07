@@ -40,13 +40,13 @@ c	equ	1
 z	equ	0
 pclath	equ	10
 	FNCALL	_main,_Seg_Init
-	FNCALL	_main,_count
-	FNCALL	_count,_Seg_Display
+	FNCALL	_main,_Down_count
+	FNCALL	_Down_count,_Seg_Display
 	FNROOT	_main
 	global	_PORTC
-psect	text88,local,class=CODE,delta=2
-global __ptext88
-__ptext88:
+psect	text89,local,class=CODE,delta=2
+global __ptext89
+__ptext89:
 _PORTC	set	7
 	global	_CARRY
 _CARRY	set	24
@@ -105,8 +105,8 @@ __pcstackCOMMON:
 ??_Seg_Init:	; 0 bytes @ 0x0
 	global	?_Seg_Display
 ?_Seg_Display:	; 0 bytes @ 0x0
-	global	?_count
-?_count:	; 0 bytes @ 0x0
+	global	?_Down_count
+?_Down_count:	; 0 bytes @ 0x0
 	global	?_main
 ?_main:	; 2 bytes @ 0x0
 	global	Seg_Display@num
@@ -114,20 +114,17 @@ Seg_Display@num:	; 2 bytes @ 0x0
 	ds	2
 	global	??_Seg_Display
 ??_Seg_Display:	; 0 bytes @ 0x2
-	global	??_count
-??_count:	; 0 bytes @ 0x2
+	global	??_Down_count
+??_Down_count:	; 0 bytes @ 0x2
 	ds	3
-	global	count@x
-count@x:	; 2 bytes @ 0x5
+	global	Down_count@x
+Down_count@x:	; 2 bytes @ 0x5
 	ds	2
 	global	??_main
 ??_main:	; 0 bytes @ 0x7
-	global	main@counter
-main@counter:	; 2 bytes @ 0x7
-	ds	2
 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 0 stack 0
 ;;Auto spaces:   Size  Autos    Used
-;; COMMON          14      9       9
+;; COMMON          14      7       7
 ;; BANK0           80      0       0
 ;; BANK1           80      0       0
 ;; BANK3           96      0       0
@@ -141,8 +138,8 @@ main@counter:	; 2 bytes @ 0x7
 ;;
 ;; Critical Paths under _main in COMMON
 ;;
-;;   _main->_count
-;;   _count->_Seg_Display
+;;   _main->_Down_count
+;;   _Down_count->_Seg_Display
 ;;
 ;; Critical Paths under _main in BANK0
 ;;
@@ -170,12 +167,11 @@ main@counter:	; 2 bytes @ 0x7
 ;; ---------------------------------------------------------------------------------
 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
 ;; ---------------------------------------------------------------------------------
-;; (0) _main                                                 2     2      0      75
-;;                                              7 COMMON     2     2      0
+;; (0) _main                                                 0     0      0      75
 ;;                           _Seg_Init
-;;                              _count
+;;                         _Down_count
 ;; ---------------------------------------------------------------------------------
-;; (1) _count                                                5     5      0      75
+;; (1) _Down_count                                           5     5      0      75
 ;;                                              2 COMMON     5     5      0
 ;;                        _Seg_Display
 ;; ---------------------------------------------------------------------------------
@@ -191,7 +187,7 @@ main@counter:	; 2 bytes @ 0x7
 
 ;; _main (ROOT)
 ;;   _Seg_Init
-;;   _count
+;;   _Down_count
 ;;     _Seg_Display
 ;;
 
@@ -202,7 +198,7 @@ main@counter:	; 2 bytes @ 0x7
 ;;EEDATA             100      0       0       0        0.0%
 ;;NULL                 0      0       0       0        0.0%
 ;;CODE                 0      0       0       0        0.0%
-;;COMMON               E      9       9       1       64.3%
+;;COMMON               E      7       7       1       50.0%
 ;;BITSFR0              0      0       0       1        0.0%
 ;;SFR0                 0      0       0       1        0.0%
 ;;BITSFR1              0      0       0       2        0.0%
@@ -230,13 +226,13 @@ __pmaintext:
 
 ;; *************** function _main *****************
 ;; Defined at:
-;;		line 9 in file "C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT_DOWN_COUNTER\Main.c"
+;;		line 9 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Main.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
-;;  counter         2    7[COMMON] int 
+;;		None
 ;; Return value:  Size  Location     Type
-;;                  2  717[COMMON] int 
+;;                  2  724[COMMON] int 
 ;; Registers used:
 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
 ;; Tracked objects:
@@ -245,20 +241,20 @@ __pmaintext:
 ;;		Unchanged: 0/0
 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
 ;;      Params:         0       0       0       0       0
-;;      Locals:         2       0       0       0       0
+;;      Locals:         0       0       0       0       0
 ;;      Temps:          0       0       0       0       0
-;;      Totals:         2       0       0       0       0
-;;Total ram usage:        2 bytes
+;;      Totals:         0       0       0       0       0
+;;Total ram usage:        0 bytes
 ;; Hardware stack levels required when called:    2
 ;; This function calls:
 ;;		_Seg_Init
-;;		_count
+;;		_Down_count
 ;; This function is called by:
 ;;		Startup code after reset
 ;; This function uses a non-reentrant model
 ;;
 psect	maintext
-	file	"C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT_DOWN_COUNTER\Main.c"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Main.c"
 	line	9
 	global	__size_of_main
 	__size_of_main	equ	__end_of_main-_main
@@ -268,39 +264,33 @@ _main:
 ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
 	line	10
 	
-l2684:	
-;Main.c: 10: int counter = 0x00;
-	clrf	(main@counter)
-	clrf	(main@counter+1)
-	line	11
-	
-l2686:	
-;Main.c: 11: Seg_Init();
+l2707:	
+;Main.c: 10: Seg_Init();
 	fcall	_Seg_Init
-	goto	l2688
-	line	12
-;Main.c: 12: while(0x01){
+	goto	l2709
+	line	11
+;Main.c: 11: while(0x01){
 	
-l718:	
+l725:	
+	line	12
+	
+l2709:	
+;Main.c: 12: Down_count();
+	fcall	_Down_count
+	goto	l2709
 	line	13
 	
-l2688:	
-;Main.c: 13: count();
-	fcall	_count
-	goto	l2688
-	line	14
+l726:	
+	line	11
+	goto	l2709
 	
-l719:	
-	line	12
-	goto	l2688
-	
-l720:	
-	line	16
-;Main.c: 14: }
-;Main.c: 15: return 0;
+l727:	
+	line	15
+;Main.c: 13: }
+;Main.c: 14: return 0;
 ;	Return value of _main is never used
 	
-l721:	
+l728:	
 	global	start
 	ljmp	start
 	opt stack 0
@@ -309,14 +299,14 @@ GLOBAL	__end_of_main
 ;; =============== function _main ends ============
 
 	signat	_main,90
-	global	_count
-psect	text89,local,class=CODE,delta=2
-global __ptext89
-__ptext89:
+	global	_Down_count
+psect	text90,local,class=CODE,delta=2
+global __ptext90
+__ptext90:
 
-;; *************** function _count *****************
+;; *************** function _Down_count *****************
 ;; Defined at:
-;;		line 95 in file "C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT_DOWN_COUNTER\Seg7_lib.h"
+;;		line 103 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Seg7_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -343,133 +333,148 @@ __ptext89:
 ;;		_main
 ;; This function uses a non-reentrant model
 ;;
-psect	text89
-	file	"C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT_DOWN_COUNTER\Seg7_lib.h"
-	line	95
-	global	__size_of_count
-	__size_of_count	equ	__end_of_count-_count
+psect	text90
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Seg7_lib.h"
+	line	103
+	global	__size_of_Down_count
+	__size_of_Down_count	equ	__end_of_Down_count-_Down_count
 	
-_count:	
+_Down_count:	
 	opt	stack 6
-; Regs used in _count: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
-	line	96
+; Regs used in _Down_count: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+	line	104
 	
-l2670:	
-;Seg7_lib.h: 96: int x = 0x00;
-	clrf	(count@x)
-	clrf	(count@x+1)
-	line	97
+l2691:	
+;Seg7_lib.h: 104: int x = 0x0F;
+	movlw	low(0Fh)
+	movwf	(Down_count@x)
+	movlw	high(0Fh)
+	movwf	((Down_count@x))+1
+	line	105
 	
-l2672:	
-	movf	(count@x+1),w
+l2693:	
+	movf	(Down_count@x+1),w
 	xorlw	80h
 	movwf	btemp+1
-	movlw	(high(010h))^80h
+	movlw	(high(01h))^80h
 	subwf	btemp+1,w
 	skipz
-	goto	u2225
-	movlw	low(010h)
-	subwf	(count@x),w
-u2225:
+	goto	u2245
+	movlw	low(01h)
+	subwf	(Down_count@x),w
+u2245:
 
-	skipc
-	goto	u2221
-	goto	u2220
-u2221:
-	goto	l2676
-u2220:
-	goto	l715
+	skipnc
+	goto	u2241
+	goto	u2240
+u2241:
+	goto	l719
+u2240:
+	goto	l722
 	
-l2674:	
-	goto	l715
+l2695:	
+	goto	l722
 	
-l712:	
-	line	98
-	goto	l2676
+l719:	
+	line	106
+;Seg7_lib.h: 106: if(x < 0x00){x=0x0F;}
+	btfss	(Down_count@x+1),7
+	goto	u2251
+	goto	u2250
+u2251:
+	goto	l2699
+u2250:
 	
-l714:	
-	line	99
+l2697:	
+	movlw	low(0Fh)
+	movwf	(Down_count@x)
+	movlw	high(0Fh)
+	movwf	((Down_count@x))+1
+	goto	l2699
 	
-l2676:	
-;Seg7_lib.h: 99: Seg_Display(x);
-	movf	(count@x+1),w
+l721:	
+	line	107
+	
+l2699:	
+;Seg7_lib.h: 107: Seg_Display(x);
+	movf	(Down_count@x+1),w
 	clrf	(?_Seg_Display+1)
 	addwf	(?_Seg_Display+1)
-	movf	(count@x),w
+	movf	(Down_count@x),w
 	clrf	(?_Seg_Display)
 	addwf	(?_Seg_Display)
 
 	fcall	_Seg_Display
-	line	100
+	line	108
 	
-l2678:	
-;Seg7_lib.h: 100: _delay((unsigned long)((500)*(20000000/4000.0)));
+l2701:	
+;Seg7_lib.h: 108: _delay((unsigned long)((500)*(20000000/4000.0)));
 	opt asmopt_off
 movlw  13
-movwf	((??_count+0)+0+2),f
+movwf	((??_Down_count+0)+0+2),f
 movlw	175
-movwf	((??_count+0)+0+1),f
+movwf	((??_Down_count+0)+0+1),f
 	movlw	193
-movwf	((??_count+0)+0),f
-u2247:
-	decfsz	((??_count+0)+0),f
-	goto	u2247
-	decfsz	((??_count+0)+0+1),f
-	goto	u2247
-	decfsz	((??_count+0)+0+2),f
-	goto	u2247
+movwf	((??_Down_count+0)+0),f
+u2277:
+	decfsz	((??_Down_count+0)+0),f
+	goto	u2277
+	decfsz	((??_Down_count+0)+0+1),f
+	goto	u2277
+	decfsz	((??_Down_count+0)+0+2),f
+	goto	u2277
 	clrwdt
 opt asmopt_on
 
-	line	97
+	line	105
 	
-l2680:	
-	movlw	low(01h)
-	addwf	(count@x),f
+l2703:	
+	movlw	low(-1)
+	addwf	(Down_count@x),f
 	skipnc
-	incf	(count@x+1),f
-	movlw	high(01h)
-	addwf	(count@x+1),f
+	incf	(Down_count@x+1),f
+	movlw	high(-1)
+	addwf	(Down_count@x+1),f
 	
-l2682:	
-	movf	(count@x+1),w
+l2705:	
+	movf	(Down_count@x+1),w
 	xorlw	80h
 	movwf	btemp+1
-	movlw	(high(010h))^80h
+	movlw	(high(01h))^80h
 	subwf	btemp+1,w
 	skipz
-	goto	u2235
-	movlw	low(010h)
-	subwf	(count@x),w
-u2235:
+	goto	u2265
+	movlw	low(01h)
+	subwf	(Down_count@x),w
+u2265:
 
-	skipc
-	goto	u2231
-	goto	u2230
-u2231:
-	goto	l2676
-u2230:
-	goto	l715
+	skipnc
+	goto	u2261
+	goto	u2260
+u2261:
+	goto	l719
+u2260:
+	goto	l722
 	
-l713:	
-	line	102
+l720:	
+	line	110
 	
-l715:	
+l722:	
 	return
 	opt stack 0
-GLOBAL	__end_of_count
-	__end_of_count:
-;; =============== function _count ends ============
+GLOBAL	__end_of_Down_count
+	__end_of_Down_count:
+;; =============== function _Down_count ends ============
 
-	signat	_count,88
+	signat	_Down_count,88
 	global	_Seg_Display
-psect	text90,local,class=CODE,delta=2
-global __ptext90
-__ptext90:
+psect	text91,local,class=CODE,delta=2
+global __ptext91
+__ptext91:
 
 ;; *************** function _Seg_Display *****************
 ;; Defined at:
-;;		line 23 in file "C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT_DOWN_COUNTER\Seg7_lib.h"
+;;		line 23 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Seg7_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;  num             2    0[COMMON] int 
 ;; Auto vars:     Size  Location     Type
@@ -492,11 +497,12 @@ __ptext90:
 ;; This function calls:
 ;;		Nothing
 ;; This function is called by:
-;;		_count
+;;		_Down_count
+;;		_Up_count
 ;; This function uses a non-reentrant model
 ;;
-psect	text90
-	file	"C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT_DOWN_COUNTER\Seg7_lib.h"
+psect	text91
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Seg7_lib.h"
 	line	23
 	global	__size_of_Seg_Display
 	__size_of_Seg_Display	equ	__end_of_Seg_Display-_Seg_Display
@@ -506,16 +512,16 @@ _Seg_Display:
 ; Regs used in _Seg_Display: [wreg-fsr0h+status,2+status,0]
 	line	24
 	
-l1770:	
+l1777:	
 ;Seg7_lib.h: 24: switch(num){
-	goto	l1806
+	goto	l1813
 	line	26
 ;Seg7_lib.h: 26: case 0x00:
 	
 l691:	
 	line	27
 	
-l1772:	
+l1779:	
 ;Seg7_lib.h: 27: PORTC = 0b01000000;
 	movlw	(040h)
 	bcf	status, 5	;RP0=0, select bank0
@@ -530,7 +536,7 @@ l1772:
 l693:	
 	line	31
 	
-l1774:	
+l1781:	
 ;Seg7_lib.h: 31: PORTC = 0b01111001;
 	movlw	(079h)
 	bcf	status, 5	;RP0=0, select bank0
@@ -545,7 +551,7 @@ l1774:
 l694:	
 	line	35
 	
-l1776:	
+l1783:	
 ;Seg7_lib.h: 35: PORTC = 0b00100100;
 	movlw	(024h)
 	bcf	status, 5	;RP0=0, select bank0
@@ -560,7 +566,7 @@ l1776:
 l695:	
 	line	39
 	
-l1778:	
+l1785:	
 ;Seg7_lib.h: 39: PORTC = 0b00110000;
 	movlw	(030h)
 	bcf	status, 5	;RP0=0, select bank0
@@ -575,7 +581,7 @@ l1778:
 l696:	
 	line	43
 	
-l1780:	
+l1787:	
 ;Seg7_lib.h: 43: PORTC = 0b00011001;
 	movlw	(019h)
 	bcf	status, 5	;RP0=0, select bank0
@@ -590,7 +596,7 @@ l1780:
 l697:	
 	line	47
 	
-l1782:	
+l1789:	
 ;Seg7_lib.h: 47: PORTC = 0b00010010;
 	movlw	(012h)
 	bcf	status, 5	;RP0=0, select bank0
@@ -605,7 +611,7 @@ l1782:
 l698:	
 	line	51
 	
-l1784:	
+l1791:	
 ;Seg7_lib.h: 51: PORTC = 0b00000010;
 	movlw	(02h)
 	bcf	status, 5	;RP0=0, select bank0
@@ -620,7 +626,7 @@ l1784:
 l699:	
 	line	55
 	
-l1786:	
+l1793:	
 ;Seg7_lib.h: 55: PORTC = 0b01111000;
 	movlw	(078h)
 	bcf	status, 5	;RP0=0, select bank0
@@ -635,7 +641,7 @@ l1786:
 l700:	
 	line	59
 	
-l1788:	
+l1795:	
 ;Seg7_lib.h: 59: PORTC = 0b00000000;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -649,7 +655,7 @@ l1788:
 l701:	
 	line	63
 	
-l1790:	
+l1797:	
 ;Seg7_lib.h: 63: PORTC = 0b00010000;
 	movlw	(010h)
 	bcf	status, 5	;RP0=0, select bank0
@@ -664,7 +670,7 @@ l1790:
 l702:	
 	line	67
 	
-l1792:	
+l1799:	
 ;Seg7_lib.h: 67: PORTC = 0b00001000;
 	movlw	(08h)
 	bcf	status, 5	;RP0=0, select bank0
@@ -679,7 +685,7 @@ l1792:
 l703:	
 	line	71
 	
-l1794:	
+l1801:	
 ;Seg7_lib.h: 71: PORTC = 0b00000011;
 	movlw	(03h)
 	bcf	status, 5	;RP0=0, select bank0
@@ -694,7 +700,7 @@ l1794:
 l704:	
 	line	75
 	
-l1796:	
+l1803:	
 ;Seg7_lib.h: 75: PORTC = 0b01000110;
 	movlw	(046h)
 	bcf	status, 5	;RP0=0, select bank0
@@ -709,7 +715,7 @@ l1796:
 l705:	
 	line	79
 	
-l1798:	
+l1805:	
 ;Seg7_lib.h: 79: PORTC = 0b00100001;
 	movlw	(021h)
 	bcf	status, 5	;RP0=0, select bank0
@@ -724,7 +730,7 @@ l1798:
 l706:	
 	line	83
 	
-l1800:	
+l1807:	
 ;Seg7_lib.h: 83: PORTC = 0b00000110;
 	movlw	(06h)
 	bcf	status, 5	;RP0=0, select bank0
@@ -739,7 +745,7 @@ l1800:
 l707:	
 	line	87
 	
-l1802:	
+l1809:	
 ;Seg7_lib.h: 87: PORTC = 0b00001110;
 	movlw	(0Eh)
 	bcf	status, 5	;RP0=0, select bank0
@@ -757,14 +763,14 @@ l708:
 	goto	l709
 	line	92
 	
-l1804:	
+l1811:	
 ;Seg7_lib.h: 92: }
 	goto	l709
 	line	24
 	
 l690:	
 	
-l1806:	
+l1813:	
 	; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-switches
 ; Switch size 1, requested type "space"
 ; Number of cases is 1, Range of values is 0 to 0
@@ -782,11 +788,11 @@ l1806:
 	opt asmopt_off
 	xorlw	0^0	; case 0
 	skipnz
-	goto	l2710
+	goto	l2731
 	goto	l709
 	opt asmopt_on
 	
-l2710:	
+l2731:	
 ; Switch size 1, requested type "space"
 ; Number of cases is 16, Range of values is 0 to 15
 ; switch strategies available:
@@ -803,52 +809,52 @@ l2710:
 	opt asmopt_off
 	xorlw	0^0	; case 0
 	skipnz
-	goto	l1772
+	goto	l1779
 	xorlw	1^0	; case 1
 	skipnz
-	goto	l1774
+	goto	l1781
 	xorlw	2^1	; case 2
 	skipnz
-	goto	l1776
+	goto	l1783
 	xorlw	3^2	; case 3
 	skipnz
-	goto	l1778
+	goto	l1785
 	xorlw	4^3	; case 4
 	skipnz
-	goto	l1780
+	goto	l1787
 	xorlw	5^4	; case 5
 	skipnz
-	goto	l1782
+	goto	l1789
 	xorlw	6^5	; case 6
 	skipnz
-	goto	l1784
+	goto	l1791
 	xorlw	7^6	; case 7
 	skipnz
-	goto	l1786
+	goto	l1793
 	xorlw	8^7	; case 8
 	skipnz
-	goto	l1788
+	goto	l1795
 	xorlw	9^8	; case 9
 	skipnz
-	goto	l1790
+	goto	l1797
 	xorlw	10^9	; case 10
 	skipnz
-	goto	l1792
+	goto	l1799
 	xorlw	11^10	; case 11
 	skipnz
-	goto	l1794
+	goto	l1801
 	xorlw	12^11	; case 12
 	skipnz
-	goto	l1796
+	goto	l1803
 	xorlw	13^12	; case 13
 	skipnz
-	goto	l1798
+	goto	l1805
 	xorlw	14^13	; case 14
 	skipnz
-	goto	l1800
+	goto	l1807
 	xorlw	15^14	; case 15
 	skipnz
-	goto	l1802
+	goto	l1809
 	goto	l709
 	opt asmopt_on
 
@@ -866,13 +872,13 @@ GLOBAL	__end_of_Seg_Display
 
 	signat	_Seg_Display,4216
 	global	_Seg_Init
-psect	text91,local,class=CODE,delta=2
-global __ptext91
-__ptext91:
+psect	text92,local,class=CODE,delta=2
+global __ptext92
+__ptext92:
 
 ;; *************** function _Seg_Init *****************
 ;; Defined at:
-;;		line 12 in file "C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT_DOWN_COUNTER\Seg7_lib.h"
+;;		line 12 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Seg7_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -898,8 +904,8 @@ __ptext91:
 ;;		_main
 ;; This function uses a non-reentrant model
 ;;
-psect	text91
-	file	"C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT_DOWN_COUNTER\Seg7_lib.h"
+psect	text92
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Seg7_lib.h"
 	line	12
 	global	__size_of_Seg_Init
 	__size_of_Seg_Init	equ	__end_of_Seg_Init-_Seg_Init
@@ -909,7 +915,7 @@ _Seg_Init:
 ; Regs used in _Seg_Init: []
 	line	13
 	
-l1768:	
+l1775:	
 ;Seg7_lib.h: 13: TRISC0 = 0x00;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -945,9 +951,9 @@ GLOBAL	__end_of_Seg_Init
 ;; =============== function _Seg_Init ends ============
 
 	signat	_Seg_Init,88
-psect	text92,local,class=CODE,delta=2
-global __ptext92
-__ptext92:
+psect	text93,local,class=CODE,delta=2
+global __ptext93
+__ptext93:
 	global	btemp
 	btemp set 07Eh
 

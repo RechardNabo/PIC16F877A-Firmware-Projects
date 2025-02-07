@@ -163,20 +163,24 @@ void LCD_INSTRUCTION_8BIT(unsigned char instruction){
 }
 
 void LCD_INITIALIZE_4BIT(){
-	LCD_INSTRUCTION_4BIT(0x02);
-	LCD_INSTRUCTION_4BIT(0x28);
-	LCD_INSTRUCTION_4BIT(0x0c);
-	LCD_INSTRUCTION_4BIT(0x06);
-	LCD_INSTRUCTION_4BIT(0x01);
+	LCD_INSTRUCTION_4BIT(0x02); // return home
+	LCD_INSTRUCTION_4BIT(0x28); //
+	LCD_INSTRUCTION_4BIT(0x06); //Increment Cursor
+	LCD_INSTRUCTION_4BIT(0x0c); // Display On
+	LCD_INSTRUCTION_4BIT(0x01); //Clear display Screen
+
 
 }
 void LCD_INITIALIZE_8BIT(){
-	LCD_INSTRUCTION_8BIT(0x38);
-	LCD_INSTRUCTION_8BIT(0x06);
-	LCD_INSTRUCTION_8BIT(0x0c);
-	LCD_INSTRUCTION_8BIT(0x01);
+	LCD_INSTRUCTION_4BIT(0x02); // return home
+	LCD_INSTRUCTION_8BIT(0x38); // 2 Lines and 5x7 matrix
+	LCD_INSTRUCTION_8BIT(0x06); //Increment Cursor
+	LCD_INSTRUCTION_8BIT(0x0c); // Display On
+	LCD_INSTRUCTION_8BIT(0x01); //Clear display Screen
 
 }
+void LCD_SET_LINE1(){LCD_INSTRUCTION_4BIT(0x80);} // start display on line 1
+void LCD_SET_LINE2(){LCD_INSTRUCTION_4BIT(0xC0);} // start display on line 2
 
 void LCD_DISPLAY(const unsigned char *string){
 	unsigned int length =  strlen(string);

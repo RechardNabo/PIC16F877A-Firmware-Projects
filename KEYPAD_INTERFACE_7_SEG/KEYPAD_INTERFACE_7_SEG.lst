@@ -1,0 +1,1304 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.82 build 9453 
+                                                                                               Tue Dec 28 18:29:03 2021
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 9453
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 9453"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F877A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           	FNCALL	_main,_KEYPAD_INIT
+    43                           	FNCALL	_main,_Seg_Init
+    44                           	FNCALL	_main,_KEYPAD_KEYS
+    45                           	FNCALL	_main,_Seg_Display
+    46                           	FNROOT	_main
+    47                           	global	_PORTB
+    48                           psect	text106,local,class=CODE,delta=2
+    49                           global __ptext106
+    50  0000                     __ptext106:
+    51  0006                     _PORTB	set	6
+    52                           	global	_PORTC
+    53  0007                     _PORTC	set	7
+    54                           	global	_CARRY
+    55  0018                     _CARRY	set	24
+    56                           	global	_GIE
+    57  005F                     _GIE	set	95
+    58                           	global	_RB3
+    59  0033                     _RB3	set	51
+    60                           	global	_RB4
+    61  0034                     _RB4	set	52
+    62                           	global	_RB5
+    63  0035                     _RB5	set	53
+    64                           	global	_RB6
+    65  0036                     _RB6	set	54
+    66                           	global	_TRISB
+    67  0086                     _TRISB	set	134
+    68                           	global	_TRISC
+    69  0087                     _TRISC	set	135
+    70                           	global	_EEADR
+    71  010D                     _EEADR	set	269
+    72                           	global	_EEDATA
+    73  010C                     _EEDATA	set	268
+    74                           	global	_EECON1
+    75  018C                     _EECON1	set	396
+    76                           	global	_EECON2
+    77  018D                     _EECON2	set	397
+    78                           	global	_RD
+    79  0C60                     _RD	set	3168
+    80                           	global	_WR
+    81  0C61                     _WR	set	3169
+    82                           	global	_WREN
+    83  0C62                     _WREN	set	3170
+    84                           	file	"KEYPAD_INTERFACE_7_SEG.as"
+    85                           	line	#
+    86                           psect cinit,class=CODE,delta=2
+    87                           global start_initialization
+    88  06BF                     start_initialization:
+    89                           
+    90                           psect cinit,class=CODE,delta=2
+    91                           global end_of_initialization
+    92                           
+    93                           ;End of C runtime variable initialization code
+    94                           
+    95  06BF                     end_of_initialization:
+    96  06BF  0183               clrf status
+    97  06C0  120A  118A  2EC8   ljmp _main	;jump to C main() function
+    98                           psect	cstackCOMMON,class=COMMON,space=1
+    99                           global __pcstackCOMMON
+   100  0070                     __pcstackCOMMON:
+   101                           	global	?_Seg_Init
+   102  0070                     ?_Seg_Init:	; 0 bytes @ 0x0
+   103                           	global	??_Seg_Init
+   104  0070                     ??_Seg_Init:	; 0 bytes @ 0x0
+   105                           	global	?_Seg_Display
+   106  0070                     ?_Seg_Display:	; 0 bytes @ 0x0
+   107                           	global	?_KEYPAD_INIT
+   108  0070                     ?_KEYPAD_INIT:	; 0 bytes @ 0x0
+   109                           	global	??_KEYPAD_INIT
+   110  0070                     ??_KEYPAD_INIT:	; 0 bytes @ 0x0
+   111                           	global	?_main
+   112  0070                     ?_main:	; 2 bytes @ 0x0
+   113                           	global	Seg_Display@num
+   114  0070                     Seg_Display@num:	; 2 bytes @ 0x0
+   115  0070                     	ds	2
+   116                           	global	??_Seg_Display
+   117  0072                     ??_Seg_Display:	; 0 bytes @ 0x2
+   118                           	global	?_KEYPAD_KEYS
+   119  0072                     ?_KEYPAD_KEYS:	; 2 bytes @ 0x2
+   120  0072                     	ds	2
+   121                           	global	??_KEYPAD_KEYS
+   122  0074                     ??_KEYPAD_KEYS:	; 0 bytes @ 0x4
+   123  0074                     	ds	2
+   124                           	global	KEYPAD_KEYS@number
+   125  0076                     KEYPAD_KEYS@number:	; 2 bytes @ 0x6
+   126  0076                     	ds	2
+   127                           	global	??_main
+   128  0078                     ??_main:	; 0 bytes @ 0x8
+   129  0078                     	ds	2
+   130 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 0 stack 0
+   131 ;;Auto spaces:   Size  Autos    Used
+   132 ;; COMMON          14     10      10
+   133 ;; BANK0           80      0       0
+   134 ;; BANK1           80      0       0
+   135 ;; BANK3           96      0       0
+   136 ;; BANK2           96      0       0
+   137                           
+   138 ;;
+   139 ;; Pointer list with targets:
+   140                           
+   141 ;; ?_KEYPAD_KEYS	unsigned int  size(1) Largest target is 0
+   142 ;;
+   143                           
+   144                           
+   145 ;;
+   146 ;; Critical Paths under _main in COMMON
+   147 ;;
+   148 ;;   _main->_KEYPAD_KEYS
+   149 ;;   _KEYPAD_KEYS->_Seg_Display
+   150 ;;
+   151 ;; Critical Paths under _main in BANK0
+   152 ;;
+   153 ;;   None.
+   154 ;;
+   155 ;; Critical Paths under _main in BANK1
+   156 ;;
+   157 ;;   None.
+   158 ;;
+   159 ;; Critical Paths under _main in BANK3
+   160 ;;
+   161 ;;   None.
+   162 ;;
+   163 ;; Critical Paths under _main in BANK2
+   164 ;;
+   165 ;;   None.
+   166                           
+   167 ;;
+   168 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   169 ;;
+   170                           
+   171 ;;
+   172 ;;Call Graph Tables:
+   173 ;;
+   174 ;; ---------------------------------------------------------------------------------
+   175 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   176 ;; ---------------------------------------------------------------------------------
+   177 ;; (0) _main                                                 2     2      0      30
+   178 ;;                                              8 COMMON     2     2      0
+   179 ;;                        _KEYPAD_INIT
+   180 ;;                           _Seg_Init
+   181 ;;                        _KEYPAD_KEYS
+   182 ;;                        _Seg_Display
+   183 ;; ---------------------------------------------------------------------------------
+   184 ;; (1) _KEYPAD_KEYS                                          6     4      2      15
+   185 ;;                                              2 COMMON     6     4      2
+   186 ;;                        _Seg_Display (ARG)
+   187 ;; ---------------------------------------------------------------------------------
+   188 ;; (1) _KEYPAD_INIT                                          0     0      0       0
+   189 ;; ---------------------------------------------------------------------------------
+   190 ;; (1) _Seg_Display                                          2     0      2      15
+   191 ;;                                              0 COMMON     2     0      2
+   192 ;; ---------------------------------------------------------------------------------
+   193 ;; (1) _Seg_Init                                             0     0      0       0
+   194 ;; ---------------------------------------------------------------------------------
+   195 ;; Estimated maximum stack depth 1
+   196 ;; ---------------------------------------------------------------------------------
+   197                           
+   198 ;; Call Graph Graphs:
+   199                           
+   200 ;; _main (ROOT)
+   201 ;;   _KEYPAD_INIT
+   202 ;;   _Seg_Init
+   203 ;;   _KEYPAD_KEYS
+   204 ;;     _Seg_Display (ARG)
+   205 ;;   _Seg_Display
+   206 ;;
+   207                           
+   208 ;; Address spaces:
+   209                           
+   210 ;;Name               Size   Autos  Total    Cost      Usage
+   211 ;;BITCOMMON            E      0       0       0        0.0%
+   212 ;;EEDATA             100      0       0       0        0.0%
+   213 ;;NULL                 0      0       0       0        0.0%
+   214 ;;CODE                 0      0       0       0        0.0%
+   215 ;;COMMON               E      A       A       1       71.4%
+   216 ;;BITSFR0              0      0       0       1        0.0%
+   217 ;;SFR0                 0      0       0       1        0.0%
+   218 ;;BITSFR1              0      0       0       2        0.0%
+   219 ;;SFR1                 0      0       0       2        0.0%
+   220 ;;STACK                0      0       1       2        0.0%
+   221 ;;ABS                  0      0       0       3        0.0%
+   222 ;;BITBANK0            50      0       0       4        0.0%
+   223 ;;BITSFR3              0      0       0       4        0.0%
+   224 ;;SFR3                 0      0       0       4        0.0%
+   225 ;;BANK0               50      0       0       5        0.0%
+   226 ;;BITSFR2              0      0       0       5        0.0%
+   227 ;;SFR2                 0      0       0       5        0.0%
+   228 ;;BITBANK1            50      0       0       6        0.0%
+   229 ;;BANK1               50      0       0       7        0.0%
+   230 ;;BITBANK3            60      0       0       8        0.0%
+   231 ;;BANK3               60      0       0       9        0.0%
+   232 ;;BITBANK2            60      0       0      10        0.0%
+   233 ;;BANK2               60      0       0      11        0.0%
+   234 ;;DATA                 0      0       0      12        0.0%
+   235                           
+   236                           	global	_main
+   237                           psect	maintext,global,class=CODE,delta=2
+   238                           global __pmaintext
+   239  06C8                     __pmaintext:
+   240                           
+   241 ;; *************** function _main *****************
+   242 ;; Defined at:
+   243 ;;		line 9 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_7_SEG\Main.c"
+   244 ;; Parameters:    Size  Location     Type
+   245 ;;		None
+   246 ;; Auto vars:     Size  Location     Type
+   247 ;;		None
+   248 ;; Return value:  Size  Location     Type
+   249 ;;                  2  727[COMMON] int 
+   250 ;; Registers used:
+   251 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   252 ;; Tracked objects:
+   253 ;;		On entry : 17F/0
+   254 ;;		On exit  : 0/0
+   255 ;;		Unchanged: 0/0
+   256 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   257 ;;      Params:         0       0       0       0       0
+   258 ;;      Locals:         0       0       0       0       0
+   259 ;;      Temps:          2       0       0       0       0
+   260 ;;      Totals:         2       0       0       0       0
+   261 ;;Total ram usage:        2 bytes
+   262 ;; Hardware stack levels required when called:    1
+   263 ;; This function calls:
+   264 ;;		_KEYPAD_INIT
+   265 ;;		_Seg_Init
+   266 ;;		_KEYPAD_KEYS
+   267 ;;		_Seg_Display
+   268 ;; This function is called by:
+   269 ;;		Startup code after reset
+   270 ;; This function uses a non-reentrant model
+   271 ;;
+   272                           psect	maintext
+   273                           	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_7_SEG\Mai
+                                 n.c"
+   274                           	line	9
+   275                           	global	__size_of_main
+   276  0029                     	__size_of_main	equ	__end_of_main-_main
+   277                           	
+   278  06C8                     _main:	
+   279                           	opt	stack 7
+   280                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   281                           	line	11
+   282                           	
+   283  06C8                     l2732:	
+   284                           ;Main.c: 11: KEYPAD_INIT();
+   285  06C8  120A  118A  26C3   	fcall	_KEYPAD_INIT
+              120A  118A         
+   286                           	line	12
+   287                           	
+   288  06CD                     l2734:	
+   289                           ;Main.c: 12: Seg_Init();
+   290  06CD  120A  118A  26BB   	fcall	_Seg_Init
+              120A  118A         
+   291  06D2  2ED3               	goto	l2736
+   292                           	line	14
+   293                           ;Main.c: 14: while(0x01){
+   294                           	
+   295  06D3                     l728:	
+   296                           	line	15
+   297                           	
+   298  06D3                     l2736:	
+   299                           ;Main.c: 15: Seg_Display(KEYPAD_KEYS());
+   300  06D3  120A  118A  26F1   	fcall	_KEYPAD_KEYS
+              120A  118A         
+   301  06D8  0873               	movf	(1+(?_KEYPAD_KEYS)),w
+   302  06D9  01F1               	clrf	(?_Seg_Display+1)
+   303  06DA  07F1               	addwf	(?_Seg_Display+1)
+   304  06DB  0872               	movf	(0+(?_KEYPAD_KEYS)),w
+   305  06DC  01F0               	clrf	(?_Seg_Display)
+   306  06DD  07F0               	addwf	(?_Seg_Display)
+   307                           
+   308  06DE  120A  118A  2776   	fcall	_Seg_Display
+              120A  118A         
+   309                           	line	16
+   310                           	
+   311  06E3                     l2738:	
+   312                           ;Main.c: 16: _delay((unsigned long)((5)*(20000000/4000.0)));
+   313                           	opt asmopt_off
+   314  06E3  3021               movlw	33
+   315  06E4  00F9               movwf	((??_main+0)+0+1),f
+   316  06E5  3076               	movlw	118
+   317  06E6  00F8               movwf	((??_main+0)+0),f
+   318  06E7                     u2327:
+   319  06E7  0BF8               	decfsz	((??_main+0)+0),f
+   320  06E8  2EE7               	goto	u2327
+   321  06E9  0BF9               	decfsz	((??_main+0)+0+1),f
+   322  06EA  2EE7               	goto	u2327
+   323  06EB  0064               	clrwdt
+   324                           opt asmopt_on
+   325                           
+   326  06EC  2ED3               	goto	l2736
+   327                           	line	17
+   328                           	
+   329  06ED                     l729:	
+   330                           	line	14
+   331  06ED  2ED3               	goto	l2736
+   332                           	
+   333  06EE                     l730:	
+   334                           	line	19
+   335                           ;Main.c: 17: }
+   336                           ;Main.c: 18: return 0;
+   337                           ;	Return value of _main is never used
+   338                           	
+   339  06EE                     l731:	
+   340                           	global	start
+   341  06EE  120A  118A  2800   	ljmp	start
+   342                           	opt stack 0
+   343                           GLOBAL	__end_of_main
+   344  06F1                     	__end_of_main:
+   345 ;; =============== function _main ends ============
+   346                           
+   347                           	signat	_main,90
+   348                           	global	_KEYPAD_KEYS
+   349                           psect	text107,local,class=CODE,delta=2
+   350                           global __ptext107
+   351  06F1                     __ptext107:
+   352                           
+   353 ;; *************** function _KEYPAD_KEYS *****************
+   354 ;; Defined at:
+   355 ;;		line 7 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_7_SEG\KEYPAD_lib.h"
+   356 ;; Parameters:    Size  Location     Type
+   357 ;;		None
+   358 ;; Auto vars:     Size  Location     Type
+   359 ;;  number          2    6[COMMON] unsigned int 
+   360 ;; Return value:  Size  Location     Type
+   361 ;;                  2    2[COMMON] unsigned int 
+   362 ;; Registers used:
+   363 ;;		wreg, status,2, status,0
+   364 ;; Tracked objects:
+   365 ;;		On entry : 0/0
+   366 ;;		On exit  : 0/0
+   367 ;;		Unchanged: 0/0
+   368 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   369 ;;      Params:         2       0       0       0       0
+   370 ;;      Locals:         2       0       0       0       0
+   371 ;;      Temps:          2       0       0       0       0
+   372 ;;      Totals:         6       0       0       0       0
+   373 ;;Total ram usage:        6 bytes
+   374 ;; Hardware stack levels used:    1
+   375 ;; This function calls:
+   376 ;;		Nothing
+   377 ;; This function is called by:
+   378 ;;		_main
+   379 ;; This function uses a non-reentrant model
+   380 ;;
+   381                           psect	text107
+   382                           	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_7_SEG\KEY
+                                 PAD_lib.h"
+   383                           	line	7
+   384                           	global	__size_of_KEYPAD_KEYS
+   385  0085                     	__size_of_KEYPAD_KEYS	equ	__end_of_KEYPAD_KEYS-_KEYPAD_KEYS
+   386                           	
+   387  06F1                     _KEYPAD_KEYS:	
+   388                           	opt	stack 7
+   389                           ; Regs used in _KEYPAD_KEYS: [wreg+status,2+status,0]
+   390                           	line	10
+   391                           	
+   392  06F1                     l2682:	
+   393                           ;KEYPAD_lib.h: 8: unsigned int number;
+   394                           ;KEYPAD_lib.h: 10: PORTB = 0b11000001;
+   395  06F1  30C1               	movlw	(0C1h)
+   396  06F2  1283               	bcf	status, 5	;RP0=0, select bank0
+   397  06F3  1303               	bcf	status, 6	;RP1=0, select bank0
+   398  06F4  0086               	movwf	(6)	;volatile
+   399                           	line	11
+   400                           	
+   401  06F5                     l2684:	
+   402                           ;KEYPAD_lib.h: 11: if(RB3 == 0x01){
+   403  06F5  1D86               	btfss	(51/8),(51)&7
+   404  06F6  2EF8               	goto	u2221
+   405  06F7  2EF9               	goto	u2220
+   406  06F8                     u2221:
+   407  06F8  2EFE               	goto	l2688
+   408  06F9                     u2220:
+   409                           	line	12
+   410                           	
+   411  06F9                     l2686:	
+   412                           ;KEYPAD_lib.h: 12: number = 0x03;
+   413  06F9  3003               	movlw	low(03h)
+   414  06FA  00F6               	movwf	(KEYPAD_KEYS@number)
+   415  06FB  3000               	movlw	high(03h)
+   416  06FC  00F7               	movwf	((KEYPAD_KEYS@number))+1
+   417  06FD  2EFE               	goto	l2688
+   418                           	line	13
+   419                           	
+   420  06FE                     l715:	
+   421                           	line	14
+   422                           	
+   423  06FE                     l2688:	
+   424                           ;KEYPAD_lib.h: 13: }
+   425                           ;KEYPAD_lib.h: 14: if(RB4 == 0x01){
+   426  06FE  1E06               	btfss	(52/8),(52)&7
+   427  06FF  2F01               	goto	u2231
+   428  0700  2F02               	goto	u2230
+   429  0701                     u2231:
+   430  0701  2F07               	goto	l2692
+   431  0702                     u2230:
+   432                           	line	15
+   433                           	
+   434  0702                     l2690:	
+   435                           ;KEYPAD_lib.h: 15: number = 0x06;
+   436  0702  3006               	movlw	low(06h)
+   437  0703  00F6               	movwf	(KEYPAD_KEYS@number)
+   438  0704  3000               	movlw	high(06h)
+   439  0705  00F7               	movwf	((KEYPAD_KEYS@number))+1
+   440  0706  2F07               	goto	l2692
+   441                           	line	16
+   442                           	
+   443  0707                     l716:	
+   444                           	line	17
+   445                           	
+   446  0707                     l2692:	
+   447                           ;KEYPAD_lib.h: 16: }
+   448                           ;KEYPAD_lib.h: 17: if(RB5 == 0x01){
+   449  0707  1E86               	btfss	(53/8),(53)&7
+   450  0708  2F0A               	goto	u2241
+   451  0709  2F0B               	goto	u2240
+   452  070A                     u2241:
+   453  070A  2F0F               	goto	l717
+   454  070B                     u2240:
+   455                           	line	18
+   456                           	
+   457  070B                     l2694:	
+   458                           ;KEYPAD_lib.h: 18: number = 0x09;
+   459  070B  3009               	movlw	low(09h)
+   460  070C  00F6               	movwf	(KEYPAD_KEYS@number)
+   461  070D  3000               	movlw	high(09h)
+   462  070E  00F7               	movwf	((KEYPAD_KEYS@number))+1
+   463                           	line	19
+   464                           	
+   465  070F                     l717:	
+   466                           	line	20
+   467                           ;KEYPAD_lib.h: 19: }
+   468                           ;KEYPAD_lib.h: 20: _delay((unsigned long)((2)*(20000000/4000.0)));
+   469                           	opt asmopt_off
+   470  070F  300D               movlw	13
+   471  0710  00F5               movwf	((??_KEYPAD_KEYS+0)+0+1),f
+   472  0711  30FB               	movlw	251
+   473  0712  00F4               movwf	((??_KEYPAD_KEYS+0)+0),f
+   474  0713                     u2337:
+   475  0713  0BF4               	decfsz	((??_KEYPAD_KEYS+0)+0),f
+   476  0714  2F13               	goto	u2337
+   477  0715  0BF5               	decfsz	((??_KEYPAD_KEYS+0)+0+1),f
+   478  0716  2F13               	goto	u2337
+   479  0717  2F18               	nop2
+   480                           opt asmopt_on
+   481                           
+   482                           	line	22
+   483                           ;KEYPAD_lib.h: 22: PORTB = 0b10000010;
+   484  0718  3082               	movlw	(082h)
+   485  0719  1283               	bcf	status, 5	;RP0=0, select bank0
+   486  071A  1303               	bcf	status, 6	;RP1=0, select bank0
+   487  071B  0086               	movwf	(6)	;volatile
+   488                           	line	23
+   489                           	
+   490  071C                     l2696:	
+   491                           ;KEYPAD_lib.h: 23: if(RB3 == 0x01){
+   492  071C  1D86               	btfss	(51/8),(51)&7
+   493  071D  2F1F               	goto	u2251
+   494  071E  2F20               	goto	u2250
+   495  071F                     u2251:
+   496  071F  2F25               	goto	l2700
+   497  0720                     u2250:
+   498                           	line	24
+   499                           	
+   500  0720                     l2698:	
+   501                           ;KEYPAD_lib.h: 24: number = 0x02;
+   502  0720  3002               	movlw	low(02h)
+   503  0721  00F6               	movwf	(KEYPAD_KEYS@number)
+   504  0722  3000               	movlw	high(02h)
+   505  0723  00F7               	movwf	((KEYPAD_KEYS@number))+1
+   506  0724  2F25               	goto	l2700
+   507                           	line	25
+   508                           	
+   509  0725                     l718:	
+   510                           	line	26
+   511                           	
+   512  0725                     l2700:	
+   513                           ;KEYPAD_lib.h: 25: }
+   514                           ;KEYPAD_lib.h: 26: if(RB4 == 0x01){
+   515  0725  1E06               	btfss	(52/8),(52)&7
+   516  0726  2F28               	goto	u2261
+   517  0727  2F29               	goto	u2260
+   518  0728                     u2261:
+   519  0728  2F2E               	goto	l2704
+   520  0729                     u2260:
+   521                           	line	27
+   522                           	
+   523  0729                     l2702:	
+   524                           ;KEYPAD_lib.h: 27: number = 0x05;
+   525  0729  3005               	movlw	low(05h)
+   526  072A  00F6               	movwf	(KEYPAD_KEYS@number)
+   527  072B  3000               	movlw	high(05h)
+   528  072C  00F7               	movwf	((KEYPAD_KEYS@number))+1
+   529  072D  2F2E               	goto	l2704
+   530                           	line	28
+   531                           	
+   532  072E                     l719:	
+   533                           	line	29
+   534                           	
+   535  072E                     l2704:	
+   536                           ;KEYPAD_lib.h: 28: }
+   537                           ;KEYPAD_lib.h: 29: if(RB5 == 0x01){
+   538  072E  1E86               	btfss	(53/8),(53)&7
+   539  072F  2F31               	goto	u2271
+   540  0730  2F32               	goto	u2270
+   541  0731                     u2271:
+   542  0731  2F37               	goto	l2708
+   543  0732                     u2270:
+   544                           	line	30
+   545                           	
+   546  0732                     l2706:	
+   547                           ;KEYPAD_lib.h: 30: number = 0x08;
+   548  0732  3008               	movlw	low(08h)
+   549  0733  00F6               	movwf	(KEYPAD_KEYS@number)
+   550  0734  3000               	movlw	high(08h)
+   551  0735  00F7               	movwf	((KEYPAD_KEYS@number))+1
+   552  0736  2F37               	goto	l2708
+   553                           	line	31
+   554                           	
+   555  0737                     l720:	
+   556                           	line	32
+   557                           	
+   558  0737                     l2708:	
+   559                           ;KEYPAD_lib.h: 31: }
+   560                           ;KEYPAD_lib.h: 32: if(RB6 == 0x01){
+   561  0737  1F06               	btfss	(54/8),(54)&7
+   562  0738  2F3A               	goto	u2281
+   563  0739  2F3B               	goto	u2280
+   564  073A                     u2281:
+   565  073A  2F3E               	goto	l2712
+   566  073B                     u2280:
+   567                           	line	33
+   568                           	
+   569  073B                     l2710:	
+   570                           ;KEYPAD_lib.h: 33: number = 0x00;
+   571  073B  01F6               	clrf	(KEYPAD_KEYS@number)
+   572  073C  01F7               	clrf	(KEYPAD_KEYS@number+1)
+   573  073D  2F3E               	goto	l2712
+   574                           	line	34
+   575                           	
+   576  073E                     l721:	
+   577                           	line	35
+   578                           	
+   579  073E                     l2712:	
+   580                           ;KEYPAD_lib.h: 34: }
+   581                           ;KEYPAD_lib.h: 35: _delay((unsigned long)((2)*(20000000/4000.0)));
+   582                           	opt asmopt_off
+   583  073E  300D               movlw	13
+   584  073F  00F5               movwf	((??_KEYPAD_KEYS+0)+0+1),f
+   585  0740  30FB               	movlw	251
+   586  0741  00F4               movwf	((??_KEYPAD_KEYS+0)+0),f
+   587  0742                     u2347:
+   588  0742  0BF4               	decfsz	((??_KEYPAD_KEYS+0)+0),f
+   589  0743  2F42               	goto	u2347
+   590  0744  0BF5               	decfsz	((??_KEYPAD_KEYS+0)+0+1),f
+   591  0745  2F42               	goto	u2347
+   592  0746  2F47               	nop2
+   593                           opt asmopt_on
+   594                           
+   595                           	line	37
+   596                           	
+   597  0747                     l2714:	
+   598                           ;KEYPAD_lib.h: 37: PORTB = 0b11000100;
+   599  0747  30C4               	movlw	(0C4h)
+   600  0748  1283               	bcf	status, 5	;RP0=0, select bank0
+   601  0749  1303               	bcf	status, 6	;RP1=0, select bank0
+   602  074A  0086               	movwf	(6)	;volatile
+   603                           	line	38
+   604                           	
+   605  074B                     l2716:	
+   606                           ;KEYPAD_lib.h: 38: if(RB3 == 0x01){
+   607  074B  1D86               	btfss	(51/8),(51)&7
+   608  074C  2F4E               	goto	u2291
+   609  074D  2F4F               	goto	u2290
+   610  074E                     u2291:
+   611  074E  2F54               	goto	l2720
+   612  074F                     u2290:
+   613                           	line	39
+   614                           	
+   615  074F                     l2718:	
+   616                           ;KEYPAD_lib.h: 39: number = 0x01;
+   617  074F  3001               	movlw	low(01h)
+   618  0750  00F6               	movwf	(KEYPAD_KEYS@number)
+   619  0751  3000               	movlw	high(01h)
+   620  0752  00F7               	movwf	((KEYPAD_KEYS@number))+1
+   621  0753  2F54               	goto	l2720
+   622                           	line	40
+   623                           	
+   624  0754                     l722:	
+   625                           	line	41
+   626                           	
+   627  0754                     l2720:	
+   628                           ;KEYPAD_lib.h: 40: }
+   629                           ;KEYPAD_lib.h: 41: if(RB4 == 0x01){
+   630  0754  1E06               	btfss	(52/8),(52)&7
+   631  0755  2F57               	goto	u2301
+   632  0756  2F58               	goto	u2300
+   633  0757                     u2301:
+   634  0757  2F5D               	goto	l2724
+   635  0758                     u2300:
+   636                           	line	42
+   637                           	
+   638  0758                     l2722:	
+   639                           ;KEYPAD_lib.h: 42: number = 0x04;
+   640  0758  3004               	movlw	low(04h)
+   641  0759  00F6               	movwf	(KEYPAD_KEYS@number)
+   642  075A  3000               	movlw	high(04h)
+   643  075B  00F7               	movwf	((KEYPAD_KEYS@number))+1
+   644  075C  2F5D               	goto	l2724
+   645                           	line	43
+   646                           	
+   647  075D                     l723:	
+   648                           	line	44
+   649                           	
+   650  075D                     l2724:	
+   651                           ;KEYPAD_lib.h: 43: }
+   652                           ;KEYPAD_lib.h: 44: if(RB5 == 0x01){
+   653  075D  1E86               	btfss	(53/8),(53)&7
+   654  075E  2F60               	goto	u2311
+   655  075F  2F61               	goto	u2310
+   656  0760                     u2311:
+   657  0760  2F65               	goto	l724
+   658  0761                     u2310:
+   659                           	line	45
+   660                           	
+   661  0761                     l2726:	
+   662                           ;KEYPAD_lib.h: 45: number = 0x07;
+   663  0761  3007               	movlw	low(07h)
+   664  0762  00F6               	movwf	(KEYPAD_KEYS@number)
+   665  0763  3000               	movlw	high(07h)
+   666  0764  00F7               	movwf	((KEYPAD_KEYS@number))+1
+   667                           	line	46
+   668                           	
+   669  0765                     l724:	
+   670                           	line	47
+   671                           ;KEYPAD_lib.h: 46: }
+   672                           ;KEYPAD_lib.h: 47: _delay((unsigned long)((2)*(20000000/4000.0)));
+   673                           	opt asmopt_off
+   674  0765  300D               movlw	13
+   675  0766  00F5               movwf	((??_KEYPAD_KEYS+0)+0+1),f
+   676  0767  30FB               	movlw	251
+   677  0768  00F4               movwf	((??_KEYPAD_KEYS+0)+0),f
+   678  0769                     u2357:
+   679  0769  0BF4               	decfsz	((??_KEYPAD_KEYS+0)+0),f
+   680  076A  2F69               	goto	u2357
+   681  076B  0BF5               	decfsz	((??_KEYPAD_KEYS+0)+0+1),f
+   682  076C  2F69               	goto	u2357
+   683  076D  2F6E               	nop2
+   684                           opt asmopt_on
+   685                           
+   686                           	line	49
+   687                           	
+   688  076E                     l2728:	
+   689                           ;KEYPAD_lib.h: 49: return number;
+   690  076E  0877               	movf	(KEYPAD_KEYS@number+1),w
+   691  076F  01F3               	clrf	(?_KEYPAD_KEYS+1)
+   692  0770  07F3               	addwf	(?_KEYPAD_KEYS+1)
+   693  0771  0876               	movf	(KEYPAD_KEYS@number),w
+   694  0772  01F2               	clrf	(?_KEYPAD_KEYS)
+   695  0773  07F2               	addwf	(?_KEYPAD_KEYS)
+   696                           
+   697  0774  2F75               	goto	l725
+   698                           	
+   699  0775                     l2730:	
+   700                           	line	50
+   701                           	
+   702  0775                     l725:	
+   703  0775  0008               	return
+   704                           	opt stack 0
+   705                           GLOBAL	__end_of_KEYPAD_KEYS
+   706  0776                     	__end_of_KEYPAD_KEYS:
+   707 ;; =============== function _KEYPAD_KEYS ends ============
+   708                           
+   709                           	signat	_KEYPAD_KEYS,90
+   710                           	global	_KEYPAD_INIT
+   711                           psect	text108,local,class=CODE,delta=2
+   712                           global __ptext108
+   713  06C3                     __ptext108:
+   714                           
+   715 ;; *************** function _KEYPAD_INIT *****************
+   716 ;; Defined at:
+   717 ;;		line 3 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_7_SEG\KEYPAD_lib.h"
+   718 ;; Parameters:    Size  Location     Type
+   719 ;;		None
+   720 ;; Auto vars:     Size  Location     Type
+   721 ;;		None
+   722 ;; Return value:  Size  Location     Type
+   723 ;;		None               void
+   724 ;; Registers used:
+   725 ;;		wreg
+   726 ;; Tracked objects:
+   727 ;;		On entry : 0/0
+   728 ;;		On exit  : 0/0
+   729 ;;		Unchanged: 0/0
+   730 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   731 ;;      Params:         0       0       0       0       0
+   732 ;;      Locals:         0       0       0       0       0
+   733 ;;      Temps:          0       0       0       0       0
+   734 ;;      Totals:         0       0       0       0       0
+   735 ;;Total ram usage:        0 bytes
+   736 ;; Hardware stack levels used:    1
+   737 ;; This function calls:
+   738 ;;		Nothing
+   739 ;; This function is called by:
+   740 ;;		_main
+   741 ;; This function uses a non-reentrant model
+   742 ;;
+   743                           psect	text108
+   744                           	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_7_SEG\KEY
+                                 PAD_lib.h"
+   745                           	line	3
+   746                           	global	__size_of_KEYPAD_INIT
+   747  0005                     	__size_of_KEYPAD_INIT	equ	__end_of_KEYPAD_INIT-_KEYPAD_INIT
+   748                           	
+   749  06C3                     _KEYPAD_INIT:	
+   750                           	opt	stack 7
+   751                           ; Regs used in _KEYPAD_INIT: [wreg]
+   752                           	line	4
+   753                           	
+   754  06C3                     l1822:	
+   755                           ;KEYPAD_lib.h: 4: TRISB = 0b11111000;
+   756  06C3  30F8               	movlw	(0F8h)
+   757  06C4  1683               	bsf	status, 5	;RP0=1, select bank1
+   758  06C5  1303               	bcf	status, 6	;RP1=0, select bank1
+   759  06C6  0086               	movwf	(134)^080h	;volatile
+   760                           	line	5
+   761                           	
+   762  06C7                     l712:	
+   763  06C7  0008               	return
+   764                           	opt stack 0
+   765                           GLOBAL	__end_of_KEYPAD_INIT
+   766  06C8                     	__end_of_KEYPAD_INIT:
+   767 ;; =============== function _KEYPAD_INIT ends ============
+   768                           
+   769                           	signat	_KEYPAD_INIT,88
+   770                           	global	_Seg_Display
+   771                           psect	text109,local,class=CODE,delta=2
+   772                           global __ptext109
+   773  0776                     __ptext109:
+   774                           
+   775 ;; *************** function _Seg_Display *****************
+   776 ;; Defined at:
+   777 ;;		line 15 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_7_SEG\Seg7_lib.h"
+   778 ;; Parameters:    Size  Location     Type
+   779 ;;  num             2    0[COMMON] int 
+   780 ;; Auto vars:     Size  Location     Type
+   781 ;;		None
+   782 ;; Return value:  Size  Location     Type
+   783 ;;		None               void
+   784 ;; Registers used:
+   785 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+   786 ;; Tracked objects:
+   787 ;;		On entry : 0/0
+   788 ;;		On exit  : 0/0
+   789 ;;		Unchanged: 0/0
+   790 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   791 ;;      Params:         2       0       0       0       0
+   792 ;;      Locals:         0       0       0       0       0
+   793 ;;      Temps:          0       0       0       0       0
+   794 ;;      Totals:         2       0       0       0       0
+   795 ;;Total ram usage:        2 bytes
+   796 ;; Hardware stack levels used:    1
+   797 ;; This function calls:
+   798 ;;		Nothing
+   799 ;; This function is called by:
+   800 ;;		_main
+   801 ;; This function uses a non-reentrant model
+   802 ;;
+   803                           psect	text109
+   804                           	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_7_SEG\Seg
+                                 7_lib.h"
+   805                           	line	15
+   806                           	global	__size_of_Seg_Display
+   807  008A                     	__size_of_Seg_Display	equ	__end_of_Seg_Display-_Seg_Display
+   808                           	
+   809  0776                     _Seg_Display:	
+   810                           	opt	stack 7
+   811                           ; Regs used in _Seg_Display: [wreg-fsr0h+status,2+status,0]
+   812                           	line	16
+   813                           	
+   814  0776                     l1780:	
+   815                           ;Seg7_lib.h: 16: switch(num){
+   816  0776  2FC8               	goto	l1816
+   817                           	line	18
+   818                           ;Seg7_lib.h: 18: case 0x00:
+   819                           	
+   820  0777                     l691:	
+   821                           	line	19
+   822                           	
+   823  0777                     l1782:	
+   824                           ;Seg7_lib.h: 19: PORTC = 0b01000000;
+   825  0777  3040               	movlw	(040h)
+   826  0778  1283               	bcf	status, 5	;RP0=0, select bank0
+   827  0779  1303               	bcf	status, 6	;RP1=0, select bank0
+   828  077A  0087               	movwf	(7)	;volatile
+   829                           	line	20
+   830                           ;Seg7_lib.h: 20: break;
+   831  077B  2FFF               	goto	l709
+   832                           	line	22
+   833                           ;Seg7_lib.h: 22: case 0x01:
+   834                           	
+   835  077C                     l693:	
+   836                           	line	23
+   837                           	
+   838  077C                     l1784:	
+   839                           ;Seg7_lib.h: 23: PORTC = 0b01111001;
+   840  077C  3079               	movlw	(079h)
+   841  077D  1283               	bcf	status, 5	;RP0=0, select bank0
+   842  077E  1303               	bcf	status, 6	;RP1=0, select bank0
+   843  077F  0087               	movwf	(7)	;volatile
+   844                           	line	24
+   845                           ;Seg7_lib.h: 24: break;
+   846  0780  2FFF               	goto	l709
+   847                           	line	26
+   848                           ;Seg7_lib.h: 26: case 0x02:
+   849                           	
+   850  0781                     l694:	
+   851                           	line	27
+   852                           	
+   853  0781                     l1786:	
+   854                           ;Seg7_lib.h: 27: PORTC = 0b00100100;
+   855  0781  3024               	movlw	(024h)
+   856  0782  1283               	bcf	status, 5	;RP0=0, select bank0
+   857  0783  1303               	bcf	status, 6	;RP1=0, select bank0
+   858  0784  0087               	movwf	(7)	;volatile
+   859                           	line	28
+   860                           ;Seg7_lib.h: 28: break;
+   861  0785  2FFF               	goto	l709
+   862                           	line	30
+   863                           ;Seg7_lib.h: 30: case 0x03:
+   864                           	
+   865  0786                     l695:	
+   866                           	line	31
+   867                           	
+   868  0786                     l1788:	
+   869                           ;Seg7_lib.h: 31: PORTC = 0b00110000;
+   870  0786  3030               	movlw	(030h)
+   871  0787  1283               	bcf	status, 5	;RP0=0, select bank0
+   872  0788  1303               	bcf	status, 6	;RP1=0, select bank0
+   873  0789  0087               	movwf	(7)	;volatile
+   874                           	line	32
+   875                           ;Seg7_lib.h: 32: break;
+   876  078A  2FFF               	goto	l709
+   877                           	line	34
+   878                           ;Seg7_lib.h: 34: case 0x04:
+   879                           	
+   880  078B                     l696:	
+   881                           	line	35
+   882                           	
+   883  078B                     l1790:	
+   884                           ;Seg7_lib.h: 35: PORTC = 0b00011001;
+   885  078B  3019               	movlw	(019h)
+   886  078C  1283               	bcf	status, 5	;RP0=0, select bank0
+   887  078D  1303               	bcf	status, 6	;RP1=0, select bank0
+   888  078E  0087               	movwf	(7)	;volatile
+   889                           	line	36
+   890                           ;Seg7_lib.h: 36: break;
+   891  078F  2FFF               	goto	l709
+   892                           	line	38
+   893                           ;Seg7_lib.h: 38: case 0x05:
+   894                           	
+   895  0790                     l697:	
+   896                           	line	39
+   897                           	
+   898  0790                     l1792:	
+   899                           ;Seg7_lib.h: 39: PORTC = 0b00010010;
+   900  0790  3012               	movlw	(012h)
+   901  0791  1283               	bcf	status, 5	;RP0=0, select bank0
+   902  0792  1303               	bcf	status, 6	;RP1=0, select bank0
+   903  0793  0087               	movwf	(7)	;volatile
+   904                           	line	40
+   905                           ;Seg7_lib.h: 40: break;
+   906  0794  2FFF               	goto	l709
+   907                           	line	42
+   908                           ;Seg7_lib.h: 42: case 0x06:
+   909                           	
+   910  0795                     l698:	
+   911                           	line	43
+   912                           	
+   913  0795                     l1794:	
+   914                           ;Seg7_lib.h: 43: PORTC = 0b00000010;
+   915  0795  3002               	movlw	(02h)
+   916  0796  1283               	bcf	status, 5	;RP0=0, select bank0
+   917  0797  1303               	bcf	status, 6	;RP1=0, select bank0
+   918  0798  0087               	movwf	(7)	;volatile
+   919                           	line	44
+   920                           ;Seg7_lib.h: 44: break;
+   921  0799  2FFF               	goto	l709
+   922                           	line	46
+   923                           ;Seg7_lib.h: 46: case 0x07:
+   924                           	
+   925  079A                     l699:	
+   926                           	line	47
+   927                           	
+   928  079A                     l1796:	
+   929                           ;Seg7_lib.h: 47: PORTC = 0b01111000;
+   930  079A  3078               	movlw	(078h)
+   931  079B  1283               	bcf	status, 5	;RP0=0, select bank0
+   932  079C  1303               	bcf	status, 6	;RP1=0, select bank0
+   933  079D  0087               	movwf	(7)	;volatile
+   934                           	line	48
+   935                           ;Seg7_lib.h: 48: break;
+   936  079E  2FFF               	goto	l709
+   937                           	line	50
+   938                           ;Seg7_lib.h: 50: case 0x08:
+   939                           	
+   940  079F                     l700:	
+   941                           	line	51
+   942                           	
+   943  079F                     l1798:	
+   944                           ;Seg7_lib.h: 51: PORTC = 0b00000000;
+   945  079F  1283               	bcf	status, 5	;RP0=0, select bank0
+   946  07A0  1303               	bcf	status, 6	;RP1=0, select bank0
+   947  07A1  0187               	clrf	(7)	;volatile
+   948                           	line	52
+   949                           ;Seg7_lib.h: 52: break;
+   950  07A2  2FFF               	goto	l709
+   951                           	line	54
+   952                           ;Seg7_lib.h: 54: case 0x09:
+   953                           	
+   954  07A3                     l701:	
+   955                           	line	55
+   956                           	
+   957  07A3                     l1800:	
+   958                           ;Seg7_lib.h: 55: PORTC = 0b00010000;
+   959  07A3  3010               	movlw	(010h)
+   960  07A4  1283               	bcf	status, 5	;RP0=0, select bank0
+   961  07A5  1303               	bcf	status, 6	;RP1=0, select bank0
+   962  07A6  0087               	movwf	(7)	;volatile
+   963                           	line	56
+   964                           ;Seg7_lib.h: 56: break;
+   965  07A7  2FFF               	goto	l709
+   966                           	line	58
+   967                           ;Seg7_lib.h: 58: case 0x0A:
+   968                           	
+   969  07A8                     l702:	
+   970                           	line	59
+   971                           	
+   972  07A8                     l1802:	
+   973                           ;Seg7_lib.h: 59: PORTC = 0b00001000;
+   974  07A8  3008               	movlw	(08h)
+   975  07A9  1283               	bcf	status, 5	;RP0=0, select bank0
+   976  07AA  1303               	bcf	status, 6	;RP1=0, select bank0
+   977  07AB  0087               	movwf	(7)	;volatile
+   978                           	line	60
+   979                           ;Seg7_lib.h: 60: break;
+   980  07AC  2FFF               	goto	l709
+   981                           	line	62
+   982                           ;Seg7_lib.h: 62: case 0x0B:
+   983                           	
+   984  07AD                     l703:	
+   985                           	line	63
+   986                           	
+   987  07AD                     l1804:	
+   988                           ;Seg7_lib.h: 63: PORTC = 0b00000011;
+   989  07AD  3003               	movlw	(03h)
+   990  07AE  1283               	bcf	status, 5	;RP0=0, select bank0
+   991  07AF  1303               	bcf	status, 6	;RP1=0, select bank0
+   992  07B0  0087               	movwf	(7)	;volatile
+   993                           	line	64
+   994                           ;Seg7_lib.h: 64: break;
+   995  07B1  2FFF               	goto	l709
+   996                           	line	66
+   997                           ;Seg7_lib.h: 66: case 0x0C:
+   998                           	
+   999  07B2                     l704:	
+  1000                           	line	67
+  1001                           	
+  1002  07B2                     l1806:	
+  1003                           ;Seg7_lib.h: 67: PORTC = 0b01000110;
+  1004  07B2  3046               	movlw	(046h)
+  1005  07B3  1283               	bcf	status, 5	;RP0=0, select bank0
+  1006  07B4  1303               	bcf	status, 6	;RP1=0, select bank0
+  1007  07B5  0087               	movwf	(7)	;volatile
+  1008                           	line	68
+  1009                           ;Seg7_lib.h: 68: break;
+  1010  07B6  2FFF               	goto	l709
+  1011                           	line	70
+  1012                           ;Seg7_lib.h: 70: case 0x0D:
+  1013                           	
+  1014  07B7                     l705:	
+  1015                           	line	71
+  1016                           	
+  1017  07B7                     l1808:	
+  1018                           ;Seg7_lib.h: 71: PORTC = 0b00100001;
+  1019  07B7  3021               	movlw	(021h)
+  1020  07B8  1283               	bcf	status, 5	;RP0=0, select bank0
+  1021  07B9  1303               	bcf	status, 6	;RP1=0, select bank0
+  1022  07BA  0087               	movwf	(7)	;volatile
+  1023                           	line	72
+  1024                           ;Seg7_lib.h: 72: break;
+  1025  07BB  2FFF               	goto	l709
+  1026                           	line	74
+  1027                           ;Seg7_lib.h: 74: case 0x0E:
+  1028                           	
+  1029  07BC                     l706:	
+  1030                           	line	75
+  1031                           	
+  1032  07BC                     l1810:	
+  1033                           ;Seg7_lib.h: 75: PORTC = 0b00000110;
+  1034  07BC  3006               	movlw	(06h)
+  1035  07BD  1283               	bcf	status, 5	;RP0=0, select bank0
+  1036  07BE  1303               	bcf	status, 6	;RP1=0, select bank0
+  1037  07BF  0087               	movwf	(7)	;volatile
+  1038                           	line	76
+  1039                           ;Seg7_lib.h: 76: break;
+  1040  07C0  2FFF               	goto	l709
+  1041                           	line	78
+  1042                           ;Seg7_lib.h: 78: case 0x0F:
+  1043                           	
+  1044  07C1                     l707:	
+  1045                           	line	79
+  1046                           	
+  1047  07C1                     l1812:	
+  1048                           ;Seg7_lib.h: 79: PORTC = 0b00001110;
+  1049  07C1  300E               	movlw	(0Eh)
+  1050  07C2  1283               	bcf	status, 5	;RP0=0, select bank0
+  1051  07C3  1303               	bcf	status, 6	;RP1=0, select bank0
+  1052  07C4  0087               	movwf	(7)	;volatile
+  1053                           	line	80
+  1054                           ;Seg7_lib.h: 80: break;
+  1055  07C5  2FFF               	goto	l709
+  1056                           	line	82
+  1057                           ;Seg7_lib.h: 82: default:
+  1058                           	
+  1059  07C6                     l708:	
+  1060                           	line	83
+  1061                           ;Seg7_lib.h: 83: break;
+  1062  07C6  2FFF               	goto	l709
+  1063                           	line	84
+  1064                           	
+  1065  07C7                     l1814:	
+  1066                           ;Seg7_lib.h: 84: }
+  1067  07C7  2FFF               	goto	l709
+  1068                           	line	16
+  1069                           	
+  1070  07C8                     l690:	
+  1071                           	
+  1072  07C8                     l1816:	
+  1073                           	; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-s
+                                 witches
+  1074                           ; Switch size 1, requested type "space"
+  1075                           ; Number of cases is 1, Range of values is 0 to 0
+  1076                           ; switch strategies available:
+  1077                           ; Name         Instructions Cycles
+  1078                           ; simple_byte            4     3 (average)
+  1079                           ; direct_byte           11     8 (fixed)
+  1080                           ; jumptable            260     6 (fixed)
+  1081                           ; rangetable             5     6 (fixed)
+  1082                           ; spacedrange            8     9 (fixed)
+  1083                           ; locatedrange           1     3 (fixed)
+  1084                           ;	Chosen strategy is simple_byte
+  1085                           
+  1086  07C8  0871               	movf (Seg_Display@num+1),w
+  1087                           	opt asmopt_off
+  1088  07C9  3A00               	xorlw	0^0	; case 0
+  1089  07CA  1903               	skipnz
+  1090  07CB  2FCD               	goto	l2760
+  1091  07CC  2FFF               	goto	l709
+  1092                           	opt asmopt_on
+  1093                           	
+  1094  07CD                     l2760:	
+  1095                           ; Switch size 1, requested type "space"
+  1096                           ; Number of cases is 16, Range of values is 0 to 15
+  1097                           ; switch strategies available:
+  1098                           ; Name         Instructions Cycles
+  1099                           ; simple_byte           49    25 (average)
+  1100                           ; direct_byte           56     8 (fixed)
+  1101                           ; jumptable            260     6 (fixed)
+  1102                           ; rangetable            20     6 (fixed)
+  1103                           ; spacedrange           38     9 (fixed)
+  1104                           ; locatedrange          16     3 (fixed)
+  1105                           ;	Chosen strategy is simple_byte
+  1106                           
+  1107  07CD  0870               	movf (Seg_Display@num),w
+  1108                           	opt asmopt_off
+  1109  07CE  3A00               	xorlw	0^0	; case 0
+  1110  07CF  1903               	skipnz
+  1111  07D0  2F77               	goto	l1782
+  1112  07D1  3A01               	xorlw	1^0	; case 1
+  1113  07D2  1903               	skipnz
+  1114  07D3  2F7C               	goto	l1784
+  1115  07D4  3A03               	xorlw	2^1	; case 2
+  1116  07D5  1903               	skipnz
+  1117  07D6  2F81               	goto	l1786
+  1118  07D7  3A01               	xorlw	3^2	; case 3
+  1119  07D8  1903               	skipnz
+  1120  07D9  2F86               	goto	l1788
+  1121  07DA  3A07               	xorlw	4^3	; case 4
+  1122  07DB  1903               	skipnz
+  1123  07DC  2F8B               	goto	l1790
+  1124  07DD  3A01               	xorlw	5^4	; case 5
+  1125  07DE  1903               	skipnz
+  1126  07DF  2F90               	goto	l1792
+  1127  07E0  3A03               	xorlw	6^5	; case 6
+  1128  07E1  1903               	skipnz
+  1129  07E2  2F95               	goto	l1794
+  1130  07E3  3A01               	xorlw	7^6	; case 7
+  1131  07E4  1903               	skipnz
+  1132  07E5  2F9A               	goto	l1796
+  1133  07E6  3A0F               	xorlw	8^7	; case 8
+  1134  07E7  1903               	skipnz
+  1135  07E8  2F9F               	goto	l1798
+  1136  07E9  3A01               	xorlw	9^8	; case 9
+  1137  07EA  1903               	skipnz
+  1138  07EB  2FA3               	goto	l1800
+  1139  07EC  3A03               	xorlw	10^9	; case 10
+  1140  07ED  1903               	skipnz
+  1141  07EE  2FA8               	goto	l1802
+  1142  07EF  3A01               	xorlw	11^10	; case 11
+  1143  07F0  1903               	skipnz
+  1144  07F1  2FAD               	goto	l1804
+  1145  07F2  3A07               	xorlw	12^11	; case 12
+  1146  07F3  1903               	skipnz
+  1147  07F4  2FB2               	goto	l1806
+  1148  07F5  3A01               	xorlw	13^12	; case 13
+  1149  07F6  1903               	skipnz
+  1150  07F7  2FB7               	goto	l1808
+  1151  07F8  3A03               	xorlw	14^13	; case 14
+  1152  07F9  1903               	skipnz
+  1153  07FA  2FBC               	goto	l1810
+  1154  07FB  3A01               	xorlw	15^14	; case 15
+  1155  07FC  1903               	skipnz
+  1156  07FD  2FC1               	goto	l1812
+  1157  07FE  2FFF               	goto	l709
+  1158                           	opt asmopt_on
+  1159                           
+  1160                           	line	84
+  1161                           	
+  1162  07FF                     l692:	
+  1163                           	line	85
+  1164                           	
+  1165  07FF                     l709:	
+  1166  07FF  0008               	return
+  1167                           	opt stack 0
+  1168                           GLOBAL	__end_of_Seg_Display
+  1169  0800                     	__end_of_Seg_Display:
+  1170 ;; =============== function _Seg_Display ends ============
+  1171                           
+  1172                           	signat	_Seg_Display,4216
+  1173                           	global	_Seg_Init
+  1174                           psect	text110,local,class=CODE,delta=2
+  1175                           global __ptext110
+  1176  06BB                     __ptext110:
+  1177                           
+  1178 ;; *************** function _Seg_Init *****************
+  1179 ;; Defined at:
+  1180 ;;		line 11 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_7_SEG\Seg7_lib.h"
+  1181 ;; Parameters:    Size  Location     Type
+  1182 ;;		None
+  1183 ;; Auto vars:     Size  Location     Type
+  1184 ;;		None
+  1185 ;; Return value:  Size  Location     Type
+  1186 ;;		None               void
+  1187 ;; Registers used:
+  1188 ;;		status,2
+  1189 ;; Tracked objects:
+  1190 ;;		On entry : 0/0
+  1191 ;;		On exit  : 0/0
+  1192 ;;		Unchanged: 0/0
+  1193 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1194 ;;      Params:         0       0       0       0       0
+  1195 ;;      Locals:         0       0       0       0       0
+  1196 ;;      Temps:          0       0       0       0       0
+  1197 ;;      Totals:         0       0       0       0       0
+  1198 ;;Total ram usage:        0 bytes
+  1199 ;; Hardware stack levels used:    1
+  1200 ;; This function calls:
+  1201 ;;		Nothing
+  1202 ;; This function is called by:
+  1203 ;;		_main
+  1204 ;; This function uses a non-reentrant model
+  1205 ;;
+  1206                           psect	text110
+  1207                           	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_7_SEG\Seg
+                                 7_lib.h"
+  1208                           	line	11
+  1209                           	global	__size_of_Seg_Init
+  1210  0004                     	__size_of_Seg_Init	equ	__end_of_Seg_Init-_Seg_Init
+  1211                           	
+  1212  06BB                     _Seg_Init:	
+  1213                           	opt	stack 7
+  1214                           ; Regs used in _Seg_Init: [status,2]
+  1215                           	line	12
+  1216                           	
+  1217  06BB                     l1778:	
+  1218                           ;Seg7_lib.h: 12: TRISC = 0b00000000;
+  1219  06BB  1683               	bsf	status, 5	;RP0=1, select bank1
+  1220  06BC  1303               	bcf	status, 6	;RP1=0, select bank1
+  1221  06BD  0187               	clrf	(135)^080h	;volatile
+  1222                           	line	13
+  1223                           	
+  1224  06BE                     l687:	
+  1225  06BE  0008               	return
+  1226                           	opt stack 0
+  1227                           GLOBAL	__end_of_Seg_Init
+  1228  06BF                     	__end_of_Seg_Init:
+  1229 ;; =============== function _Seg_Init ends ============
+  1230                           
+  1231                           	signat	_Seg_Init,88
+  1232                           psect	text111,local,class=CODE,delta=2
+  1233                           global __ptext111
+  1234  0000                     __ptext111:
+  1235                           	global	btemp
+  1236  007E                     	btemp set 07Eh
+  1237                           
+  1238                           	DABS	1,126,2	;btemp
+  1239                           	global	wtemp0
+  1240  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.82 build 9453 
+Symbol Table                                                                                   Tue Dec 28 18:29:03 2021
+
+                  _RD 0C60                    _WR 0C61                   l700 079F                   l701 07A3  
+                 l702 07A8                   l703 07AD                   l704 07B2                   l712 06C7  
+                 l720 0737                   l705 07B7                   l721 073E                   l706 07BC  
+                 l722 0754                   l730 06EE                   l707 07C1                   l723 075D  
+                 l715 06FE                   l731 06EE                   l708 07C6                   l724 0765  
+                 l716 0707                   l709 07FF                   l725 0775                   l717 070F  
+                 l718 0725                   l719 072E                   l728 06D3                   l729 06ED  
+                 l690 07C8                   l691 0777                   l692 07FF                   l693 077C  
+                 l694 0781                   l687 06BE                   l695 0786                   l696 078B  
+                 l697 0790                   l698 0795                   l699 079A                   _GIE 005F  
+                 _RB3 0033                   _RB4 0034                   _RB5 0035                   _RB6 0036  
+        ?_KEYPAD_INIT 0070          ?_KEYPAD_KEYS 0072                  l1800 07A3                  l1810 07BC  
+                l1802 07A8                  l1812 07C1                  l1804 07AD                  l2700 0725  
+                l1814 07C7                  l1806 07B2                  l1822 06C3                  l2710 073B  
+                l2702 0729                  l1808 07B7                  l1816 07C8                  l2720 0754  
+                l2712 073E                  l2704 072E                  l2730 0775                  l2722 0758  
+                l2714 0747                  l2706 0732                  l1780 0776                  l2724 075D  
+                l2716 074B                  l2708 0737                  l2732 06C8                  l1790 078B  
+                l1782 0777                  l2726 0761                  l2718 074F                  l2734 06CD  
+                l2760 07CD                  l1792 0790                  l1784 077C                  l2728 076E  
+                l2736 06D3                  l1778 06BB                  l1794 0795                  l1786 0781  
+                l2690 0702                  l2682 06F1                  l2738 06E3                  l1796 079A  
+                l1788 0786                  l2692 0707                  l2684 06F5                  l1798 079F  
+                l2694 070B                  l2686 06F9                  l2696 071C                  l2688 06FE  
+                l2698 0720                  u2300 0758                  u2220 06F9                  u2301 0757  
+                u2221 06F8                  u2310 0761                  u2230 0702                  u2311 0760  
+                u2231 0701                  u2240 070B                  u2241 070A                  u2250 0720  
+                u2251 071F                  u2260 0729                  u2261 0728                  u2270 0732  
+                u2271 0731                  u2327 06E7                  u2280 073B                  u2281 073A  
+                u2337 0713                  u2290 074F                  u2291 074E                  u2347 0742  
+                u2357 0769                  _WREN 0C62                  _main 06C8                  btemp 007E  
+                start 0000                 ?_main 0070                 _EEADR 010D                 _CARRY 0018  
+               _PORTB 0006                 _PORTC 0007                 _TRISB 0086                 _TRISC 0087  
+       ??_Seg_Display 0072                 status 0003                 wtemp0 007E          __end_of_main 06F1  
+    __end_of_Seg_Init 06BF                ??_main 0078                _EEDATA 010C                _EECON1 018C  
+              _EECON2 018D   __end_of_Seg_Display 0800  __size_of_KEYPAD_INIT 0005  __size_of_KEYPAD_KEYS 0085  
+      __pcstackCOMMON 0070           _Seg_Display 0776             ?_Seg_Init 0070        Seg_Display@num 0070  
+          __pmaintext 06C8     KEYPAD_KEYS@number 0076            ??_Seg_Init 0070  end_of_initialization 06BF  
+ start_initialization 06BF         ??_KEYPAD_INIT 0070         ??_KEYPAD_KEYS 0074          ?_Seg_Display 0070  
+   __size_of_Seg_Init 0004   __end_of_KEYPAD_INIT 06C8   __end_of_KEYPAD_KEYS 0776             __ptext110 06BB  
+           __ptext111 0000             __ptext106 0000             __ptext107 06F1             __ptext108 06C3  
+           __ptext109 0776           _KEYPAD_INIT 06C3           _KEYPAD_KEYS 06F1  __size_of_Seg_Display 008A  
+            _Seg_Init 06BB         __size_of_main 0029  

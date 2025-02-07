@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\www\Desktop\PIC16F877A\RANDOM_NUMBERS\Main.c"
+# 1 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\RANDOM_NUMBERS\Main.c"
 
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
@@ -1215,7 +1215,7 @@ extern char * utoa(char * buf, unsigned val, int base);
 extern char * ltoa(char * buf, long val, int base);
 extern char * ultoa(char * buf, unsigned long val, int base);
 
-# 11 "C:\Users\www\Desktop\PIC16F877A\RANDOM_NUMBERS\Seg7_lib.h"
+# 11 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\RANDOM_NUMBERS\Seg7_lib.h"
 void Seg_Init(){
 TRISC0 = 0x00;
 TRISC1 = 0x00;
@@ -1312,14 +1312,14 @@ extern struct tm * localtime(const time_t *);
 extern time_t mktime(struct tm *);
 extern size_t strftime(char *, size_t, const char *, const struct tm *);
 
-# 5 "C:\Users\www\Desktop\PIC16F877A\RANDOM_NUMBERS\Rand_num.h"
+# 5 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\RANDOM_NUMBERS\Rand_num.h"
 int Random_num(const unsigned int min ,const unsigned int max){
 unsigned int number;
 number = ((unsigned int)rand()%(max-min+1))+min;
 return number;
 }
 
-# 11 "C:\Users\www\Desktop\PIC16F877A\RANDOM_NUMBERS\Main.c"
+# 11 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\RANDOM_NUMBERS\Main.c"
 int main(void){
 Seg_Init();
 while(0x01){

@@ -364,7 +364,7 @@ __pmaintext:
 
 ;; *************** function _main *****************
 ;; Defined at:
-;;		line 11 in file "C:\Users\www\Desktop\PIC16F877A\RANDOM_NUMBERS\Main.c"
+;;		line 11 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\RANDOM_NUMBERS\Main.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -393,7 +393,7 @@ __pmaintext:
 ;; This function uses a non-reentrant model
 ;;
 psect	maintext
-	file	"C:\Users\www\Desktop\PIC16F877A\RANDOM_NUMBERS\Main.c"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\RANDOM_NUMBERS\Main.c"
 	line	11
 	global	__size_of_main
 	__size_of_main	equ	__end_of_main-_main
@@ -488,7 +488,7 @@ __ptext211:
 
 ;; *************** function _Random_num *****************
 ;; Defined at:
-;;		line 5 in file "C:\Users\www\Desktop\PIC16F877A\RANDOM_NUMBERS\Rand_num.h"
+;;		line 5 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\RANDOM_NUMBERS\Rand_num.h"
 ;; Parameters:    Size  Location     Type
 ;;  min             2   18[BANK0 ] const unsigned int 
 ;;  max             2   20[BANK0 ] const unsigned int 
@@ -518,7 +518,7 @@ __ptext211:
 ;; This function uses a non-reentrant model
 ;;
 psect	text211
-	file	"C:\Users\www\Desktop\PIC16F877A\RANDOM_NUMBERS\Rand_num.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\RANDOM_NUMBERS\Rand_num.h"
 	line	5
 	global	__size_of_Random_num
 	__size_of_Random_num	equ	__end_of_Random_num-_Random_num
@@ -1197,7 +1197,7 @@ __ptext216:
 
 ;; *************** function _Seg_Display *****************
 ;; Defined at:
-;;		line 22 in file "C:\Users\www\Desktop\PIC16F877A\RANDOM_NUMBERS\Seg7_lib.h"
+;;		line 22 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\RANDOM_NUMBERS\Seg7_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;  num             2    5[BANK0 ] int 
 ;; Auto vars:     Size  Location     Type
@@ -1224,7 +1224,7 @@ __ptext216:
 ;; This function uses a non-reentrant model
 ;;
 psect	text216
-	file	"C:\Users\www\Desktop\PIC16F877A\RANDOM_NUMBERS\Seg7_lib.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\RANDOM_NUMBERS\Seg7_lib.h"
 	line	22
 	global	__size_of_Seg_Display
 	__size_of_Seg_Display	equ	__end_of_Seg_Display-_Seg_Display
@@ -1492,7 +1492,7 @@ __ptext217:
 
 ;; *************** function _Seg_Init *****************
 ;; Defined at:
-;;		line 11 in file "C:\Users\www\Desktop\PIC16F877A\RANDOM_NUMBERS\Seg7_lib.h"
+;;		line 11 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\RANDOM_NUMBERS\Seg7_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -1519,7 +1519,7 @@ __ptext217:
 ;; This function uses a non-reentrant model
 ;;
 psect	text217
-	file	"C:\Users\www\Desktop\PIC16F877A\RANDOM_NUMBERS\Seg7_lib.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\RANDOM_NUMBERS\Seg7_lib.h"
 	line	11
 	global	__size_of_Seg_Init
 	__size_of_Seg_Init	equ	__end_of_Seg_Init-_Seg_Init

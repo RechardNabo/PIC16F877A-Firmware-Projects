@@ -175,7 +175,7 @@ psect	maintext
 
 ;; *************** function _main *****************
 ;; Defined at:
-;;		line 7 in file "C:\Users\www\Desktop\PIC16F877A\LED_FLASHING\Main.c"
+;;		line 7 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\LED_FLASHING\Main.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -201,7 +201,7 @@ psect	maintext
 ;; This function uses a non-reentrant model
 ;;
 psect	maintext
-	file	"C:\Users\www\Desktop\PIC16F877A\LED_FLASHING\Main.c"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\LED_FLASHING\Main.c"
 	line	7
 	global	__size_of_main
 	__size_of_main	equ	__end_of_main-_main

@@ -33,14 +33,13 @@ file_001=no
 file_000=no
 file_001=no
 [FILE_INFO]
-file_000=Main.c
+file_000=C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Main.c
 file_001=C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Seg7_lib.h
 [SUITE_INFO]
 suite_guid={507D93FD-16F1-4270-980F-0C7C0207E6D3}
 suite_state=
 [TOOL_SETTINGS]
-TS{3FF1D5F2-E530-4850-9F70-F61D55BD1AC9}=C9=1
-TS{3FF1D5F2-E530-4850-9F70-F61D55BD1AC9}_alt=yes
+TS{3FF1D5F2-E530-4850-9F70-F61D55BD1AC9}= C9=1
 [INSTRUMENTED_TRACE]
 enable=0
 transport=0

@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\www\Desktop\PIC16F877A\LED\Main.c"
+# 1 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\LED\Main.c"
 
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
@@ -1154,7 +1154,7 @@ extern int vsscanf(const char *, const char *, va_list);
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 6 "C:\Users\www\Desktop\PIC16F877A\LED\Main.c"
+# 6 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\LED\Main.c"
 void main(){
 TRISB = 0b11111101;
 while(0x01){

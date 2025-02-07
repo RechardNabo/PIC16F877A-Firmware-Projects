@@ -1,5 +1,5 @@
-_main: CODE, 1829 0 18
-_Seg_Init: CODE, 1818 0 11
+_main: CODE, 1821 0 16
+_Seg_Init: CODE, 1810 0 11
+_Down_count: CODE, 1837 0 73
 _Seg_Display: CODE, 1910 0 138
-_count: CODE, 1847 0 63
-Total: 230
+Total: 238

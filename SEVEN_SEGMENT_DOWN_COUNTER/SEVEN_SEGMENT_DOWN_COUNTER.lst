@@ -1,0 +1,1012 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.82 build 9453 
+                                                                                               Thu Dec 23 20:55:02 2021
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 9453
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 9453"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F877A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           	FNCALL	_main,_Seg_Init
+    43                           	FNCALL	_main,_Down_count
+    44                           	FNCALL	_Down_count,_Seg_Display
+    45                           	FNROOT	_main
+    46                           	global	_PORTC
+    47                           psect	text89,local,class=CODE,delta=2
+    48                           global __ptext89
+    49  0000                     __ptext89:
+    50  0007                     _PORTC	set	7
+    51                           	global	_CARRY
+    52  0018                     _CARRY	set	24
+    53                           	global	_GIE
+    54  005F                     _GIE	set	95
+    55                           	global	_TRISC0
+    56  0438                     _TRISC0	set	1080
+    57                           	global	_TRISC1
+    58  0439                     _TRISC1	set	1081
+    59                           	global	_TRISC2
+    60  043A                     _TRISC2	set	1082
+    61                           	global	_TRISC3
+    62  043B                     _TRISC3	set	1083
+    63                           	global	_TRISC4
+    64  043C                     _TRISC4	set	1084
+    65                           	global	_TRISC5
+    66  043D                     _TRISC5	set	1085
+    67                           	global	_TRISC6
+    68  043E                     _TRISC6	set	1086
+    69                           	global	_TRISC7
+    70  043F                     _TRISC7	set	1087
+    71                           	global	_EEADR
+    72  010D                     _EEADR	set	269
+    73                           	global	_EEDATA
+    74  010C                     _EEDATA	set	268
+    75                           	global	_EECON1
+    76  018C                     _EECON1	set	396
+    77                           	global	_EECON2
+    78  018D                     _EECON2	set	397
+    79                           	global	_RD
+    80  0C60                     _RD	set	3168
+    81                           	global	_WR
+    82  0C61                     _WR	set	3169
+    83                           	global	_WREN
+    84  0C62                     _WREN	set	3170
+    85                           	file	"SEVEN_SEGMENT_DOWN_COUNTER.as"
+    86                           	line	#
+    87                           psect cinit,class=CODE,delta=2
+    88                           global start_initialization
+    89  070E                     start_initialization:
+    90                           
+    91                           psect cinit,class=CODE,delta=2
+    92                           global end_of_initialization
+    93                           
+    94                           ;End of C runtime variable initialization code
+    95                           
+    96  070E                     end_of_initialization:
+    97  070E  0183               clrf status
+    98  070F  120A  118A  2F1D   ljmp _main	;jump to C main() function
+    99                           psect	cstackCOMMON,class=COMMON,space=1
+   100                           global __pcstackCOMMON
+   101  0070                     __pcstackCOMMON:
+   102                           	global	?_Seg_Init
+   103  0070                     ?_Seg_Init:	; 0 bytes @ 0x0
+   104                           	global	??_Seg_Init
+   105  0070                     ??_Seg_Init:	; 0 bytes @ 0x0
+   106                           	global	?_Seg_Display
+   107  0070                     ?_Seg_Display:	; 0 bytes @ 0x0
+   108                           	global	?_Down_count
+   109  0070                     ?_Down_count:	; 0 bytes @ 0x0
+   110                           	global	?_main
+   111  0070                     ?_main:	; 2 bytes @ 0x0
+   112                           	global	Seg_Display@num
+   113  0070                     Seg_Display@num:	; 2 bytes @ 0x0
+   114  0070                     	ds	2
+   115                           	global	??_Seg_Display
+   116  0072                     ??_Seg_Display:	; 0 bytes @ 0x2
+   117                           	global	??_Down_count
+   118  0072                     ??_Down_count:	; 0 bytes @ 0x2
+   119  0072                     	ds	3
+   120                           	global	Down_count@x
+   121  0075                     Down_count@x:	; 2 bytes @ 0x5
+   122  0075                     	ds	2
+   123                           	global	??_main
+   124  0077                     ??_main:	; 0 bytes @ 0x7
+   125 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 0 stack 0
+   126 ;;Auto spaces:   Size  Autos    Used
+   127 ;; COMMON          14      7       7
+   128 ;; BANK0           80      0       0
+   129 ;; BANK1           80      0       0
+   130 ;; BANK3           96      0       0
+   131 ;; BANK2           96      0       0
+   132                           
+   133 ;;
+   134 ;; Pointer list with targets:
+   135                           
+   136                           
+   137                           
+   138 ;;
+   139 ;; Critical Paths under _main in COMMON
+   140 ;;
+   141 ;;   _main->_Down_count
+   142 ;;   _Down_count->_Seg_Display
+   143 ;;
+   144 ;; Critical Paths under _main in BANK0
+   145 ;;
+   146 ;;   None.
+   147 ;;
+   148 ;; Critical Paths under _main in BANK1
+   149 ;;
+   150 ;;   None.
+   151 ;;
+   152 ;; Critical Paths under _main in BANK3
+   153 ;;
+   154 ;;   None.
+   155 ;;
+   156 ;; Critical Paths under _main in BANK2
+   157 ;;
+   158 ;;   None.
+   159                           
+   160 ;;
+   161 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   162 ;;
+   163                           
+   164 ;;
+   165 ;;Call Graph Tables:
+   166 ;;
+   167 ;; ---------------------------------------------------------------------------------
+   168 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   169 ;; ---------------------------------------------------------------------------------
+   170 ;; (0) _main                                                 0     0      0      75
+   171 ;;                           _Seg_Init
+   172 ;;                         _Down_count
+   173 ;; ---------------------------------------------------------------------------------
+   174 ;; (1) _Down_count                                           5     5      0      75
+   175 ;;                                              2 COMMON     5     5      0
+   176 ;;                        _Seg_Display
+   177 ;; ---------------------------------------------------------------------------------
+   178 ;; (2) _Seg_Display                                          2     0      2      15
+   179 ;;                                              0 COMMON     2     0      2
+   180 ;; ---------------------------------------------------------------------------------
+   181 ;; (1) _Seg_Init                                             0     0      0       0
+   182 ;; ---------------------------------------------------------------------------------
+   183 ;; Estimated maximum stack depth 2
+   184 ;; ---------------------------------------------------------------------------------
+   185                           
+   186 ;; Call Graph Graphs:
+   187                           
+   188 ;; _main (ROOT)
+   189 ;;   _Seg_Init
+   190 ;;   _Down_count
+   191 ;;     _Seg_Display
+   192 ;;
+   193                           
+   194 ;; Address spaces:
+   195                           
+   196 ;;Name               Size   Autos  Total    Cost      Usage
+   197 ;;BITCOMMON            E      0       0       0        0.0%
+   198 ;;EEDATA             100      0       0       0        0.0%
+   199 ;;NULL                 0      0       0       0        0.0%
+   200 ;;CODE                 0      0       0       0        0.0%
+   201 ;;COMMON               E      7       7       1       50.0%
+   202 ;;BITSFR0              0      0       0       1        0.0%
+   203 ;;SFR0                 0      0       0       1        0.0%
+   204 ;;BITSFR1              0      0       0       2        0.0%
+   205 ;;SFR1                 0      0       0       2        0.0%
+   206 ;;STACK                0      0       2       2        0.0%
+   207 ;;ABS                  0      0       0       3        0.0%
+   208 ;;BITBANK0            50      0       0       4        0.0%
+   209 ;;BITSFR3              0      0       0       4        0.0%
+   210 ;;SFR3                 0      0       0       4        0.0%
+   211 ;;BANK0               50      0       0       5        0.0%
+   212 ;;BITSFR2              0      0       0       5        0.0%
+   213 ;;SFR2                 0      0       0       5        0.0%
+   214 ;;BITBANK1            50      0       0       6        0.0%
+   215 ;;BANK1               50      0       0       7        0.0%
+   216 ;;BITBANK3            60      0       0       8        0.0%
+   217 ;;BANK3               60      0       0       9        0.0%
+   218 ;;BITBANK2            60      0       0      10        0.0%
+   219 ;;BANK2               60      0       0      11        0.0%
+   220 ;;DATA                 0      0       0      12        0.0%
+   221                           
+   222                           	global	_main
+   223                           psect	maintext,global,class=CODE,delta=2
+   224                           global __pmaintext
+   225  071D                     __pmaintext:
+   226                           
+   227 ;; *************** function _main *****************
+   228 ;; Defined at:
+   229 ;;		line 9 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Main.c"
+   230 ;; Parameters:    Size  Location     Type
+   231 ;;		None
+   232 ;; Auto vars:     Size  Location     Type
+   233 ;;		None
+   234 ;; Return value:  Size  Location     Type
+   235 ;;                  2  724[COMMON] int 
+   236 ;; Registers used:
+   237 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   238 ;; Tracked objects:
+   239 ;;		On entry : 17F/0
+   240 ;;		On exit  : 0/0
+   241 ;;		Unchanged: 0/0
+   242 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   243 ;;      Params:         0       0       0       0       0
+   244 ;;      Locals:         0       0       0       0       0
+   245 ;;      Temps:          0       0       0       0       0
+   246 ;;      Totals:         0       0       0       0       0
+   247 ;;Total ram usage:        0 bytes
+   248 ;; Hardware stack levels required when called:    2
+   249 ;; This function calls:
+   250 ;;		_Seg_Init
+   251 ;;		_Down_count
+   252 ;; This function is called by:
+   253 ;;		Startup code after reset
+   254 ;; This function uses a non-reentrant model
+   255 ;;
+   256                           psect	maintext
+   257                           	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUN
+                                 TER\Main.c"
+   258                           	line	9
+   259                           	global	__size_of_main
+   260  0010                     	__size_of_main	equ	__end_of_main-_main
+   261                           	
+   262  071D                     _main:	
+   263                           	opt	stack 6
+   264                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   265                           	line	10
+   266                           	
+   267  071D                     l2707:	
+   268                           ;Main.c: 10: Seg_Init();
+   269  071D  120A  118A  2712   	fcall	_Seg_Init
+              120A  118A         
+   270  0722  2F23               	goto	l2709
+   271                           	line	11
+   272                           ;Main.c: 11: while(0x01){
+   273                           	
+   274  0723                     l725:	
+   275                           	line	12
+   276                           	
+   277  0723                     l2709:	
+   278                           ;Main.c: 12: Down_count();
+   279  0723  120A  118A  272D   	fcall	_Down_count
+              120A  118A         
+   280  0728  2F23               	goto	l2709
+   281                           	line	13
+   282                           	
+   283  0729                     l726:	
+   284                           	line	11
+   285  0729  2F23               	goto	l2709
+   286                           	
+   287  072A                     l727:	
+   288                           	line	15
+   289                           ;Main.c: 13: }
+   290                           ;Main.c: 14: return 0;
+   291                           ;	Return value of _main is never used
+   292                           	
+   293  072A                     l728:	
+   294                           	global	start
+   295  072A  120A  118A  2800   	ljmp	start
+   296                           	opt stack 0
+   297                           GLOBAL	__end_of_main
+   298  072D                     	__end_of_main:
+   299 ;; =============== function _main ends ============
+   300                           
+   301                           	signat	_main,90
+   302                           	global	_Down_count
+   303                           psect	text90,local,class=CODE,delta=2
+   304                           global __ptext90
+   305  072D                     __ptext90:
+   306                           
+   307 ;; *************** function _Down_count *****************
+   308 ;; Defined at:
+   309 ;;		line 103 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Seg7_lib.h"
+   310 ;; Parameters:    Size  Location     Type
+   311 ;;		None
+   312 ;; Auto vars:     Size  Location     Type
+   313 ;;  x               2    5[COMMON] int 
+   314 ;; Return value:  Size  Location     Type
+   315 ;;		None               void
+   316 ;; Registers used:
+   317 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   318 ;; Tracked objects:
+   319 ;;		On entry : 0/0
+   320 ;;		On exit  : 0/0
+   321 ;;		Unchanged: 0/0
+   322 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   323 ;;      Params:         0       0       0       0       0
+   324 ;;      Locals:         2       0       0       0       0
+   325 ;;      Temps:          3       0       0       0       0
+   326 ;;      Totals:         5       0       0       0       0
+   327 ;;Total ram usage:        5 bytes
+   328 ;; Hardware stack levels used:    1
+   329 ;; Hardware stack levels required when called:    1
+   330 ;; This function calls:
+   331 ;;		_Seg_Display
+   332 ;; This function is called by:
+   333 ;;		_main
+   334 ;; This function uses a non-reentrant model
+   335 ;;
+   336                           psect	text90
+   337                           	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUN
+                                 TER\Seg7_lib.h"
+   338                           	line	103
+   339                           	global	__size_of_Down_count
+   340  0049                     	__size_of_Down_count	equ	__end_of_Down_count-_Down_count
+   341                           	
+   342  072D                     _Down_count:	
+   343                           	opt	stack 6
+   344                           ; Regs used in _Down_count: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   345                           	line	104
+   346                           	
+   347  072D                     l2691:	
+   348                           ;Seg7_lib.h: 104: int x = 0x0F;
+   349  072D  300F               	movlw	low(0Fh)
+   350  072E  00F5               	movwf	(Down_count@x)
+   351  072F  3000               	movlw	high(0Fh)
+   352  0730  00F6               	movwf	((Down_count@x))+1
+   353                           	line	105
+   354                           	
+   355  0731                     l2693:	
+   356  0731  0876               	movf	(Down_count@x+1),w
+   357  0732  3A80               	xorlw	80h
+   358  0733  00FF               	movwf	btemp+1
+   359  0734  3080               	movlw	(high(01h))^80h
+   360  0735  027F               	subwf	btemp+1,w
+   361  0736  1D03               	skipz
+   362  0737  2F3A               	goto	u2245
+   363  0738  3001               	movlw	low(01h)
+   364  0739  0275               	subwf	(Down_count@x),w
+   365  073A                     u2245:
+   366                           
+   367  073A  1803               	skipnc
+   368  073B  2F3D               	goto	u2241
+   369  073C  2F3E               	goto	u2240
+   370  073D                     u2241:
+   371  073D  2F40               	goto	l719
+   372  073E                     u2240:
+   373  073E  2F75               	goto	l722
+   374                           	
+   375  073F                     l2695:	
+   376  073F  2F75               	goto	l722
+   377                           	
+   378  0740                     l719:	
+   379                           	line	106
+   380                           ;Seg7_lib.h: 106: if(x < 0x00){x=0x0F;}
+   381  0740  1FF6               	btfss	(Down_count@x+1),7
+   382  0741  2F43               	goto	u2251
+   383  0742  2F44               	goto	u2250
+   384  0743                     u2251:
+   385  0743  2F49               	goto	l2699
+   386  0744                     u2250:
+   387                           	
+   388  0744                     l2697:	
+   389  0744  300F               	movlw	low(0Fh)
+   390  0745  00F5               	movwf	(Down_count@x)
+   391  0746  3000               	movlw	high(0Fh)
+   392  0747  00F6               	movwf	((Down_count@x))+1
+   393  0748  2F49               	goto	l2699
+   394                           	
+   395  0749                     l721:	
+   396                           	line	107
+   397                           	
+   398  0749                     l2699:	
+   399                           ;Seg7_lib.h: 107: Seg_Display(x);
+   400  0749  0876               	movf	(Down_count@x+1),w
+   401  074A  01F1               	clrf	(?_Seg_Display+1)
+   402  074B  07F1               	addwf	(?_Seg_Display+1)
+   403  074C  0875               	movf	(Down_count@x),w
+   404  074D  01F0               	clrf	(?_Seg_Display)
+   405  074E  07F0               	addwf	(?_Seg_Display)
+   406                           
+   407  074F  120A  118A  2776   	fcall	_Seg_Display
+              120A  118A         
+   408                           	line	108
+   409                           	
+   410  0754                     l2701:	
+   411                           ;Seg7_lib.h: 108: _delay((unsigned long)((500)*(20000000/4000.0)));
+   412                           	opt asmopt_off
+   413  0754  300D               movlw  13
+   414  0755  00F4               movwf	((??_Down_count+0)+0+2),f
+   415  0756  30AF               movlw	175
+   416  0757  00F3               movwf	((??_Down_count+0)+0+1),f
+   417  0758  30C1               	movlw	193
+   418  0759  00F2               movwf	((??_Down_count+0)+0),f
+   419  075A                     u2277:
+   420  075A  0BF2               	decfsz	((??_Down_count+0)+0),f
+   421  075B  2F5A               	goto	u2277
+   422  075C  0BF3               	decfsz	((??_Down_count+0)+0+1),f
+   423  075D  2F5A               	goto	u2277
+   424  075E  0BF4               	decfsz	((??_Down_count+0)+0+2),f
+   425  075F  2F5A               	goto	u2277
+   426  0760  0064               	clrwdt
+   427                           opt asmopt_on
+   428                           
+   429                           	line	105
+   430                           	
+   431  0761                     l2703:	
+   432  0761  30FF               	movlw	low(-1)
+   433  0762  07F5               	addwf	(Down_count@x),f
+   434  0763  1803               	skipnc
+   435  0764  0AF6               	incf	(Down_count@x+1),f
+   436  0765  30FF               	movlw	high(-1)
+   437  0766  07F6               	addwf	(Down_count@x+1),f
+   438                           	
+   439  0767                     l2705:	
+   440  0767  0876               	movf	(Down_count@x+1),w
+   441  0768  3A80               	xorlw	80h
+   442  0769  00FF               	movwf	btemp+1
+   443  076A  3080               	movlw	(high(01h))^80h
+   444  076B  027F               	subwf	btemp+1,w
+   445  076C  1D03               	skipz
+   446  076D  2F70               	goto	u2265
+   447  076E  3001               	movlw	low(01h)
+   448  076F  0275               	subwf	(Down_count@x),w
+   449  0770                     u2265:
+   450                           
+   451  0770  1803               	skipnc
+   452  0771  2F73               	goto	u2261
+   453  0772  2F74               	goto	u2260
+   454  0773                     u2261:
+   455  0773  2F40               	goto	l719
+   456  0774                     u2260:
+   457  0774  2F75               	goto	l722
+   458                           	
+   459  0775                     l720:	
+   460                           	line	110
+   461                           	
+   462  0775                     l722:	
+   463  0775  0008               	return
+   464                           	opt stack 0
+   465                           GLOBAL	__end_of_Down_count
+   466  0776                     	__end_of_Down_count:
+   467 ;; =============== function _Down_count ends ============
+   468                           
+   469                           	signat	_Down_count,88
+   470                           	global	_Seg_Display
+   471                           psect	text91,local,class=CODE,delta=2
+   472                           global __ptext91
+   473  0776                     __ptext91:
+   474                           
+   475 ;; *************** function _Seg_Display *****************
+   476 ;; Defined at:
+   477 ;;		line 23 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Seg7_lib.h"
+   478 ;; Parameters:    Size  Location     Type
+   479 ;;  num             2    0[COMMON] int 
+   480 ;; Auto vars:     Size  Location     Type
+   481 ;;		None
+   482 ;; Return value:  Size  Location     Type
+   483 ;;		None               void
+   484 ;; Registers used:
+   485 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+   486 ;; Tracked objects:
+   487 ;;		On entry : 0/0
+   488 ;;		On exit  : 0/0
+   489 ;;		Unchanged: 0/0
+   490 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   491 ;;      Params:         2       0       0       0       0
+   492 ;;      Locals:         0       0       0       0       0
+   493 ;;      Temps:          0       0       0       0       0
+   494 ;;      Totals:         2       0       0       0       0
+   495 ;;Total ram usage:        2 bytes
+   496 ;; Hardware stack levels used:    1
+   497 ;; This function calls:
+   498 ;;		Nothing
+   499 ;; This function is called by:
+   500 ;;		_Down_count
+   501 ;;		_Up_count
+   502 ;; This function uses a non-reentrant model
+   503 ;;
+   504                           psect	text91
+   505                           	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUN
+                                 TER\Seg7_lib.h"
+   506                           	line	23
+   507                           	global	__size_of_Seg_Display
+   508  008A                     	__size_of_Seg_Display	equ	__end_of_Seg_Display-_Seg_Display
+   509                           	
+   510  0776                     _Seg_Display:	
+   511                           	opt	stack 6
+   512                           ; Regs used in _Seg_Display: [wreg-fsr0h+status,2+status,0]
+   513                           	line	24
+   514                           	
+   515  0776                     l1777:	
+   516                           ;Seg7_lib.h: 24: switch(num){
+   517  0776  2FC8               	goto	l1813
+   518                           	line	26
+   519                           ;Seg7_lib.h: 26: case 0x00:
+   520                           	
+   521  0777                     l691:	
+   522                           	line	27
+   523                           	
+   524  0777                     l1779:	
+   525                           ;Seg7_lib.h: 27: PORTC = 0b01000000;
+   526  0777  3040               	movlw	(040h)
+   527  0778  1283               	bcf	status, 5	;RP0=0, select bank0
+   528  0779  1303               	bcf	status, 6	;RP1=0, select bank0
+   529  077A  0087               	movwf	(7)	;volatile
+   530                           	line	28
+   531                           ;Seg7_lib.h: 28: break;
+   532  077B  2FFF               	goto	l709
+   533                           	line	30
+   534                           ;Seg7_lib.h: 30: case 0x01:
+   535                           	
+   536  077C                     l693:	
+   537                           	line	31
+   538                           	
+   539  077C                     l1781:	
+   540                           ;Seg7_lib.h: 31: PORTC = 0b01111001;
+   541  077C  3079               	movlw	(079h)
+   542  077D  1283               	bcf	status, 5	;RP0=0, select bank0
+   543  077E  1303               	bcf	status, 6	;RP1=0, select bank0
+   544  077F  0087               	movwf	(7)	;volatile
+   545                           	line	32
+   546                           ;Seg7_lib.h: 32: break;
+   547  0780  2FFF               	goto	l709
+   548                           	line	34
+   549                           ;Seg7_lib.h: 34: case 0x02:
+   550                           	
+   551  0781                     l694:	
+   552                           	line	35
+   553                           	
+   554  0781                     l1783:	
+   555                           ;Seg7_lib.h: 35: PORTC = 0b00100100;
+   556  0781  3024               	movlw	(024h)
+   557  0782  1283               	bcf	status, 5	;RP0=0, select bank0
+   558  0783  1303               	bcf	status, 6	;RP1=0, select bank0
+   559  0784  0087               	movwf	(7)	;volatile
+   560                           	line	36
+   561                           ;Seg7_lib.h: 36: break;
+   562  0785  2FFF               	goto	l709
+   563                           	line	38
+   564                           ;Seg7_lib.h: 38: case 0x03:
+   565                           	
+   566  0786                     l695:	
+   567                           	line	39
+   568                           	
+   569  0786                     l1785:	
+   570                           ;Seg7_lib.h: 39: PORTC = 0b00110000;
+   571  0786  3030               	movlw	(030h)
+   572  0787  1283               	bcf	status, 5	;RP0=0, select bank0
+   573  0788  1303               	bcf	status, 6	;RP1=0, select bank0
+   574  0789  0087               	movwf	(7)	;volatile
+   575                           	line	40
+   576                           ;Seg7_lib.h: 40: break;
+   577  078A  2FFF               	goto	l709
+   578                           	line	42
+   579                           ;Seg7_lib.h: 42: case 0x04:
+   580                           	
+   581  078B                     l696:	
+   582                           	line	43
+   583                           	
+   584  078B                     l1787:	
+   585                           ;Seg7_lib.h: 43: PORTC = 0b00011001;
+   586  078B  3019               	movlw	(019h)
+   587  078C  1283               	bcf	status, 5	;RP0=0, select bank0
+   588  078D  1303               	bcf	status, 6	;RP1=0, select bank0
+   589  078E  0087               	movwf	(7)	;volatile
+   590                           	line	44
+   591                           ;Seg7_lib.h: 44: break;
+   592  078F  2FFF               	goto	l709
+   593                           	line	46
+   594                           ;Seg7_lib.h: 46: case 0x05:
+   595                           	
+   596  0790                     l697:	
+   597                           	line	47
+   598                           	
+   599  0790                     l1789:	
+   600                           ;Seg7_lib.h: 47: PORTC = 0b00010010;
+   601  0790  3012               	movlw	(012h)
+   602  0791  1283               	bcf	status, 5	;RP0=0, select bank0
+   603  0792  1303               	bcf	status, 6	;RP1=0, select bank0
+   604  0793  0087               	movwf	(7)	;volatile
+   605                           	line	48
+   606                           ;Seg7_lib.h: 48: break;
+   607  0794  2FFF               	goto	l709
+   608                           	line	50
+   609                           ;Seg7_lib.h: 50: case 0x06:
+   610                           	
+   611  0795                     l698:	
+   612                           	line	51
+   613                           	
+   614  0795                     l1791:	
+   615                           ;Seg7_lib.h: 51: PORTC = 0b00000010;
+   616  0795  3002               	movlw	(02h)
+   617  0796  1283               	bcf	status, 5	;RP0=0, select bank0
+   618  0797  1303               	bcf	status, 6	;RP1=0, select bank0
+   619  0798  0087               	movwf	(7)	;volatile
+   620                           	line	52
+   621                           ;Seg7_lib.h: 52: break;
+   622  0799  2FFF               	goto	l709
+   623                           	line	54
+   624                           ;Seg7_lib.h: 54: case 0x07:
+   625                           	
+   626  079A                     l699:	
+   627                           	line	55
+   628                           	
+   629  079A                     l1793:	
+   630                           ;Seg7_lib.h: 55: PORTC = 0b01111000;
+   631  079A  3078               	movlw	(078h)
+   632  079B  1283               	bcf	status, 5	;RP0=0, select bank0
+   633  079C  1303               	bcf	status, 6	;RP1=0, select bank0
+   634  079D  0087               	movwf	(7)	;volatile
+   635                           	line	56
+   636                           ;Seg7_lib.h: 56: break;
+   637  079E  2FFF               	goto	l709
+   638                           	line	58
+   639                           ;Seg7_lib.h: 58: case 0x08:
+   640                           	
+   641  079F                     l700:	
+   642                           	line	59
+   643                           	
+   644  079F                     l1795:	
+   645                           ;Seg7_lib.h: 59: PORTC = 0b00000000;
+   646  079F  1283               	bcf	status, 5	;RP0=0, select bank0
+   647  07A0  1303               	bcf	status, 6	;RP1=0, select bank0
+   648  07A1  0187               	clrf	(7)	;volatile
+   649                           	line	60
+   650                           ;Seg7_lib.h: 60: break;
+   651  07A2  2FFF               	goto	l709
+   652                           	line	62
+   653                           ;Seg7_lib.h: 62: case 0x09:
+   654                           	
+   655  07A3                     l701:	
+   656                           	line	63
+   657                           	
+   658  07A3                     l1797:	
+   659                           ;Seg7_lib.h: 63: PORTC = 0b00010000;
+   660  07A3  3010               	movlw	(010h)
+   661  07A4  1283               	bcf	status, 5	;RP0=0, select bank0
+   662  07A5  1303               	bcf	status, 6	;RP1=0, select bank0
+   663  07A6  0087               	movwf	(7)	;volatile
+   664                           	line	64
+   665                           ;Seg7_lib.h: 64: break;
+   666  07A7  2FFF               	goto	l709
+   667                           	line	66
+   668                           ;Seg7_lib.h: 66: case 0x0A:
+   669                           	
+   670  07A8                     l702:	
+   671                           	line	67
+   672                           	
+   673  07A8                     l1799:	
+   674                           ;Seg7_lib.h: 67: PORTC = 0b00001000;
+   675  07A8  3008               	movlw	(08h)
+   676  07A9  1283               	bcf	status, 5	;RP0=0, select bank0
+   677  07AA  1303               	bcf	status, 6	;RP1=0, select bank0
+   678  07AB  0087               	movwf	(7)	;volatile
+   679                           	line	68
+   680                           ;Seg7_lib.h: 68: break;
+   681  07AC  2FFF               	goto	l709
+   682                           	line	70
+   683                           ;Seg7_lib.h: 70: case 0x0B:
+   684                           	
+   685  07AD                     l703:	
+   686                           	line	71
+   687                           	
+   688  07AD                     l1801:	
+   689                           ;Seg7_lib.h: 71: PORTC = 0b00000011;
+   690  07AD  3003               	movlw	(03h)
+   691  07AE  1283               	bcf	status, 5	;RP0=0, select bank0
+   692  07AF  1303               	bcf	status, 6	;RP1=0, select bank0
+   693  07B0  0087               	movwf	(7)	;volatile
+   694                           	line	72
+   695                           ;Seg7_lib.h: 72: break;
+   696  07B1  2FFF               	goto	l709
+   697                           	line	74
+   698                           ;Seg7_lib.h: 74: case 0x0C:
+   699                           	
+   700  07B2                     l704:	
+   701                           	line	75
+   702                           	
+   703  07B2                     l1803:	
+   704                           ;Seg7_lib.h: 75: PORTC = 0b01000110;
+   705  07B2  3046               	movlw	(046h)
+   706  07B3  1283               	bcf	status, 5	;RP0=0, select bank0
+   707  07B4  1303               	bcf	status, 6	;RP1=0, select bank0
+   708  07B5  0087               	movwf	(7)	;volatile
+   709                           	line	76
+   710                           ;Seg7_lib.h: 76: break;
+   711  07B6  2FFF               	goto	l709
+   712                           	line	78
+   713                           ;Seg7_lib.h: 78: case 0x0D:
+   714                           	
+   715  07B7                     l705:	
+   716                           	line	79
+   717                           	
+   718  07B7                     l1805:	
+   719                           ;Seg7_lib.h: 79: PORTC = 0b00100001;
+   720  07B7  3021               	movlw	(021h)
+   721  07B8  1283               	bcf	status, 5	;RP0=0, select bank0
+   722  07B9  1303               	bcf	status, 6	;RP1=0, select bank0
+   723  07BA  0087               	movwf	(7)	;volatile
+   724                           	line	80
+   725                           ;Seg7_lib.h: 80: break;
+   726  07BB  2FFF               	goto	l709
+   727                           	line	82
+   728                           ;Seg7_lib.h: 82: case 0x0E:
+   729                           	
+   730  07BC                     l706:	
+   731                           	line	83
+   732                           	
+   733  07BC                     l1807:	
+   734                           ;Seg7_lib.h: 83: PORTC = 0b00000110;
+   735  07BC  3006               	movlw	(06h)
+   736  07BD  1283               	bcf	status, 5	;RP0=0, select bank0
+   737  07BE  1303               	bcf	status, 6	;RP1=0, select bank0
+   738  07BF  0087               	movwf	(7)	;volatile
+   739                           	line	84
+   740                           ;Seg7_lib.h: 84: break;
+   741  07C0  2FFF               	goto	l709
+   742                           	line	86
+   743                           ;Seg7_lib.h: 86: case 0x0F:
+   744                           	
+   745  07C1                     l707:	
+   746                           	line	87
+   747                           	
+   748  07C1                     l1809:	
+   749                           ;Seg7_lib.h: 87: PORTC = 0b00001110;
+   750  07C1  300E               	movlw	(0Eh)
+   751  07C2  1283               	bcf	status, 5	;RP0=0, select bank0
+   752  07C3  1303               	bcf	status, 6	;RP1=0, select bank0
+   753  07C4  0087               	movwf	(7)	;volatile
+   754                           	line	88
+   755                           ;Seg7_lib.h: 88: break;
+   756  07C5  2FFF               	goto	l709
+   757                           	line	90
+   758                           ;Seg7_lib.h: 90: default:
+   759                           	
+   760  07C6                     l708:	
+   761                           	line	91
+   762                           ;Seg7_lib.h: 91: break;
+   763  07C6  2FFF               	goto	l709
+   764                           	line	92
+   765                           	
+   766  07C7                     l1811:	
+   767                           ;Seg7_lib.h: 92: }
+   768  07C7  2FFF               	goto	l709
+   769                           	line	24
+   770                           	
+   771  07C8                     l690:	
+   772                           	
+   773  07C8                     l1813:	
+   774                           	; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-s
+                                 witches
+   775                           ; Switch size 1, requested type "space"
+   776                           ; Number of cases is 1, Range of values is 0 to 0
+   777                           ; switch strategies available:
+   778                           ; Name         Instructions Cycles
+   779                           ; simple_byte            4     3 (average)
+   780                           ; direct_byte           11     8 (fixed)
+   781                           ; jumptable            260     6 (fixed)
+   782                           ; rangetable             5     6 (fixed)
+   783                           ; spacedrange            8     9 (fixed)
+   784                           ; locatedrange           1     3 (fixed)
+   785                           ;	Chosen strategy is simple_byte
+   786                           
+   787  07C8  0871               	movf (Seg_Display@num+1),w
+   788                           	opt asmopt_off
+   789  07C9  3A00               	xorlw	0^0	; case 0
+   790  07CA  1903               	skipnz
+   791  07CB  2FCD               	goto	l2731
+   792  07CC  2FFF               	goto	l709
+   793                           	opt asmopt_on
+   794                           	
+   795  07CD                     l2731:	
+   796                           ; Switch size 1, requested type "space"
+   797                           ; Number of cases is 16, Range of values is 0 to 15
+   798                           ; switch strategies available:
+   799                           ; Name         Instructions Cycles
+   800                           ; simple_byte           49    25 (average)
+   801                           ; direct_byte           56     8 (fixed)
+   802                           ; jumptable            260     6 (fixed)
+   803                           ; rangetable            20     6 (fixed)
+   804                           ; spacedrange           38     9 (fixed)
+   805                           ; locatedrange          16     3 (fixed)
+   806                           ;	Chosen strategy is simple_byte
+   807                           
+   808  07CD  0870               	movf (Seg_Display@num),w
+   809                           	opt asmopt_off
+   810  07CE  3A00               	xorlw	0^0	; case 0
+   811  07CF  1903               	skipnz
+   812  07D0  2F77               	goto	l1779
+   813  07D1  3A01               	xorlw	1^0	; case 1
+   814  07D2  1903               	skipnz
+   815  07D3  2F7C               	goto	l1781
+   816  07D4  3A03               	xorlw	2^1	; case 2
+   817  07D5  1903               	skipnz
+   818  07D6  2F81               	goto	l1783
+   819  07D7  3A01               	xorlw	3^2	; case 3
+   820  07D8  1903               	skipnz
+   821  07D9  2F86               	goto	l1785
+   822  07DA  3A07               	xorlw	4^3	; case 4
+   823  07DB  1903               	skipnz
+   824  07DC  2F8B               	goto	l1787
+   825  07DD  3A01               	xorlw	5^4	; case 5
+   826  07DE  1903               	skipnz
+   827  07DF  2F90               	goto	l1789
+   828  07E0  3A03               	xorlw	6^5	; case 6
+   829  07E1  1903               	skipnz
+   830  07E2  2F95               	goto	l1791
+   831  07E3  3A01               	xorlw	7^6	; case 7
+   832  07E4  1903               	skipnz
+   833  07E5  2F9A               	goto	l1793
+   834  07E6  3A0F               	xorlw	8^7	; case 8
+   835  07E7  1903               	skipnz
+   836  07E8  2F9F               	goto	l1795
+   837  07E9  3A01               	xorlw	9^8	; case 9
+   838  07EA  1903               	skipnz
+   839  07EB  2FA3               	goto	l1797
+   840  07EC  3A03               	xorlw	10^9	; case 10
+   841  07ED  1903               	skipnz
+   842  07EE  2FA8               	goto	l1799
+   843  07EF  3A01               	xorlw	11^10	; case 11
+   844  07F0  1903               	skipnz
+   845  07F1  2FAD               	goto	l1801
+   846  07F2  3A07               	xorlw	12^11	; case 12
+   847  07F3  1903               	skipnz
+   848  07F4  2FB2               	goto	l1803
+   849  07F5  3A01               	xorlw	13^12	; case 13
+   850  07F6  1903               	skipnz
+   851  07F7  2FB7               	goto	l1805
+   852  07F8  3A03               	xorlw	14^13	; case 14
+   853  07F9  1903               	skipnz
+   854  07FA  2FBC               	goto	l1807
+   855  07FB  3A01               	xorlw	15^14	; case 15
+   856  07FC  1903               	skipnz
+   857  07FD  2FC1               	goto	l1809
+   858  07FE  2FFF               	goto	l709
+   859                           	opt asmopt_on
+   860                           
+   861                           	line	92
+   862                           	
+   863  07FF                     l692:	
+   864                           	line	93
+   865                           	
+   866  07FF                     l709:	
+   867  07FF  0008               	return
+   868                           	opt stack 0
+   869                           GLOBAL	__end_of_Seg_Display
+   870  0800                     	__end_of_Seg_Display:
+   871 ;; =============== function _Seg_Display ends ============
+   872                           
+   873                           	signat	_Seg_Display,4216
+   874                           	global	_Seg_Init
+   875                           psect	text92,local,class=CODE,delta=2
+   876                           global __ptext92
+   877  0712                     __ptext92:
+   878                           
+   879 ;; *************** function _Seg_Init *****************
+   880 ;; Defined at:
+   881 ;;		line 12 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Seg7_lib.h"
+   882 ;; Parameters:    Size  Location     Type
+   883 ;;		None
+   884 ;; Auto vars:     Size  Location     Type
+   885 ;;		None
+   886 ;; Return value:  Size  Location     Type
+   887 ;;		None               void
+   888 ;; Registers used:
+   889 ;;		None
+   890 ;; Tracked objects:
+   891 ;;		On entry : 0/0
+   892 ;;		On exit  : 0/0
+   893 ;;		Unchanged: 0/0
+   894 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   895 ;;      Params:         0       0       0       0       0
+   896 ;;      Locals:         0       0       0       0       0
+   897 ;;      Temps:          0       0       0       0       0
+   898 ;;      Totals:         0       0       0       0       0
+   899 ;;Total ram usage:        0 bytes
+   900 ;; Hardware stack levels used:    1
+   901 ;; This function calls:
+   902 ;;		Nothing
+   903 ;; This function is called by:
+   904 ;;		_main
+   905 ;; This function uses a non-reentrant model
+   906 ;;
+   907                           psect	text92
+   908                           	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUN
+                                 TER\Seg7_lib.h"
+   909                           	line	12
+   910                           	global	__size_of_Seg_Init
+   911  000B                     	__size_of_Seg_Init	equ	__end_of_Seg_Init-_Seg_Init
+   912                           	
+   913  0712                     _Seg_Init:	
+   914                           	opt	stack 7
+   915                           ; Regs used in _Seg_Init: []
+   916                           	line	13
+   917                           	
+   918  0712                     l1775:	
+   919                           ;Seg7_lib.h: 13: TRISC0 = 0x00;
+   920  0712  1683               	bsf	status, 5	;RP0=1, select bank1
+   921  0713  1303               	bcf	status, 6	;RP1=0, select bank1
+   922  0714  1007               	bcf	(1080/8)^080h,(1080)&7
+   923                           	line	14
+   924                           ;Seg7_lib.h: 14: TRISC1 = 0x00;
+   925  0715  1087               	bcf	(1081/8)^080h,(1081)&7
+   926                           	line	15
+   927                           ;Seg7_lib.h: 15: TRISC2 = 0x00;
+   928  0716  1107               	bcf	(1082/8)^080h,(1082)&7
+   929                           	line	16
+   930                           ;Seg7_lib.h: 16: TRISC3 = 0x00;
+   931  0717  1187               	bcf	(1083/8)^080h,(1083)&7
+   932                           	line	17
+   933                           ;Seg7_lib.h: 17: TRISC4 = 0x00;
+   934  0718  1207               	bcf	(1084/8)^080h,(1084)&7
+   935                           	line	18
+   936                           ;Seg7_lib.h: 18: TRISC5 = 0x00;
+   937  0719  1287               	bcf	(1085/8)^080h,(1085)&7
+   938                           	line	19
+   939                           ;Seg7_lib.h: 19: TRISC6 = 0x00;
+   940  071A  1307               	bcf	(1086/8)^080h,(1086)&7
+   941                           	line	20
+   942                           ;Seg7_lib.h: 20: TRISC7 = 0x00;
+   943  071B  1387               	bcf	(1087/8)^080h,(1087)&7
+   944                           	line	21
+   945                           	
+   946  071C                     l687:	
+   947  071C  0008               	return
+   948                           	opt stack 0
+   949                           GLOBAL	__end_of_Seg_Init
+   950  071D                     	__end_of_Seg_Init:
+   951 ;; =============== function _Seg_Init ends ============
+   952                           
+   953                           	signat	_Seg_Init,88
+   954                           psect	text93,local,class=CODE,delta=2
+   955                           global __ptext93
+   956  0000                     __ptext93:
+   957                           	global	btemp
+   958  007E                     	btemp set 07Eh
+   959                           
+   960                           	DABS	1,126,2	;btemp
+   961                           	global	wtemp0
+   962  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.82 build 9453 
+Symbol Table                                                                                   Thu Dec 23 20:55:02 2021
+
+                  _RD 0C60                    _WR 0C61                   l700 079F                   l701 07A3  
+                 l702 07A8                   l703 07AD                   l704 07B2                   l720 0775  
+                 l705 07B7                   l721 0749                   l706 07BC                   l722 0775  
+                 l707 07C1                   l708 07C6                   l709 07FF                   l725 0723  
+                 l726 0729                   l719 0740                   l727 072A                   l728 072A  
+                 l690 07C8                   l691 0777                   l692 07FF                   l693 077C  
+                 l694 0781                   l687 071C                   l695 0786                   l696 078B  
+                 l697 0790                   l698 0795                   l699 079A                   _GIE 005F  
+                l1801 07AD                  l1811 07C7                  l1803 07B2                  l1805 07B7  
+                l1813 07C8                  l2701 0754                  l1807 07BC                  l2703 0761  
+                l1809 07C1                  l2705 0767                  l2731 07CD                  l2707 071D  
+                l1781 077C                  l2709 0723                  l1775 0712                  l1791 0795  
+                l1783 0781                  l1793 079A                  l1785 0786                  l1777 0776  
+                l1795 079F                  l1787 078B                  l1779 0777                  l2691 072D  
+                l1797 07A3                  l1789 0790                  l2693 0731                  l1799 07A8  
+                l2695 073F                  l2697 0744                  l2699 0749                  u2240 073E  
+                u2241 073D                  u2250 0744                  u2251 0743                  u2260 0774  
+                u2261 0773                  u2245 073A                  u2265 0770                  u2277 075A  
+                _WREN 0C62                  _main 071D                  btemp 007E                  start 0000  
+         Down_count@x 0075                 ?_main 0070                 _EEADR 010D                 _CARRY 0018  
+               _PORTC 0007         ??_Seg_Display 0072                 status 0003                 wtemp0 007E  
+          _Down_count 072D          __end_of_main 072D      __end_of_Seg_Init 071D                ??_main 0077  
+              _EEDATA 010C                _EECON1 018C                _EECON2 018D   __end_of_Seg_Display 0800  
+              _TRISC0 0438                _TRISC1 0439                _TRISC2 043A                _TRISC3 043B  
+              _TRISC4 043C                _TRISC5 043D                _TRISC6 043E                _TRISC7 043F  
+         ?_Down_count 0070        __pcstackCOMMON 0070           _Seg_Display 0776             ?_Seg_Init 0070  
+      Seg_Display@num 0070            __pmaintext 071D   __size_of_Down_count 0049            ??_Seg_Init 0070  
+end_of_initialization 070E          ??_Down_count 0072   start_initialization 070E          ?_Seg_Display 0070  
+  __end_of_Down_count 0776     __size_of_Seg_Init 000B  __size_of_Seg_Display 008A              _Seg_Init 0712  
+            __ptext90 072D              __ptext91 0776              __ptext92 0712              __ptext93 0000  
+            __ptext89 0000         __size_of_main 0010  

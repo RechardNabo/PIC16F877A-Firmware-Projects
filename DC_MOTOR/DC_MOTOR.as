@@ -196,7 +196,7 @@ __pmaintext:
 
 ;; *************** function _main *****************
 ;; Defined at:
-;;		line 10 in file "C:\Users\www\Desktop\PIC16F877A\DC_MOTOR\Main.c"
+;;		line 10 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\DC_MOTOR\Main.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -223,7 +223,7 @@ __pmaintext:
 ;; This function uses a non-reentrant model
 ;;
 psect	maintext
-	file	"C:\Users\www\Desktop\PIC16F877A\DC_MOTOR\Main.c"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\DC_MOTOR\Main.c"
 	line	10
 	global	__size_of_main
 	__size_of_main	equ	__end_of_main-_main
@@ -323,7 +323,7 @@ __ptext77:
 
 ;; *************** function _Check_btn *****************
 ;; Defined at:
-;;		line 23 in file "C:\Users\www\Desktop\PIC16F877A\DC_MOTOR\Main.c"
+;;		line 23 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\DC_MOTOR\Main.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -350,7 +350,7 @@ __ptext77:
 ;; This function uses a non-reentrant model
 ;;
 psect	text77
-	file	"C:\Users\www\Desktop\PIC16F877A\DC_MOTOR\Main.c"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\DC_MOTOR\Main.c"
 	line	23
 	global	__size_of_Check_btn
 	__size_of_Check_btn	equ	__end_of_Check_btn-_Check_btn

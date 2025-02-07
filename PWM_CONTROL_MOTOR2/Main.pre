@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\www\Desktop\PIC16F877A\PWM_CONTROL_MOTOR2\Main.c"
+# 1 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_CONTROL_MOTOR2\Main.c"
 
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
@@ -1090,7 +1090,7 @@ extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsign
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 3 "C:\Users\www\Desktop\PIC16F877A\PWM_CONTROL_MOTOR2\PWM_lib.h"
+# 3 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_CONTROL_MOTOR2\PWM_lib.h"
 long Frequency;
 
 
@@ -1336,7 +1336,7 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 
-# 25 "C:\Users\www\Desktop\PIC16F877A\PWM_CONTROL_MOTOR2\LCD_SCREEN.h"
+# 25 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_CONTROL_MOTOR2\LCD_SCREEN.h"
 void LCD_SETUP_4BIT(){
 
 TRISB2 = 0x00;
@@ -1505,7 +1505,7 @@ void LCD_DISPLAY_DIGIT(const unsigned int num){
 LCD_DATA(num,0x04);
 }
 
-# 1 "C:\Users\www\Desktop\PIC16F877A\PWM_CONTROL_MOTOR2\ADC_lib.h"
+# 1 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_CONTROL_MOTOR2\ADC_lib.h"
 void ADC_INIT(){
 ADCON0 = 0x41;
 ADCON1 = 0xC0;
@@ -1529,7 +1529,7 @@ extern char * utoa(char * buf, unsigned val, int base);
 extern char * ltoa(char * buf, long val, int base);
 extern char * ultoa(char * buf, unsigned long val, int base);
 
-# 10 "C:\Users\www\Desktop\PIC16F877A\PWM_CONTROL_MOTOR2\Main.c"
+# 10 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_CONTROL_MOTOR2\Main.c"
 void main(void){
 unsigned int i = 0x00;
 float ADC, temperature;

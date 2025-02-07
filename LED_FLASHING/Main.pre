@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\www\Desktop\PIC16F877A\LED_FLASHING\Main.c"
+# 1 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\LED_FLASHING\Main.c"
 
 # 12 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\stdio.h"
 typedef int ptrdiff_t;
@@ -1215,7 +1215,7 @@ extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsign
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 7 "C:\Users\www\Desktop\PIC16F877A\LED_FLASHING\Main.c"
+# 7 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\LED_FLASHING\Main.c"
 int main(void){
 TRISB = 0b11111101;
 while(0x01){

@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT_UP_DOWN_COUNTER\Main.c"
+# 1 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Main.c"
 
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
@@ -1215,7 +1215,7 @@ extern char * utoa(char * buf, unsigned val, int base);
 extern char * ltoa(char * buf, long val, int base);
 extern char * ultoa(char * buf, unsigned long val, int base);
 
-# 12 "C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT_UP_DOWN_COUNTER\Seg7_lib.h"
+# 12 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Seg7_lib.h"
 void Seg_Init(){
 TRISC0 = 0x00;
 TRISC1 = 0x00;
@@ -1316,7 +1316,7 @@ _delay((unsigned long)((500)*(20000000/4000.0)));
 }
 }
 
-# 8 "C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT_UP_DOWN_COUNTER\Main.c"
+# 8 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Main.c"
 unsigned int Check_button();
 int main(void){
 TRISB = 0b11111111;

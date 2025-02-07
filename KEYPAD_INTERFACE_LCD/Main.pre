@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\www\Desktop\PIC16F877A\KEYPAD_INTERFACE_LCD\Main.c"
+# 1 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_LCD\Main.c"
 
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
@@ -1159,7 +1159,7 @@ extern char * utoa(char * buf, unsigned val, int base);
 extern char * ltoa(char * buf, long val, int base);
 extern char * ultoa(char * buf, unsigned long val, int base);
 
-# 4 "C:\Users\www\Desktop\PIC16F877A\KEYPAD_INTERFACE_LCD\KEYPAD_lib.h"
+# 4 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_LCD\KEYPAD_lib.h"
 unsigned int number = 0;
 void KEYPAD_INIT(){
 TRISD = 0b11111000;
@@ -1306,7 +1306,7 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 
-# 25 "C:\Users\www\Desktop\PIC16F877A\KEYPAD_INTERFACE_LCD\LCD_SCREEN.h"
+# 25 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_LCD\LCD_SCREEN.h"
 void LCD_SETUP_4BIT(){
 
 TRISB1 = 0x00;
@@ -1471,7 +1471,7 @@ LCD_DATA(string[x],0x04);
 }
 }
 
-# 9 "C:\Users\www\Desktop\PIC16F877A\KEYPAD_INTERFACE_LCD\Main.c"
+# 9 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\KEYPAD_INTERFACE_LCD\Main.c"
 int main(void){
 KEYPAD_INIT();
 LCD_SETUP_4BIT();

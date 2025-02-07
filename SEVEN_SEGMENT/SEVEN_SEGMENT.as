@@ -51,8 +51,22 @@ _PORTC	set	7
 _CARRY	set	24
 	global	_GIE
 _GIE	set	95
-	global	_TRISC
-_TRISC	set	135
+	global	_TRISC0
+_TRISC0	set	1080
+	global	_TRISC1
+_TRISC1	set	1081
+	global	_TRISC2
+_TRISC2	set	1082
+	global	_TRISC3
+_TRISC3	set	1083
+	global	_TRISC4
+_TRISC4	set	1084
+	global	_TRISC5
+_TRISC5	set	1085
+	global	_TRISC6
+_TRISC6	set	1086
+	global	_TRISC7
+_TRISC7	set	1087
 	global	_EEADR
 _EEADR	set	269
 	global	_EEDATA
@@ -201,7 +215,7 @@ __pmaintext:
 
 ;; *************** function _main *****************
 ;; Defined at:
-;;		line 10 in file "C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT\Main.c"
+;;		line 10 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT\Main.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -229,7 +243,7 @@ __pmaintext:
 ;; This function uses a non-reentrant model
 ;;
 psect	maintext
-	file	"C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT\Main.c"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT\Main.c"
 	line	10
 	global	__size_of_main
 	__size_of_main	equ	__end_of_main-_main
@@ -291,7 +305,7 @@ __ptext83:
 
 ;; *************** function _Seg_Display *****************
 ;; Defined at:
-;;		line 15 in file "C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT\Seg7_lib.h"
+;;		line 22 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT\Seg7_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;  num             2    0[COMMON] int 
 ;; Auto vars:     Size  Location     Type
@@ -318,271 +332,271 @@ __ptext83:
 ;; This function uses a non-reentrant model
 ;;
 psect	text83
-	file	"C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT\Seg7_lib.h"
-	line	15
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT\Seg7_lib.h"
+	line	22
 	global	__size_of_Seg_Display
 	__size_of_Seg_Display	equ	__end_of_Seg_Display-_Seg_Display
 	
 _Seg_Display:	
 	opt	stack 7
 ; Regs used in _Seg_Display: [wreg-fsr0h+status,2+status,0]
-	line	16
+	line	23
 	
 l1762:	
-;Seg7_lib.h: 16: switch(num){
+;Seg7_lib.h: 23: switch(num){
 	goto	l1798
-	line	18
-;Seg7_lib.h: 18: case 0x00:
+	line	25
+;Seg7_lib.h: 25: case 0x00:
 	
 l689:	
-	line	19
+	line	26
 	
 l1764:	
-;Seg7_lib.h: 19: PORTC = 0b01000000;
+;Seg7_lib.h: 26: PORTC = 0b01000000;
 	movlw	(040h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(7)	;volatile
-	line	20
-;Seg7_lib.h: 20: break;
+	line	27
+;Seg7_lib.h: 27: break;
 	goto	l707
-	line	22
-;Seg7_lib.h: 22: case 0x01:
+	line	29
+;Seg7_lib.h: 29: case 0x01:
 	
 l691:	
-	line	23
+	line	30
 	
 l1766:	
-;Seg7_lib.h: 23: PORTC = 0b01111001;
+;Seg7_lib.h: 30: PORTC = 0b01111001;
 	movlw	(079h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(7)	;volatile
-	line	24
-;Seg7_lib.h: 24: break;
+	line	31
+;Seg7_lib.h: 31: break;
 	goto	l707
-	line	26
-;Seg7_lib.h: 26: case 0x02:
+	line	33
+;Seg7_lib.h: 33: case 0x02:
 	
 l692:	
-	line	27
+	line	34
 	
 l1768:	
-;Seg7_lib.h: 27: PORTC = 0b00100100;
+;Seg7_lib.h: 34: PORTC = 0b00100100;
 	movlw	(024h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(7)	;volatile
-	line	28
-;Seg7_lib.h: 28: break;
+	line	35
+;Seg7_lib.h: 35: break;
 	goto	l707
-	line	30
-;Seg7_lib.h: 30: case 0x03:
+	line	37
+;Seg7_lib.h: 37: case 0x03:
 	
 l693:	
-	line	31
+	line	38
 	
 l1770:	
-;Seg7_lib.h: 31: PORTC = 0b00110000;
+;Seg7_lib.h: 38: PORTC = 0b00110000;
 	movlw	(030h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(7)	;volatile
-	line	32
-;Seg7_lib.h: 32: break;
+	line	39
+;Seg7_lib.h: 39: break;
 	goto	l707
-	line	34
-;Seg7_lib.h: 34: case 0x04:
+	line	41
+;Seg7_lib.h: 41: case 0x04:
 	
 l694:	
-	line	35
+	line	42
 	
 l1772:	
-;Seg7_lib.h: 35: PORTC = 0b00011001;
+;Seg7_lib.h: 42: PORTC = 0b00011001;
 	movlw	(019h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(7)	;volatile
-	line	36
-;Seg7_lib.h: 36: break;
+	line	43
+;Seg7_lib.h: 43: break;
 	goto	l707
-	line	38
-;Seg7_lib.h: 38: case 0x05:
+	line	45
+;Seg7_lib.h: 45: case 0x05:
 	
 l695:	
-	line	39
+	line	46
 	
 l1774:	
-;Seg7_lib.h: 39: PORTC = 0b00010010;
+;Seg7_lib.h: 46: PORTC = 0b00010010;
 	movlw	(012h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(7)	;volatile
-	line	40
-;Seg7_lib.h: 40: break;
+	line	47
+;Seg7_lib.h: 47: break;
 	goto	l707
-	line	42
-;Seg7_lib.h: 42: case 0x06:
+	line	49
+;Seg7_lib.h: 49: case 0x06:
 	
 l696:	
-	line	43
+	line	50
 	
 l1776:	
-;Seg7_lib.h: 43: PORTC = 0b00000010;
+;Seg7_lib.h: 50: PORTC = 0b00000010;
 	movlw	(02h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(7)	;volatile
-	line	44
-;Seg7_lib.h: 44: break;
+	line	51
+;Seg7_lib.h: 51: break;
 	goto	l707
-	line	46
-;Seg7_lib.h: 46: case 0x07:
+	line	53
+;Seg7_lib.h: 53: case 0x07:
 	
 l697:	
-	line	47
+	line	54
 	
 l1778:	
-;Seg7_lib.h: 47: PORTC = 0b01111000;
+;Seg7_lib.h: 54: PORTC = 0b01111000;
 	movlw	(078h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(7)	;volatile
-	line	48
-;Seg7_lib.h: 48: break;
+	line	55
+;Seg7_lib.h: 55: break;
 	goto	l707
-	line	50
-;Seg7_lib.h: 50: case 0x08:
+	line	57
+;Seg7_lib.h: 57: case 0x08:
 	
 l698:	
-	line	51
+	line	58
 	
 l1780:	
-;Seg7_lib.h: 51: PORTC = 0b00000000;
+;Seg7_lib.h: 58: PORTC = 0b00000000;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(7)	;volatile
-	line	52
-;Seg7_lib.h: 52: break;
+	line	59
+;Seg7_lib.h: 59: break;
 	goto	l707
-	line	54
-;Seg7_lib.h: 54: case 0x09:
+	line	61
+;Seg7_lib.h: 61: case 0x09:
 	
 l699:	
-	line	55
+	line	62
 	
 l1782:	
-;Seg7_lib.h: 55: PORTC = 0b00010000;
+;Seg7_lib.h: 62: PORTC = 0b00010000;
 	movlw	(010h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(7)	;volatile
-	line	56
-;Seg7_lib.h: 56: break;
+	line	63
+;Seg7_lib.h: 63: break;
 	goto	l707
-	line	58
-;Seg7_lib.h: 58: case 0x0A:
+	line	65
+;Seg7_lib.h: 65: case 0x0A:
 	
 l700:	
-	line	59
+	line	66
 	
 l1784:	
-;Seg7_lib.h: 59: PORTC = 0b00001000;
+;Seg7_lib.h: 66: PORTC = 0b00001000;
 	movlw	(08h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(7)	;volatile
-	line	60
-;Seg7_lib.h: 60: break;
+	line	67
+;Seg7_lib.h: 67: break;
 	goto	l707
-	line	62
-;Seg7_lib.h: 62: case 0x0B:
+	line	69
+;Seg7_lib.h: 69: case 0x0B:
 	
 l701:	
-	line	63
+	line	70
 	
 l1786:	
-;Seg7_lib.h: 63: PORTC = 0b00000011;
+;Seg7_lib.h: 70: PORTC = 0b00000011;
 	movlw	(03h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(7)	;volatile
-	line	64
-;Seg7_lib.h: 64: break;
+	line	71
+;Seg7_lib.h: 71: break;
 	goto	l707
-	line	66
-;Seg7_lib.h: 66: case 0x0C:
+	line	73
+;Seg7_lib.h: 73: case 0x0C:
 	
 l702:	
-	line	67
+	line	74
 	
 l1788:	
-;Seg7_lib.h: 67: PORTC = 0b01000110;
+;Seg7_lib.h: 74: PORTC = 0b01000110;
 	movlw	(046h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(7)	;volatile
-	line	68
-;Seg7_lib.h: 68: break;
+	line	75
+;Seg7_lib.h: 75: break;
 	goto	l707
-	line	70
-;Seg7_lib.h: 70: case 0x0D:
+	line	77
+;Seg7_lib.h: 77: case 0x0D:
 	
 l703:	
-	line	71
+	line	78
 	
 l1790:	
-;Seg7_lib.h: 71: PORTC = 0b00100001;
+;Seg7_lib.h: 78: PORTC = 0b00100001;
 	movlw	(021h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(7)	;volatile
-	line	72
-;Seg7_lib.h: 72: break;
+	line	79
+;Seg7_lib.h: 79: break;
 	goto	l707
-	line	74
-;Seg7_lib.h: 74: case 0x0E:
+	line	81
+;Seg7_lib.h: 81: case 0x0E:
 	
 l704:	
-	line	75
+	line	82
 	
 l1792:	
-;Seg7_lib.h: 75: PORTC = 0b00000110;
+;Seg7_lib.h: 82: PORTC = 0b00000110;
 	movlw	(06h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(7)	;volatile
-	line	76
-;Seg7_lib.h: 76: break;
+	line	83
+;Seg7_lib.h: 83: break;
 	goto	l707
-	line	78
-;Seg7_lib.h: 78: case 0x0F:
+	line	85
+;Seg7_lib.h: 85: case 0x0F:
 	
 l705:	
-	line	79
+	line	86
 	
 l1794:	
-;Seg7_lib.h: 79: PORTC = 0b00001110;
+;Seg7_lib.h: 86: PORTC = 0b00001110;
 	movlw	(0Eh)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(7)	;volatile
-	line	80
-;Seg7_lib.h: 80: break;
+	line	87
+;Seg7_lib.h: 87: break;
 	goto	l707
-	line	82
-;Seg7_lib.h: 82: default:
+	line	89
+;Seg7_lib.h: 89: default:
 	
 l706:	
-	line	83
-;Seg7_lib.h: 83: break;
+	line	90
+;Seg7_lib.h: 90: break;
 	goto	l707
-	line	84
+	line	91
 	
 l1796:	
-;Seg7_lib.h: 84: }
+;Seg7_lib.h: 91: }
 	goto	l707
-	line	16
+	line	23
 	
 l688:	
 	
@@ -674,10 +688,10 @@ l2688:
 	goto	l707
 	opt asmopt_on
 
-	line	84
+	line	91
 	
 l690:	
-	line	85
+	line	92
 	
 l707:	
 	return
@@ -694,7 +708,7 @@ __ptext84:
 
 ;; *************** function _Seg_Init *****************
 ;; Defined at:
-;;		line 11 in file "C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT\Seg7_lib.h"
+;;		line 11 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT\Seg7_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -702,7 +716,7 @@ __ptext84:
 ;; Return value:  Size  Location     Type
 ;;		None               void
 ;; Registers used:
-;;		status,2
+;;		None
 ;; Tracked objects:
 ;;		On entry : 0/0
 ;;		On exit  : 0/0
@@ -721,22 +735,43 @@ __ptext84:
 ;; This function uses a non-reentrant model
 ;;
 psect	text84
-	file	"C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT\Seg7_lib.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT\Seg7_lib.h"
 	line	11
 	global	__size_of_Seg_Init
 	__size_of_Seg_Init	equ	__end_of_Seg_Init-_Seg_Init
 	
 _Seg_Init:	
 	opt	stack 7
-; Regs used in _Seg_Init: [status,2]
+; Regs used in _Seg_Init: []
 	line	12
 	
 l1760:	
-;Seg7_lib.h: 12: TRISC = 0b00000000;
+;Seg7_lib.h: 12: TRISC0 = 0x00;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
-	clrf	(135)^080h	;volatile
+	bcf	(1080/8)^080h,(1080)&7
 	line	13
+;Seg7_lib.h: 13: TRISC1 = 0x00;
+	bcf	(1081/8)^080h,(1081)&7
+	line	14
+;Seg7_lib.h: 14: TRISC2 = 0x00;
+	bcf	(1082/8)^080h,(1082)&7
+	line	15
+;Seg7_lib.h: 15: TRISC3 = 0x00;
+	bcf	(1083/8)^080h,(1083)&7
+	line	16
+;Seg7_lib.h: 16: TRISC4 = 0x00;
+	bcf	(1084/8)^080h,(1084)&7
+	line	17
+;Seg7_lib.h: 17: TRISC5 = 0x00;
+	bcf	(1085/8)^080h,(1085)&7
+	line	18
+;Seg7_lib.h: 18: TRISC6 = 0x00;
+	bcf	(1086/8)^080h,(1086)&7
+	line	19
+;Seg7_lib.h: 19: TRISC7 = 0x00;
+	bcf	(1087/8)^080h,(1087)&7
+	line	20
 	
 l685:	
 	return

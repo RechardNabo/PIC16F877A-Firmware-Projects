@@ -763,7 +763,7 @@ __pmaintext:
 
 ;; *************** function _main *****************
 ;; Defined at:
-;;		line 7 in file "C:\Users\www\Desktop\PIC16F877A\PWM_APPLICATION\Main.c"
+;;		line 7 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_APPLICATION\Main.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -792,7 +792,7 @@ __pmaintext:
 ;; This function uses a non-reentrant model
 ;;
 psect	maintext
-	file	"C:\Users\www\Desktop\PIC16F877A\PWM_APPLICATION\Main.c"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_APPLICATION\Main.c"
 	line	7
 	global	__size_of_main
 	__size_of_main	equ	__end_of_main-_main
@@ -970,7 +970,7 @@ __ptext412:
 
 ;; *************** function _PWM_SETUP *****************
 ;; Defined at:
-;;		line 92 in file "C:\Users\www\Desktop\PIC16F877A\PWM_APPLICATION\PWM_lib.h"
+;;		line 92 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_APPLICATION\PWM_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -1003,7 +1003,7 @@ __ptext412:
 ;; This function uses a non-reentrant model
 ;;
 psect	text412
-	file	"C:\Users\www\Desktop\PIC16F877A\PWM_APPLICATION\PWM_lib.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_APPLICATION\PWM_lib.h"
 	line	92
 	global	__size_of_PWM_SETUP
 	__size_of_PWM_SETUP	equ	__end_of_PWM_SETUP-_PWM_SETUP
@@ -1086,7 +1086,7 @@ __ptext413:
 
 ;; *************** function _PWM2_DUTY *****************
 ;; Defined at:
-;;		line 34 in file "C:\Users\www\Desktop\PIC16F877A\PWM_APPLICATION\PWM_lib.h"
+;;		line 34 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_APPLICATION\PWM_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;  duty            2   51[BANK0 ] unsigned int 
 ;; Auto vars:     Size  Location     Type
@@ -1119,7 +1119,7 @@ __ptext413:
 ;; This function uses a non-reentrant model
 ;;
 psect	text413
-	file	"C:\Users\www\Desktop\PIC16F877A\PWM_APPLICATION\PWM_lib.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_APPLICATION\PWM_lib.h"
 	line	34
 	global	__size_of_PWM2_DUTY
 	__size_of_PWM2_DUTY	equ	__end_of_PWM2_DUTY-_PWM2_DUTY
@@ -1315,7 +1315,7 @@ __ptext414:
 
 ;; *************** function _PWM1_DUTY *****************
 ;; Defined at:
-;;		line 23 in file "C:\Users\www\Desktop\PIC16F877A\PWM_APPLICATION\PWM_lib.h"
+;;		line 23 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_APPLICATION\PWM_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;  duty            2   51[BANK0 ] unsigned int 
 ;; Auto vars:     Size  Location     Type
@@ -1349,7 +1349,7 @@ __ptext414:
 ;; This function uses a non-reentrant model
 ;;
 psect	text414
-	file	"C:\Users\www\Desktop\PIC16F877A\PWM_APPLICATION\PWM_lib.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_APPLICATION\PWM_lib.h"
 	line	23
 	global	__size_of_PWM1_DUTY
 	__size_of_PWM1_DUTY	equ	__end_of_PWM1_DUTY-_PWM1_DUTY
@@ -2493,7 +2493,7 @@ __ptext419:
 
 ;; *************** function _PWM2_INITIALIZE *****************
 ;; Defined at:
-;;		line 17 in file "C:\Users\www\Desktop\PIC16F877A\PWM_APPLICATION\PWM_lib.h"
+;;		line 17 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_APPLICATION\PWM_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;  frequency       4    6[BANK0 ] long 
 ;; Auto vars:     Size  Location     Type
@@ -2521,7 +2521,7 @@ __ptext419:
 ;; This function uses a non-reentrant model
 ;;
 psect	text419
-	file	"C:\Users\www\Desktop\PIC16F877A\PWM_APPLICATION\PWM_lib.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_APPLICATION\PWM_lib.h"
 	line	17
 	global	__size_of_PWM2_INITIALIZE
 	__size_of_PWM2_INITIALIZE	equ	__end_of_PWM2_INITIALIZE-_PWM2_INITIALIZE
@@ -2621,7 +2621,7 @@ __ptext420:
 
 ;; *************** function _PWM1_INITIALIZE *****************
 ;; Defined at:
-;;		line 11 in file "C:\Users\www\Desktop\PIC16F877A\PWM_APPLICATION\PWM_lib.h"
+;;		line 11 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_APPLICATION\PWM_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;  frequency       4    6[BANK0 ] long 
 ;; Auto vars:     Size  Location     Type
@@ -2649,7 +2649,7 @@ __ptext420:
 ;; This function uses a non-reentrant model
 ;;
 psect	text420
-	file	"C:\Users\www\Desktop\PIC16F877A\PWM_APPLICATION\PWM_lib.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_APPLICATION\PWM_lib.h"
 	line	11
 	global	__size_of_PWM1_INITIALIZE
 	__size_of_PWM1_INITIALIZE	equ	__end_of_PWM1_INITIALIZE-_PWM1_INITIALIZE
@@ -2749,7 +2749,7 @@ __ptext421:
 
 ;; *************** function _PWM_MAX_DUTY *****************
 ;; Defined at:
-;;		line 6 in file "C:\Users\www\Desktop\PIC16F877A\PWM_APPLICATION\PWM_lib.h"
+;;		line 6 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_APPLICATION\PWM_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -2778,7 +2778,7 @@ __ptext421:
 ;; This function uses a non-reentrant model
 ;;
 psect	text421
-	file	"C:\Users\www\Desktop\PIC16F877A\PWM_APPLICATION\PWM_lib.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_APPLICATION\PWM_lib.h"
 	line	6
 	global	__size_of_PWM_MAX_DUTY
 	__size_of_PWM_MAX_DUTY	equ	__end_of_PWM_MAX_DUTY-_PWM_MAX_DUTY
@@ -3814,7 +3814,7 @@ __ptext425:
 
 ;; *************** function _PWM2_START *****************
 ;; Defined at:
-;;		line 69 in file "C:\Users\www\Desktop\PIC16F877A\PWM_APPLICATION\PWM_lib.h"
+;;		line 69 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_APPLICATION\PWM_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -3841,7 +3841,7 @@ __ptext425:
 ;; This function uses a non-reentrant model
 ;;
 psect	text425
-	file	"C:\Users\www\Desktop\PIC16F877A\PWM_APPLICATION\PWM_lib.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_APPLICATION\PWM_lib.h"
 	line	69
 	global	__size_of_PWM2_START
 	__size_of_PWM2_START	equ	__end_of_PWM2_START-_PWM2_START
@@ -3890,7 +3890,7 @@ __ptext426:
 
 ;; *************** function _PWM1_START *****************
 ;; Defined at:
-;;		line 45 in file "C:\Users\www\Desktop\PIC16F877A\PWM_APPLICATION\PWM_lib.h"
+;;		line 45 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_APPLICATION\PWM_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -3917,7 +3917,7 @@ __ptext426:
 ;; This function uses a non-reentrant model
 ;;
 psect	text426
-	file	"C:\Users\www\Desktop\PIC16F877A\PWM_APPLICATION\PWM_lib.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PWM_APPLICATION\PWM_lib.h"
 	line	45
 	global	__size_of_PWM1_START
 	__size_of_PWM1_START	equ	__end_of_PWM1_START-_PWM1_START

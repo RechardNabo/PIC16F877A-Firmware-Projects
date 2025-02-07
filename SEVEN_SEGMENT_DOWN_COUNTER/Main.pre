@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT_DOWN_COUNTER\Main.c"
+# 1 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Main.c"
 
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
@@ -1215,7 +1215,7 @@ extern char * utoa(char * buf, unsigned val, int base);
 extern char * ltoa(char * buf, long val, int base);
 extern char * ultoa(char * buf, unsigned long val, int base);
 
-# 12 "C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT_DOWN_COUNTER\Seg7_lib.h"
+# 12 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Seg7_lib.h"
 void Seg_Init(){
 TRISC0 = 0x00;
 TRISC1 = 0x00;
@@ -1298,22 +1298,29 @@ default:
 break;
 }
 }
-
-void count(){
+void Up_count(){
 int x = 0x00;
-for(x ; x< 0x10 ; x-=-0x01){
-if(x<0x00){x==0x00;}
+while(x!=0x10){
+if(x > 0x0F){x=0x00;}
+Seg_Display(x);
+_delay((unsigned long)((500)*(20000000/4000.0)));
+x++;
+}
+}
+void Down_count(){
+int x = 0x0F;
+for(x ; x>0x00; x-=+0x01){
+if(x < 0x00){x=0x0F;}
 Seg_Display(x);
 _delay((unsigned long)((500)*(20000000/4000.0)));
 }
 }
 
-# 9 "C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT_DOWN_COUNTER\Main.c"
+# 9 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_DOWN_COUNTER\Main.c"
 int main(void){
-int counter = 0x00;
 Seg_Init();
 while(0x01){
-count();
+Down_count();
 }
 return 0;
 }

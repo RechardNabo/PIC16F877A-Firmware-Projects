@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT\Main.c"
+# 1 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT\Main.c"
 
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
@@ -1218,9 +1218,16 @@ extern int vsscanf(const char *, const char *, va_list);
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 11 "C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT\Seg7_lib.h"
+# 11 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT\Seg7_lib.h"
 void Seg_Init(){
-TRISC = 0b00000000;
+TRISC0 = 0x00;
+TRISC1 = 0x00;
+TRISC2 = 0x00;
+TRISC3 = 0x00;
+TRISC4 = 0x00;
+TRISC5 = 0x00;
+TRISC6 = 0x00;
+TRISC7 = 0x00;
 }
 
 void Seg_Display(int num){
@@ -1295,7 +1302,7 @@ break;
 }
 }
 
-# 7 "C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT\Main.c"
+# 7 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT\Main.c"
 void count();
 void display(int num);
 

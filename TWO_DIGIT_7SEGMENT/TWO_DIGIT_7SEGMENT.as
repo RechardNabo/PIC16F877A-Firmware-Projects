@@ -241,7 +241,7 @@ __pmaintext:
 
 ;; *************** function _main *****************
 ;; Defined at:
-;;		line 9 in file "C:\Users\www\Desktop\PIC16F877A\TWO_DIGIT_7SEGMENT\Main.c"
+;;		line 9 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\TWO_DIGIT_7SEGMENT\Main.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -271,7 +271,7 @@ __pmaintext:
 ;; This function uses a non-reentrant model
 ;;
 psect	maintext
-	file	"C:\Users\www\Desktop\PIC16F877A\TWO_DIGIT_7SEGMENT\Main.c"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\TWO_DIGIT_7SEGMENT\Main.c"
 	line	9
 	global	__size_of_main
 	__size_of_main	equ	__end_of_main-_main
@@ -321,10 +321,10 @@ l2931:
 ;Main.c: 16: while(0x01){
 	
 l735:	
-	line	18
+	line	17
 	
 l2933:	
-;Main.c: 18: if(num2 > 9){
+;Main.c: 17: if(num2 > 9){
 	movlw	high(0Ah)
 	subwf	(main@num2+1),w
 	movlw	low(0Ah)
@@ -336,10 +336,10 @@ l2933:
 u2271:
 	goto	l736
 u2270:
-	line	19
+	line	18
 	
 l2935:	
-;Main.c: 19: num1 = num1+0x01;
+;Main.c: 18: num1 = num1+0x01;
 	movf	(main@num1),w
 	addlw	low(01h)
 	movwf	(main@num1)
@@ -348,24 +348,24 @@ l2935:
 	addlw	1
 	addlw	high(01h)
 	movwf	1+(main@num1)
-	line	20
+	line	19
 	
 l2937:	
-;Main.c: 20: num2 = 0x00;
+;Main.c: 19: num2 = 0x00;
 	clrf	(main@num2)
 	clrf	(main@num2+1)
-	line	21
+	line	20
 	
 l2939:	
-;Main.c: 21: counter = 0x00;
+;Main.c: 20: counter = 0x00;
 	clrf	(main@counter)
 	clrf	(main@counter+1)
-	line	22
+	line	21
 	
 l736:	
-	line	23
-;Main.c: 22: }
-;Main.c: 23: num2 = counter;
+	line	22
+;Main.c: 21: }
+;Main.c: 22: num2 = counter;
 	movf	(main@counter+1),w
 	clrf	(main@num2+1)
 	addwf	(main@num2+1)
@@ -373,10 +373,10 @@ l736:
 	clrf	(main@num2)
 	addwf	(main@num2)
 
-	line	24
+	line	23
 	
 l2941:	
-;Main.c: 24: _delay((unsigned long)((1000)*(20000000/4000.0)));
+;Main.c: 23: _delay((unsigned long)((1000)*(20000000/4000.0)));
 	opt asmopt_off
 movlw  26
 movwf	((??_main+0)+0+2),f
@@ -394,10 +394,10 @@ u2287:
 	clrwdt
 opt asmopt_on
 
-	line	25
+	line	24
 	
 l2943:	
-;Main.c: 25: Seg7_Multiplex(num1,num2);
+;Main.c: 24: Seg7_Multiplex(num1,num2);
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movf	(main@num1+1),w
@@ -415,10 +415,10 @@ l2943:
 	addwf	0+(?_Seg7_Multiplex)+02h
 
 	fcall	_Seg7_Multiplex
-	line	26
+	line	25
 	
 l2945:	
-;Main.c: 26: counter = counter+0x01;
+;Main.c: 25: counter = counter+0x01;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movf	(main@counter),w
@@ -430,16 +430,16 @@ l2945:
 	addlw	high(01h)
 	movwf	1+(main@counter)
 	goto	l2933
-	line	27
+	line	26
 	
 l737:	
 	line	16
 	goto	l2933
 	
 l738:	
-	line	29
-;Main.c: 27: }
-;Main.c: 28: return 0;
+	line	28
+;Main.c: 26: }
+;Main.c: 27: return 0;
 ;	Return value of _main is never used
 	
 l739:	
@@ -458,7 +458,7 @@ __ptext149:
 
 ;; *************** function _Seg7_Multiplex *****************
 ;; Defined at:
-;;		line 31 in file "C:\Users\www\Desktop\PIC16F877A\TWO_DIGIT_7SEGMENT\Main.c"
+;;		line 30 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\TWO_DIGIT_7SEGMENT\Main.c"
 ;; Parameters:    Size  Location     Type
 ;;  num1            2    3[COMMON] unsigned int 
 ;;  num2            2    5[COMMON] unsigned int 
@@ -487,18 +487,18 @@ __ptext149:
 ;; This function uses a non-reentrant model
 ;;
 psect	text149
-	file	"C:\Users\www\Desktop\PIC16F877A\TWO_DIGIT_7SEGMENT\Main.c"
-	line	31
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\TWO_DIGIT_7SEGMENT\Main.c"
+	line	30
 	global	__size_of_Seg7_Multiplex
 	__size_of_Seg7_Multiplex	equ	__end_of_Seg7_Multiplex-_Seg7_Multiplex
 	
 _Seg7_Multiplex:	
 	opt	stack 6
 ; Regs used in _Seg7_Multiplex: [wreg-fsr0h+status,2+status,0+pclath+cstack]
-	line	32
+	line	31
 	
 l2907:	
-;Main.c: 32: Seg_Display(num1,'C');
+;Main.c: 31: Seg_Display(num1,'C');
 	movf	(Seg7_Multiplex@num1+1),w
 	clrf	(?_Seg_Display+1)
 	addwf	(?_Seg_Display+1)
@@ -511,22 +511,22 @@ l2907:
 	movf	(??_Seg7_Multiplex+0)+0,w
 	movwf	0+(?_Seg_Display)+02h
 	fcall	_Seg_Display
-	line	33
+	line	32
 	
 l2909:	
-;Main.c: 33: RD0 = 0x00;
+;Main.c: 32: RD0 = 0x00;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bcf	(64/8),(64)&7
-	line	34
+	line	33
 	
 l2911:	
-;Main.c: 34: RD1 = 0x01;
+;Main.c: 33: RD1 = 0x01;
 	bsf	(65/8),(65)&7
-	line	35
+	line	34
 	
 l2913:	
-;Main.c: 35: _delay((unsigned long)((60)*(20000000/4000.0)));
+;Main.c: 34: _delay((unsigned long)((60)*(20000000/4000.0)));
 	opt asmopt_off
 movlw  2
 movwf	((??_Seg7_Multiplex+0)+0+2),f
@@ -543,10 +543,10 @@ u2297:
 	goto	u2297
 opt asmopt_on
 
-	line	36
+	line	35
 	
 l2915:	
-;Main.c: 36: Seg_Display(num2,'C');
+;Main.c: 35: Seg_Display(num2,'C');
 	movf	(Seg7_Multiplex@num2+1),w
 	clrf	(?_Seg_Display+1)
 	addwf	(?_Seg_Display+1)
@@ -559,20 +559,20 @@ l2915:
 	movf	(??_Seg7_Multiplex+0)+0,w
 	movwf	0+(?_Seg_Display)+02h
 	fcall	_Seg_Display
-	line	37
+	line	36
 	
 l2917:	
-;Main.c: 37: RD0 = 0x01;
+;Main.c: 36: RD0 = 0x01;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bsf	(64/8),(64)&7
-	line	38
+	line	37
 	
 l2919:	
-;Main.c: 38: RD1 = 0x00;
+;Main.c: 37: RD1 = 0x00;
 	bcf	(65/8),(65)&7
-	line	39
-;Main.c: 39: _delay((unsigned long)((60)*(20000000/4000.0)));
+	line	38
+;Main.c: 38: _delay((unsigned long)((60)*(20000000/4000.0)));
 	opt asmopt_off
 movlw  2
 movwf	((??_Seg7_Multiplex+0)+0+2),f
@@ -589,7 +589,7 @@ u2307:
 	goto	u2307
 opt asmopt_on
 
-	line	40
+	line	39
 	
 l742:	
 	return
@@ -606,7 +606,7 @@ __ptext150:
 
 ;; *************** function _Seg_Display *****************
 ;; Defined at:
-;;		line 18 in file "C:\Users\www\Desktop\PIC16F877A\TWO_DIGIT_7SEGMENT\Seg7_lib.h"
+;;		line 18 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\TWO_DIGIT_7SEGMENT\Seg7_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;  num             2    0[COMMON] int 
 ;;  type            1    2[COMMON] unsigned char 
@@ -634,7 +634,7 @@ __ptext150:
 ;; This function uses a non-reentrant model
 ;;
 psect	text150
-	file	"C:\Users\www\Desktop\PIC16F877A\TWO_DIGIT_7SEGMENT\Seg7_lib.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\TWO_DIGIT_7SEGMENT\Seg7_lib.h"
 	line	18
 	global	__size_of_Seg_Display
 	__size_of_Seg_Display	equ	__end_of_Seg_Display-_Seg_Display
@@ -1397,7 +1397,7 @@ __ptext151:
 
 ;; *************** function _Seg_Init *****************
 ;; Defined at:
-;;		line 14 in file "C:\Users\www\Desktop\PIC16F877A\TWO_DIGIT_7SEGMENT\Seg7_lib.h"
+;;		line 14 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\TWO_DIGIT_7SEGMENT\Seg7_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -1424,7 +1424,7 @@ __ptext151:
 ;; This function uses a non-reentrant model
 ;;
 psect	text151
-	file	"C:\Users\www\Desktop\PIC16F877A\TWO_DIGIT_7SEGMENT\Seg7_lib.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\TWO_DIGIT_7SEGMENT\Seg7_lib.h"
 	line	14
 	global	__size_of_Seg_Init
 	__size_of_Seg_Init	equ	__end_of_Seg_Init-_Seg_Init

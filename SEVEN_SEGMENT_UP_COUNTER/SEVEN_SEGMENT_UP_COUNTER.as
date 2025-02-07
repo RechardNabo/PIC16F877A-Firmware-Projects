@@ -226,7 +226,7 @@ __pmaintext:
 
 ;; *************** function _main *****************
 ;; Defined at:
-;;		line 9 in file "C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT_UP_COUNTER\Main.c"
+;;		line 9 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_COUNTER\Main.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -254,7 +254,7 @@ __pmaintext:
 ;; This function uses a non-reentrant model
 ;;
 psect	maintext
-	file	"C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT_UP_COUNTER\Main.c"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_COUNTER\Main.c"
 	line	9
 	global	__size_of_main
 	__size_of_main	equ	__end_of_main-_main
@@ -306,7 +306,7 @@ __ptext89:
 
 ;; *************** function _count *****************
 ;; Defined at:
-;;		line 95 in file "C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT_UP_COUNTER\Seg7_lib.h"
+;;		line 95 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_COUNTER\Seg7_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -334,7 +334,7 @@ __ptext89:
 ;; This function uses a non-reentrant model
 ;;
 psect	text89
-	file	"C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT_UP_COUNTER\Seg7_lib.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_COUNTER\Seg7_lib.h"
 	line	95
 	global	__size_of_count
 	__size_of_count	equ	__end_of_count-_count
@@ -459,7 +459,7 @@ __ptext90:
 
 ;; *************** function _Seg_Display *****************
 ;; Defined at:
-;;		line 23 in file "C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT_UP_COUNTER\Seg7_lib.h"
+;;		line 23 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_COUNTER\Seg7_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;  num             2    0[COMMON] int 
 ;; Auto vars:     Size  Location     Type
@@ -486,7 +486,7 @@ __ptext90:
 ;; This function uses a non-reentrant model
 ;;
 psect	text90
-	file	"C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT_UP_COUNTER\Seg7_lib.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_COUNTER\Seg7_lib.h"
 	line	23
 	global	__size_of_Seg_Display
 	__size_of_Seg_Display	equ	__end_of_Seg_Display-_Seg_Display
@@ -862,7 +862,7 @@ __ptext91:
 
 ;; *************** function _Seg_Init *****************
 ;; Defined at:
-;;		line 12 in file "C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT_UP_COUNTER\Seg7_lib.h"
+;;		line 12 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_COUNTER\Seg7_lib.h"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -889,7 +889,7 @@ __ptext91:
 ;; This function uses a non-reentrant model
 ;;
 psect	text91
-	file	"C:\Users\www\Desktop\PIC16F877A\SEVEN_SEGMENT_UP_COUNTER\Seg7_lib.h"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\SEVEN_SEGMENT_UP_COUNTER\Seg7_lib.h"
 	line	12
 	global	__size_of_Seg_Init
 	__size_of_Seg_Init	equ	__end_of_Seg_Init-_Seg_Init

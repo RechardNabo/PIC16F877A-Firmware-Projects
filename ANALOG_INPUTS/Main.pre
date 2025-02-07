@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\www\Desktop\PIC16F877A\ANALOG_INPUTS\Main.c"
+# 1 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PIC16F877A\ANALOG_INPUTS\Main.c"
 
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
@@ -1285,7 +1285,7 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 
-# 25 "C:\Users\www\Desktop\PIC16F877A\ANALOG_INPUTS\LCD_SCREEN.h"
+# 25 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PIC16F877A\ANALOG_INPUTS\LCD_SCREEN.h"
 void LCD_SETUP_4BIT(){
 
 TRISB1 = 0x00;
@@ -1487,13 +1487,13 @@ extern struct tm * localtime(const time_t *);
 extern time_t mktime(struct tm *);
 extern size_t strftime(char *, size_t, const char *, const struct tm *);
 
-# 5 "C:\Users\www\Desktop\PIC16F877A\ANALOG_INPUTS\Random_Num.h"
+# 5 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PIC16F877A\ANALOG_INPUTS\Random_Num.h"
 int random_number(int min, int max){
 int num = (rand()%(max-min+0x01))+min;
 return num;
 }
 
-# 1 "C:\Users\www\Desktop\PIC16F877A\ANALOG_INPUTS\ADC_lib.h"
+# 1 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PIC16F877A\ANALOG_INPUTS\ADC_lib.h"
 void ADC_INIT(){
 ADCON0 = 0x41;
 ADCON1 = 0xC0;
@@ -1511,7 +1511,7 @@ while(GO_nDONE);
 return ((ADRESH<<8)+ADRESL);
 }
 
-# 12 "C:\Users\www\Desktop\PIC16F877A\ANALOG_INPUTS\Main.c"
+# 12 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\PIC16F877A\ANALOG_INPUTS\Main.c"
 int main(void){
 float ADC, temperature;
 int a,b,c,d,e,f;

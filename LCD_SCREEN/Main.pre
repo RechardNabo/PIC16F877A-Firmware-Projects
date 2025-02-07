@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\www\Desktop\PIC16F877A\LCD_SCREEN\Main.c"
+# 1 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\LCD_SCREEN\Main.c"
 
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
@@ -1285,7 +1285,7 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 
-# 25 "C:\Users\www\Desktop\PIC16F877A\LCD_SCREEN\LCD_SCREEN.h"
+# 25 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\LCD_SCREEN\LCD_SCREEN.h"
 void LCD_SETUP_4BIT(){
 
 TRISB1 = 0x00;
@@ -1454,7 +1454,7 @@ void LCD_DISPLAY_DIGIT(const unsigned int num){
 LCD_DATA(num,0x08);
 }
 
-# 13 "C:\Users\www\Desktop\PIC16F877A\LCD_SCREEN\Main.c"
+# 13 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\LCD_SCREEN\Main.c"
 int main(void){
 LCD_SETUP_8BIT();
 LCD_INITIALIZE_8BIT();

@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\www\Desktop\PIC16F877A\TWO_DIGIT_7SEGMENT\Main.c"
+# 1 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\TWO_DIGIT_7SEGMENT\Main.c"
 
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
@@ -1159,7 +1159,7 @@ extern char * utoa(char * buf, unsigned val, int base);
 extern char * ltoa(char * buf, long val, int base);
 extern char * ultoa(char * buf, unsigned long val, int base);
 
-# 14 "C:\Users\www\Desktop\PIC16F877A\TWO_DIGIT_7SEGMENT\Seg7_lib.h"
+# 14 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\TWO_DIGIT_7SEGMENT\Seg7_lib.h"
 void Seg_Init(){
 TRISC = 0b00000000;
 }
@@ -1309,7 +1309,7 @@ break;
 }
 }
 
-# 8 "C:\Users\www\Desktop\PIC16F877A\TWO_DIGIT_7SEGMENT\Main.c"
+# 8 "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\TWO_DIGIT_7SEGMENT\Main.c"
 extern void Seg7_Multiplex(unsigned int num1, unsigned int num2);
 int main(){
 Seg_Init();
@@ -1319,7 +1319,6 @@ unsigned int num1 = 0x00;
 unsigned int num2 = 0x00;
 unsigned int counter = 0x00;
 while(0x01){
-
 if(num2 > 9){
 num1 = num1+0x01;
 num2 = 0x00;

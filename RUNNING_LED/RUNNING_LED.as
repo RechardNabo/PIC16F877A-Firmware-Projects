@@ -202,7 +202,7 @@ __pmaintext:
 
 ;; *************** function _main *****************
 ;; Defined at:
-;;		line 11 in file "C:\Users\www\Desktop\PIC16F877A\RUNNING_LED\Main.c"
+;;		line 11 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\RUNNING_LED\Main.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -229,7 +229,7 @@ __pmaintext:
 ;; This function uses a non-reentrant model
 ;;
 psect	maintext
-	file	"C:\Users\www\Desktop\PIC16F877A\RUNNING_LED\Main.c"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\RUNNING_LED\Main.c"
 	line	11
 	global	__size_of_main
 	__size_of_main	equ	__end_of_main-_main
@@ -278,7 +278,7 @@ __ptext79:
 
 ;; *************** function _Display_2 *****************
 ;; Defined at:
-;;		line 19 in file "C:\Users\www\Desktop\PIC16F877A\RUNNING_LED\Main.c"
+;;		line 19 in file "C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\RUNNING_LED\Main.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -305,7 +305,7 @@ __ptext79:
 ;; This function uses a non-reentrant model
 ;;
 psect	text79
-	file	"C:\Users\www\Desktop\PIC16F877A\RUNNING_LED\Main.c"
+	file	"C:\Users\www\Desktop\N\Programming\PIC_MIcrocontroller\RUNNING_LED\Main.c"
 	line	19
 	global	__size_of_Display_2
 	__size_of_Display_2	equ	__end_of_Display_2-_Display_2
